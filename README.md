@@ -1,2 +1,2 @@
-# PythonCurriculum
+# Python Curriculum
 My Python Curriculum
