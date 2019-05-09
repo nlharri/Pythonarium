@@ -3,28 +3,34 @@ Python Curriculum
 
 # Table of Contents
 
-Introduction
-- History of Python
-- Installing Python
-- The Python Interactive Shell
-- Practicing Python Online
-- Recommended Code Editors
-- Alternatives, IDEs
+# Introduction
 
-Basic Syntax
+## History of Python
 
-Advanced Concepts
+## Installing Python
 
-Object Oriented Python
+## The Python Interactive Shell
 
-Modularization
+## Practicing Python Online
 
-External Libraries
+## Recommended Code Editors
 
-Using Python for Data Science
+## Alternatives, IDEs
 
-Using Python for Machine Learning
+# Basic Syntax
 
-Using Python for Building User Interfaces
+# Advanced Concepts
 
-Using Python for Bulding Websites
+# Object Oriented Python
+
+# Modularization
+
+# External Libraries
+
+# Using Python for Data Science
+
+# Using Python for Machine Learning
+
+# Using Python for Building User Interfaces
+
+# Using Python for Building Websites
