@@ -1,36 +1,78 @@
-# Index of Python Curriculum
+# The Python Curriculum
 Python Curriculum
 
 # Table of Contents
 
-# Introduction
+Introduction
+- History of Python
+- Installing Python
+- The Python Interactive Shell
+- Practicing Python Online
+- Recommended Code Editors
+- Alternatives, IDEs
 
-## History of Python
+Basic Syntax
+- Hello World!
+- Identifiers
+- Reserved Words
+- Lines and Indentation
+- Multi-Line Statements
+- Quotation in Python
+- Comments in Python
+- Using Blank Lines
+- Processing User Input
+- Multiple Statements in a single line
+- Command Line Arguments
 
-## Installing Python
+Advanced Concepts
 
-## The Python Interactive Shell
+Object Oriented Python
 
-## Practicing Python Online
+Modularization
 
-## Recommended Code Editors
+External Libraries
 
-## Alternatives, IDEs
+Using Python for Data Science
 
-# Basic Syntax
+Using Python for Machine Learning
 
-# Advanced Concepts
+Using Python for Building User Interfaces
 
-# Object Oriented Python
+Using Python for Building Websites
 
-# Modularization
+Resources
+- https://www.tutorialspoint.com/python/python_basic_syntax.htm
 
-# External Libraries
+# Detailed Descriptions of Each Chapter
 
-# Using Python for Data Science
+## Introduction
 
-# Using Python for Machine Learning
+### History of Python
 
-# Using Python for Building User Interfaces
+### Installing Python
 
-# Using Python for Building Websites
+### The Python Interactive Shell
+
+### Practicing Python Online
+
+### Recommended Code Editors
+
+### Alternatives, IDEs
+
+## Basic Syntax
+
+## Advanced Concepts
+
+## Object Oriented Python
+
+## Modularization
+
+## External Libraries
+
+## Using Python for Data Science
+
+## Using Python for Machine Learning
+
+## Using Python for Building User Interfaces
+
+## Using Python for Building Websites
