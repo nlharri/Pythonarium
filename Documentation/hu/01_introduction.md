@@ -27,6 +27,8 @@ A Python legfrissebb változata jelen dokumentum írásának idején a 3.7.3 ver
 
 A Python nyelvnek két változata van, a Python3 és a Python2. A Python3 olyan újításokat tartalmaz, ami miatt visszafelé nem kompatibilis. Én ebben a könyvben Python3-at használok, és ennek a telepítését ajánlom az Olvasónak is.
 
+A Python3 miértjéről ebben a cikkben tájékozódhatsz (angolul): https://hackaday.com/2018/08/15/stop-using-python-2-what-you-need-to-know-about-python-3/ 
+
 ### Windows
 
 ### Linux
