@@ -32,23 +32,34 @@ Python Tananyag
 - Listák és egyéb összetett adattípusok
 - Dekorátorok
 - Iterátorok
-- ...
 
-## Objektumorientált Programozás
+## Adatstruktúrák és algoritmusok
 
-## Modularizáció
+## Objektumorientált Programozás Pythonban
+
+## Modularizáció, névtér (namespace), hatáskör (scope)
 
 ## Külső könyvtárak használata
 
-## Python használata az adattudományban
+## Python használata automatizálásra
 
-## Python használata a gépi tanulás témakörében
+## Python használata weboldalak szisztematikus feldolgozására (webscraping)
+
+## Python használata hálózati programozáshoz
 
 ## Python használata felhasználói felületek létrehozására
 
-## Python használata weboldalak készítéséhez
+## Python használata webfejlesztésre
 
-## Hívatkozások
+## python használata képfeldolgozásra
+
+## Python használata az adattudományban, adatbányászatban, adatvizualizációhoz
+
+## Python használata a mesterséges intelligenciában és gépi tanulásban
+
+## Python példafeladatok megoldással
+
+## Források, Hivatkozások
 - [Bevezetés a Python Programozásba](http://szerver2.lacszki.sulinet.hu/tananyag/informatika/python.pdf)
 - [Python - Basic Syntax](https://www.tutorialspoint.com/python/python_basic_syntax.htm)
 - [Python Oktató](http://pythontutorial.pergamen.hu/downloads/tut.pdf)
