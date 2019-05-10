@@ -10,6 +10,3 @@
 
 ## Kódszerkesztők, Iintegrált Fejlesztői Környezetek (IDE-k)
 
-# Hívatkozások
-
-- [Python Oktató](http://pythontutorial.pergamen.hu/downloads/tut.pdf)
