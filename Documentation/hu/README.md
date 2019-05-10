@@ -52,4 +52,4 @@ Hívatkozások:
 - [Bevezetés a Python Programozásba](http://szerver2.lacszki.sulinet.hu/tananyag/informatika/python.pdf)
 - [Python - Basic Syntax](https://www.tutorialspoint.com/python/python_basic_syntax.htm)
 - [Python Oktató](http://pythontutorial.pergamen.hu/downloads/tut.pdf)
-- [Python programozási nyelv - Wikipedia](https://hu.wikipedia.org/wiki/Python_(programoz%C3%A1si_nyelv)
+- [Python programozási nyelv - Wikipedia](https://hu.wikipedia.org/wiki/Python_(programoz%C3%A1si_nyelv))
