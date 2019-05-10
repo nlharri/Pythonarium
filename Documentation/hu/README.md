@@ -48,7 +48,7 @@ Python használata felhasználói felületek létrehozására
 
 Python használata weboldalak készítéséhez
 
-Források
-- https://www.tutorialspoint.com/python/python_basic_syntax.htm
-- http://szerver2.lacszki.sulinet.hu/tananyag/informatika/python.pdf
+Hívatkozások:
+- [Bevezetés a Python Programozásba](http://szerver2.lacszki.sulinet.hu/tananyag/informatika/python.pdf)
+- [Python - Basic Syntax](https://www.tutorialspoint.com/python/python_basic_syntax.htm)
 
