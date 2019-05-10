@@ -32,11 +32,16 @@ A Python3 miértjéről ebben a cikkben tájékozódhatsz (angolul): https://hac
 ### Windows
 
 Windowshoz a Python legfrissebb változata letölthető a https://www.python.org/downloads/ weboldalról.
+
 ![Python Download](assets/python_website.png)
 
 ### Linux
 
+
+
 ### macOS
+
+
 
 ## Interaktív shell
 
