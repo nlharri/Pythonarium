@@ -33,24 +33,31 @@ A Python3 miértjéről ebben a cikkben tájékozódhatsz (angolul): https://hac
 
 Windowshoz a Python legfrissebb változata letölthető a https://www.python.org/downloads/ weboldalról.
 
-![Python Download](assets/python_website.png)
-
 ### Linux
 
-
+Linux operációs rendszer alatt többnyire már telepítve van egy Python verzió.
 
 ### macOS
 
+macOS operációs rendszer alatt telepítve van egy Python verzió.
 
-
-## Interaktív shell
+## Python shell
 
 A Python interpretált nyelv. Ez azt jelenti, hogy a Python nyelven írt programot megírás után az interpreter futtatja. Nincs szükség olyan fordításra (compiling), melynek során a programnyelven írt programot egy futtatható állománnyá alakítjuk, amelyet az operációs rendszer és a processzor már közvetlenül értelmezni tudna.
 
-Python programok futtatására a következő lehetőségek állnak rendelkezésre:
----
+Python programok futtatása a Python interpreterrel lehetséges.
 
-## Python gyakorlása az interneten keresztül
+### Python programok futtatása 
 
-## Kódszerkesztők, Iintegrált Fejlesztői Környezetek (IDE-k)
+A következő lehetőségek állnak rendelkezésre:
+
+- a Python program futtatása (pl. ```program.py```) a következő paranccsal: ```python program.py```
+
+- Python shell: a ```python``` paranccsal indítható a terminal alkalmazásból (Windows operációs rendszeren PowerShell-ből).
+
+- IPython: Interactive Python - ez egy parancsértelmező amely többfajta programozási nyelvet támogat, de eredetileg Pythonhoz fejlesztették ki. Sokfajta funkciót támogat, úgymint type introspection (változók és objektumok vizsgálata futási időben, parancsok tabulátor billentyűvel történő kiegészítése, illetve az eddig kiadott utasítások közötti visszakereshetőség (history).
+
+## Python program futtatása online
+
+## Kódszerkesztők, Integrált Fejlesztői Környezetek (IDE-k)
 
