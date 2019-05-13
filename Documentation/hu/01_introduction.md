@@ -45,6 +45,11 @@ Windowshoz a Python legfrissebb változata letölthető a https://www.python.org
 
 ## Interaktív shell
 
+A Python interpretált nyelv. Ez azt jelenti, hogy a Python nyelven írt programot megírás után az interpreter futtatja. Nincs szükség olyan fordításra (compiling), melynek során a programnyelven írt programot egy futtatható állománnyá alakítjuk, amelyet az operációs rendszer és a processzor már közvetlenül értelmezni tudna.
+
+Python programok futtatására a következő lehetőségek állnak rendelkezésre:
+---
+
 ## Python gyakorlása az interneten keresztül
 
 ## Kódszerkesztők, Iintegrált Fejlesztői Környezetek (IDE-k)
