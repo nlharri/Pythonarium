@@ -1,15 +1,18 @@
 # Python Tananyag
-Python Tananyag
+
+Ebből a dokumentációból megismerheted a Python programozási nyelv alapjait. Ez a leírás alapvetően programozóknak készült. Amennyiben még sosem programoztál semmilyen programozási nyelven, akkor is hasznos lehet ez a leírás. Viszont általánosságban a programozás alapvető elemeinek megismeréséhez javaslom egyéb források keresését. A Python egy nagyon jó kezdő nyelv azok számára, akik még nem tanultak programozni. Ennek az irománynak a célja mégsem az, hogy az abszolút nulla szintről megtanulj programozni. Alapvetően jó, ha úgy olvasod ezt a dokumentációt, hogy van már némi tapasztalatod a programozás terén.
+
+Az Interneten rengeteg forrásanyag található Python programozással kapcsolatban. Ebben a dokumentációban lépésről lépésre ismerkedhetsz meg a Python nyelv elemeivel, az egyszerűbb témaköröktől a bonyolultabbak felé haladva. Sok szemléletes példa és alkalmazás segítségével megismerheted, hogy mennyire sokrétűen lehet használni ezt a programozási nyelvet.
 
 # Tartalomjegyzék
 
 ## [Bevezető](01_introduction.md)
 - A Python programozási nyelv története
+- Motiváció
 - Telepítés
-- Interaktív shell
-- Python gyakorlása az interneten keresztül
-- Ajánlott kódszerkesztők
-- Alternatív kódszerkesztők, integrált fejlesztői környezetek (IDE-k)
+- Python shell
+- Python program futtatása online
+- Kódszerkesztők, Integrált Fejlesztői Környezetek (IDE-k)
 
 ## Alap szintakszis
 - Hello Világ! alkalmazás
