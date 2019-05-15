@@ -73,7 +73,31 @@ A Python nyelv alapvető szintaxisa. A Python program felépítése.
 
 ### Python használata az adattudományban, adatbányászatban, adatvizualizációhoz
 
-### Python használata a mesterséges intelligenciában és gépi tanulásban
+### Python használata a mesterséges intelligenciában és gépi tanulásban. Bevezetés a Tensorflow használatába
+
+#### Mesterséges intelligencia, neurális hálózatok
+
+#### Neurális hálózati architektúrák 
+
+#### TensorFlow alapok
+
+Ismerkedés a Tensorflow alapjaival
+- Session-ök
+- Gráfok
+- Változók, tenzorok
+- Placeholder-ek
+
+#### Az első Tensorflow neurális hálózataink felépítése: egy egyszerű neuron
+
+#### Az első Tensorflow neurális hálózataink felépítése: képek klasszifikálása, az MNIST adathalmaz
+
+#### Az első Tensorflow neurális hálózataink felépítése: képek klasszifikálása, kutya vagy macska?
+
+#### CNNs - Convolutional Neural Networks
+
+#### RNNs - Recurrent Neural Networks
+
+#### GANs - Generative Adversarial Networks
 
 ### Python példafeladatok megoldással
 
