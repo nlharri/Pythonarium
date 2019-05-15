@@ -96,6 +96,8 @@ A fejezet alapjául szolgáló weboldal: [OpenCV Tutorial: A Guide to Learn Open
 
 Ebben a fejezetben a Python felhasználási lehetőségeit ismertetem a tudományos számítások világában.
 
+Referencia: [Python Data Science Handbook (Jake VanderPlas)](https://jakevdp.github.io/PythonDataScienceHandbook/)
+
 #### A SciPy ökoszisztéma
 
 A SciPy ökoszisztéma elemei.
@@ -120,6 +122,8 @@ A SciPy ökoszisztéma elemei.
 #### Ismerkedés a Pandas könyvtárral
 
 ### Python használata a mesterséges intelligenciában és gépi tanulásban. Bevezetés a Tensorflow és a Keras használatába
+
+Referencia: [Python Data Science Handbook (Jake VanderPlas)](https://jakevdp.github.io/PythonDataScienceHandbook/)
 
 #### Mesterséges intelligencia, neurális hálózatok
 
@@ -168,3 +172,4 @@ Ismerkedés a Tensorflow alapjaival.
 - [OpenCV Tutorial: A Guide to Learn OpenCV](https://www.pyimagesearch.com/2018/07/19/opencv-tutorial-a-guide-to-learn-opencv/)
 - [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/)
 - [Tutorial: Python Web Scraping Using BeautifulSoup (by DataQuest)](https://www.dataquest.io/blog/web-scraping-tutorial-python/)
+- [Python Data Science Handbook (Jake VanderPlas)](https://jakevdp.github.io/PythonDataScienceHandbook/)
