@@ -56,6 +56,10 @@ A Python nyelv alapvető szintaxisa. A Python program felépítése.
 
 ## Adatstruktúrák és algoritmusok
 
+## Unit teszt és integration teszt Pythonban
+
+A fejezet alapjául szolgáló mű: [Getting Started With Testing in Python (by RealPython)](https://realpython.com/python-testing/)
+
 ## Külső könyvtárak használata
 
 ## A Python sokrétű alkalmazása példákkal
@@ -173,3 +177,7 @@ Ismerkedés a Tensorflow alapjaival.
 - [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/)
 - [Tutorial: Python Web Scraping Using BeautifulSoup (by DataQuest)](https://www.dataquest.io/blog/web-scraping-tutorial-python/)
 - [Python Data Science Handbook (Jake VanderPlas)](https://jakevdp.github.io/PythonDataScienceHandbook/)
+- [Introduction to Deep Neural Networks with Keras and Tensorflow](https://github.com/leriomaggio/deep-learning-keras-tensorflow)
+- [Jupyter notebooks for the code samples of the book "Deep Learning with Python"](https://github.com/fchollet/deep-learning-with-python-notebooks)
+- [CS228 Python Tutorial](https://github.com/kuleshov/cs228-material/blob/master/tutorials/python/cs228-python-tutorial.ipynb)
+- [Deep Learning a gyakorlatban Python és LUA alapon](https://github.com/BME-SmartLab-Education/vitmav45/blob/master/01/03-LUA-alapok-compiled.ipynb)
