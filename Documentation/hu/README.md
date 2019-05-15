@@ -48,6 +48,7 @@ A Python nyelv alapvető szintaxisa. A Python program felépítése.
 - Listák és egyéb összetett adattípusok
 - Dekorátorok
 - Iterátorok
+- Beépített könyvtárak
 
 ## Modulok, csomagok (package) névtér (namespace), hatáskör (scope)
 
@@ -76,6 +77,10 @@ Ebben a fejezetben desktop alkalmazások fejlesztését mutatom be három külö
 #### PySide2 alapok
 
 ### Python használata webfejlesztésre. Django és Flask
+
+#### Django alapok
+
+#### Flask alapok
 
 ### Python használata képfeldolgozásra. Ismerkedés az OpenCV-vel (Open Source Computer Vision Library)
 
@@ -110,17 +115,24 @@ A SciPy ökoszisztéma elemei.
 
 #### Ismerkedés a Pandas könyvtárral
 
-### Python használata a mesterséges intelligenciában és gépi tanulásban. Bevezetés a Tensorflow használatába
+### Python használata a mesterséges intelligenciában és gépi tanulásban. Bevezetés a Tensorflow és a Keras használatába
 
 #### Mesterséges intelligencia, neurális hálózatok
 
 #### Neurális hálózatok architektúrája
 
-#### Népszerű Python könyvtárak gépi tanuláshoz és neurális hálózatok létrehozásához.
+#### Népszerű Python könyvtárak gépi tanuláshoz és neurális hálózatok létrehozásához
 
 A jeleneg legnépszerűbb Python könyvtárak rövid ismertetése.
 
-#### TensorFlow alapok
+- Tensorflow és Keras
+- PyTorch
+- Theano
+- Scikit-learn
+- Microsoft Cognitive Toolkit (CNTK)
+
+
+#### TensorFlow és Keras alapok
 
 Ismerkedés a Tensorflow alapjaival.
 
