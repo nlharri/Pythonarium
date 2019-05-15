@@ -7,14 +7,25 @@ Az Interneten rengeteg forrásanyag található Python programozással kapcsolat
 # Tartalomjegyzék
 
 ## [Bevezető](01_introduction.md)
+
+Bevezetés a Python programozási nyelv alapjaiba.
+
+Tartalom:
 - A Python programozási nyelv története
 - Motiváció
 - Telepítés
+  - Windows
+  - Linux
+  - macOS
 - Python shell
+  - Python programok futtatása
 - Python program futtatása online
 - Kódszerkesztők, Integrált Fejlesztői Környezetek (IDE-k)
 
 ## Alap szintakszis
+
+A Python nyelv alapvető szintaxisa. A Python program felépítése.
+
 - Hello Világ! alkalmazás
 - Azonosítók
 - Foglalt szavak
@@ -28,39 +39,43 @@ Az Interneten rengeteg forrásanyag található Python programozással kapcsolat
 - Parancssori argumentumok
 
 ## Haladó Python
+
+Összetett adatokkal való műveletek. 
+
 - Adattípusok
 - Függvények
-- Hatáskör (scope)
-- Paraméterek, paraméter-átadás függvénynek
+- Paraméterek, paraméter-átadás függvényeknek
 - Listák és egyéb összetett adattípusok
 - Dekorátorok
 - Iterátorok
 
+## Modulok, csomagok (package) névtér (namespace), hatáskör (scope)
+
+## Objektumorientált programozás Pythonban
+
 ## Adatstruktúrák és algoritmusok
-
-## Objektumorientált Programozás Pythonban
-
-## Modularizáció, névtér (namespace), hatáskör (scope)
 
 ## Külső könyvtárak használata
 
-## Python használata automatizálásra
+## A Python sokrétű alkalmazása példákkal
 
-## Python használata weboldalak szisztematikus feldolgozására (webscraping)
+### Python használata automatizálásra
 
-## Python használata hálózati programozáshoz
+### Python használata weboldalak szisztematikus feldolgozására (webscraping)
 
-## Python használata felhasználói felületek létrehozására
+### Python használata hálózati programozáshoz
 
-## Python használata webfejlesztésre
+### Python használata felhasználói felületek létrehozására
 
-## python használata képfeldolgozásra
+### Python használata webfejlesztésre
 
-## Python használata az adattudományban, adatbányászatban, adatvizualizációhoz
+### python használata képfeldolgozásra
 
-## Python használata a mesterséges intelligenciában és gépi tanulásban
+### Python használata az adattudományban, adatbányászatban, adatvizualizációhoz
 
-## Python példafeladatok megoldással
+### Python használata a mesterséges intelligenciában és gépi tanulásban
+
+### Python példafeladatok megoldással
 
 ## Források, Hivatkozások
 - [Bevezetés a Python Programozásba](http://szerver2.lacszki.sulinet.hu/tananyag/informatika/python.pdf)
