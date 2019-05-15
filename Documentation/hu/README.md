@@ -61,27 +61,28 @@ A Python nyelv alapvető szintaxisa. A Python program felépítése.
 
 ### Python használata automatizálásra
 
-### Python használata weboldalak szisztematikus feldolgozására (webscraping)
+### Python használata weboldalak szisztematikus feldolgozására (webscraping). A BeautifulSoup csomag
 
 ### Python használata hálózati programozáshoz
 
-### Python használata felhasználói felületek létrehozására
+### Python használata felhasználói felületek létrehozására: Tkinter, PySide, PyQt
 
-### Python használata webfejlesztésre
+### Python használata webfejlesztésre. Ismerkedés a Django-val és a Flask-kal
 
-### python használata képfeldolgozásra
+### Python használata képfeldolgozásra. Ismerkedés az OpenCV-vel (Open Source Computer Vision Library)
 
-### Python használata az adattudományban, adatbányászatban, adatvizualizációhoz
+### Python használata az adattudományban, adatbányászatban és adatvizualizációhoz
 
 ### Python használata a mesterséges intelligenciában és gépi tanulásban. Bevezetés a Tensorflow használatába
 
 #### Mesterséges intelligencia, neurális hálózatok
 
-#### Neurális hálózati architektúrák 
+#### Neurális hálózatok architektúrája
 
 #### TensorFlow alapok
 
-Ismerkedés a Tensorflow alapjaival
+Ismerkedés a Tensorflow alapjaival.
+
 - Session-ök
 - Gráfok
 - Változók, tenzorok
