@@ -65,9 +65,17 @@ A Python nyelv alapvető szintaxisa. A Python program felépítése.
 
 ### Python használata hálózati programozáshoz
 
-### Python használata felhasználói felületek létrehozására: Tkinter, PySide, PyQt
+### Python használata felhasználói felületek létrehozására: Tkinter, Kivy, PySide2
 
-### Python használata webfejlesztésre. Ismerkedés a Django-val és a Flask-kal
+Ebben a fejezetben desktop alkalmazások fejlesztését mutatom be három különböző Python könyvtár használatán keresztül.
+
+#### Tkinter alapok
+
+#### Kivy alapok
+
+#### PySide2 alapok
+
+### Python használata webfejlesztésre. Django és Flask
 
 ### Python használata képfeldolgozásra. Ismerkedés az OpenCV-vel (Open Source Computer Vision Library)
 
@@ -103,6 +111,10 @@ A SciPy ökoszisztéma elemei.
 #### Mesterséges intelligencia, neurális hálózatok
 
 #### Neurális hálózatok architektúrája
+
+#### Népszerű Python könyvtárak gépi tanuláshoz és neurális hálózatok létrehozásához.
+
+A jeleneg legnépszerűbb Python könyvtárak rövid ismertetése.
 
 #### TensorFlow alapok
 
