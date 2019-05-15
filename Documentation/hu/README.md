@@ -62,6 +62,8 @@ A Python nyelv alapvető szintaxisa. A Python program felépítése.
 
 ### Python használata automatizálásra
 
+Ebben a fejezetben megismerheted, hogy hogyan lehet a Python nyelvet praktikusan használni olyan feladatokra, amelyek kézzel elvégezve órákig tartanának. A fejezet alapjául szolgáló mű: [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/).
+
 ### Python használata weboldalak szisztematikus feldolgozására (webscraping). A BeautifulSoup csomag
 
 ### Python használata hálózati programozáshoz
@@ -161,3 +163,5 @@ Ismerkedés a Tensorflow alapjaival.
 - [Python Oktató](http://pythontutorial.pergamen.hu/downloads/tut.pdf)
 - [Python programozási nyelv - Wikipedia](https://hu.wikipedia.org/wiki/Python_(programoz%C3%A1si_nyelv))
 - [OpenCV Tutorial: A Guide to Learn OpenCV](https://www.pyimagesearch.com/2018/07/19/opencv-tutorial-a-guide-to-learn-opencv/)
+- [OpenCV Tutorial: A Guide to Learn OpenCV](https://www.pyimagesearch.com/2018/07/19/opencv-tutorial-a-guide-to-learn-opencv/)
+- [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/)
