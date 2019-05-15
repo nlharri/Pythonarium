@@ -71,7 +71,32 @@ A Python nyelv alapvető szintaxisa. A Python program felépítése.
 
 ### Python használata képfeldolgozásra. Ismerkedés az OpenCV-vel (Open Source Computer Vision Library)
 
-### Python használata az adattudományban, adatbányászatban és adatvizualizációhoz
+### Python használata a tudományos számításokhoz
+
+Ebben a fejezetben a Python felhasználási lehetőségeit ismertetem a tudományos számítások világában.
+
+#### A SciPy ökoszisztéma
+
+A SciPy ökoszisztéma elemei.
+
+- NumPy
+- SciPy könyvtár
+- Matplotlib
+- IPython
+- SymPy
+- Pandas
+
+#### Ismerkedés a NumPy könyvtárral
+
+#### Ismerkedés a SciPy könyvtárral
+
+#### Ismerkedés a Matplotlib könyvtárral
+
+#### Ismerkedés a IPython könyvtárral
+
+#### Ismerkedés a SymPy könyvtárral
+
+#### Ismerkedés a Pandas könyvtárral
 
 ### Python használata a mesterséges intelligenciában és gépi tanulásban. Bevezetés a Tensorflow használatába
 
