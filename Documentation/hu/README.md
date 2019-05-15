@@ -66,6 +66,8 @@ Ebben a fejezetben megismerheted, hogy hogyan lehet a Python nyelvet praktikusan
 
 ### Python használata weboldalak szisztematikus feldolgozására (webscraping). A BeautifulSoup csomag
 
+A fejezet alapjául a következő tutorial szolgált: [Tutorial: Python Web Scraping Using BeautifulSoup (by DataQuest)](https://www.dataquest.io/blog/web-scraping-tutorial-python/)
+
 ### Python használata hálózati programozáshoz
 
 ### Python használata felhasználói felületek létrehozására: Tkinter, Kivy, PySide2
@@ -165,3 +167,4 @@ Ismerkedés a Tensorflow alapjaival.
 - [OpenCV Tutorial: A Guide to Learn OpenCV](https://www.pyimagesearch.com/2018/07/19/opencv-tutorial-a-guide-to-learn-opencv/)
 - [OpenCV Tutorial: A Guide to Learn OpenCV](https://www.pyimagesearch.com/2018/07/19/opencv-tutorial-a-guide-to-learn-opencv/)
 - [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/)
+- [Tutorial: Python Web Scraping Using BeautifulSoup (by DataQuest)](https://www.dataquest.io/blog/web-scraping-tutorial-python/)
