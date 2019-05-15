@@ -79,6 +79,10 @@ Ebben a fejezetben desktop alkalmazások fejlesztését mutatom be három külö
 
 ### Python használata képfeldolgozásra. Ismerkedés az OpenCV-vel (Open Source Computer Vision Library)
 
+Ebben a fejezetben a képfeldolgozás alapjaival ismerkedhetsz meg a népszerű OpenCV könyvtár használatán kersztül. 
+
+A fejezet alapjául szolgáló weboldal: [OpenCV Tutorial: A Guide to Learn OpenCV](https://www.pyimagesearch.com/2018/07/19/opencv-tutorial-a-guide-to-learn-opencv/)
+
 ### Python használata a tudományos számításokhoz
 
 Ebben a fejezetben a Python felhasználási lehetőségeit ismertetem a tudományos számítások világában.
@@ -144,3 +148,4 @@ Ismerkedés a Tensorflow alapjaival.
 - [Python - Basic Syntax](https://www.tutorialspoint.com/python/python_basic_syntax.htm)
 - [Python Oktató](http://pythontutorial.pergamen.hu/downloads/tut.pdf)
 - [Python programozási nyelv - Wikipedia](https://hu.wikipedia.org/wiki/Python_(programoz%C3%A1si_nyelv))
+- [OpenCV Tutorial: A Guide to Learn OpenCV](https://www.pyimagesearch.com/2018/07/19/opencv-tutorial-a-guide-to-learn-opencv/)
