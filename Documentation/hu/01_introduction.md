@@ -41,11 +41,21 @@ Linux operációs rendszer alatt többnyire már telepítve van egy Python verzi
 
 ```
 python --version
+python3 --version
 ```
+
+![Python in Linux](./assets/Python_in_Linux.png "Python in Linux")
+
+Amint látható, a python3-at külön paranccsal lehet elérni.
 
 ### macOS
 
-macOS operációs rendszer alatt telepítve van egy Python verzió. A legfrissebb, macOS Mojave változat a Python 2.7-et tartalmazza alapból. A Python 3 telepítésére többfajta mód létezik, pl. a HomeBrew nevű csomagkezelő használata. Ehhez először a HomeBrew-t kell telepíteni:
+macOS operációs rendszer alatt telepítve van egy Python verzió. A legfrissebb, macOS Mojave változat a Python 2.7-et tartalmazza alapból. 
+
+![Python in macOS](./assets/Python_in_macOS.png "Python in macOS")
+
+
+A Python 3 telepítésére többfajta módszer létezik. Amit én használtam, az a HomeBrew nevű csomagkezelő használata. Ehhez először a HomeBrew-t kell telepíteni:
 
 ```
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -67,21 +77,26 @@ Python programok futtatása a Python interpreterrel lehetséges.
 
 A következő lehetőségek állnak rendelkezésre:
 
-- a Python program futtatása (pl. ```program.py```) a következő paranccsal: ```python program.py```
+- a Python program futtatása (pl. ```program.py```) a következő paranccsal: ```python program.py``` vagy ```python3 program.py```
 
-- Python shell: a ```python``` paranccsal indítható a terminal alkalmazásból (Windows operációs rendszeren PowerShell-ből).
+- Python shell: a ```python``` vagy ```python3``` paranccsal indítható a terminal alkalmazásból (Windows operációs rendszeren PowerShell-ből)
 
 - IPython: Interactive Python - ez egy parancsértelmező amely többfajta programozási nyelvet támogat, de eredetileg Pythonhoz fejlesztették ki. Sokfajta funkciót támogat, úgymint type introspection (változók és objektumok vizsgálata futási időben), parancsok tabulátor billentyűvel történő kiegészítése, illetve az eddig kiadott utasítások közötti visszakereshetőség (history).
+
+## Virtuális környezet, ```virtualenv```
+
+## Csomagkezelés, ```pip```
 
 ## Python program futtatása online
 
 Python kód online futtatására is van lehetőség, például az alábbiak:
-- [Repl.it](https://repl.it)
-- [Google Colab](https://colab.research.google.com/)
+- [Repl.it](https://repl.it) - én ezt tartom a legjobbnak egyszerű Python programok futtatására
+- [Google Colab](https://colab.research.google.com/) - ez leginkább tudományos számításokhoz, gépi tanulás témakörében használható jól. Beépített GPU támogatással nagy számítási igényű modelleket is lehet tanítani vele.
+- [Tutorialspoint online Python](https://www.tutorialspoint.com/execute_python_online.php)
 
 ## Kódszerkesztők, Integrált Fejlesztői Környezetek (IDE-k)
 
 Az általam használt kódszerkesztő a [Visual Studio Code](https://code.visualstudio.com/). Egyéb kódszerkesztők és Integrált Fejlesztői Környezetek:
-- Atom editor
-- PyCharm
-- IDLE
+- [Atom editor](https://atom.io)
+- [PyCharm](https://www.jetbrains.com/pycharm/)
+- [IDLE](https://docs.python.org/3/library/idle.html)
