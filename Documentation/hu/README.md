@@ -182,3 +182,4 @@ Ismerkedés a Tensorflow alapjaival.
 - [CS228 Python Tutorial](https://github.com/kuleshov/cs228-material/blob/master/tutorials/python/cs228-python-tutorial.ipynb)
 - [Deep Learning a gyakorlatban Python és LUA alapon](https://github.com/BME-SmartLab-Education/vitmav45/blob/master/01/03-LUA-alapok-compiled.ipynb)
 - [Getting Started With Testing in Python (by RealPython)](https://realpython.com/python-testing/)
+- [Coursera Machine Learning course by Andrew Ng](https://www.coursera.org/learn/machine-learning)
