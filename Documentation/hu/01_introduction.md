@@ -31,15 +31,31 @@ A Python3 miértjéről ebben a cikkben tájékozódhatsz (angolul): https://hac
 
 ### Windows
 
-Windowshoz a Python legfrissebb változata letölthető a https://www.python.org/downloads/ weboldalról.
+Windowshoz a Python legfrissebb változata letölthető a https://www.python.org/downloads/ weboldalról. Telepítés után a Start Menüből indítható a Python shell.
+
+![Python in Windows Start Menu](./img/Python_in_Windows_Start_Menu.png "Python in Windows Start Menu")
 
 ### Linux
 
-Linux operációs rendszer alatt többnyire már telepítve van egy Python verzió.
+Linux operációs rendszer alatt többnyire már telepítve van egy Python verzió. Az aktuális telepített Python verzió lekérdezéséhez a következő parancsot használd:
+
+```
+python --version
+```
 
 ### macOS
 
-macOS operációs rendszer alatt telepítve van egy Python verzió.
+macOS operációs rendszer alatt telepítve van egy Python verzió. A legfrissebb, macOS Mojave változat a Python 2.7-et tartalmazza alapból. A Python 3 telepítésére többfajta mód létezik, pl. a HomeBrew nevű csomagkezelő használata. Ehhez először a HomeBrew-t kell telepíteni:
+
+```
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+
+majd pedig a HomeBrew segítségével a Pythont:
+
+```
+brew install python3
+```
 
 ## Python shell
 
@@ -55,9 +71,13 @@ A következő lehetőségek állnak rendelkezésre:
 
 - Python shell: a ```python``` paranccsal indítható a terminal alkalmazásból (Windows operációs rendszeren PowerShell-ből).
 
-- IPython: Interactive Python - ez egy parancsértelmező amely többfajta programozási nyelvet támogat, de eredetileg Pythonhoz fejlesztették ki. Sokfajta funkciót támogat, úgymint type introspection (változók és objektumok vizsgálata futási időben, parancsok tabulátor billentyűvel történő kiegészítése, illetve az eddig kiadott utasítások közötti visszakereshetőség (history).
+- IPython: Interactive Python - ez egy parancsértelmező amely többfajta programozási nyelvet támogat, de eredetileg Pythonhoz fejlesztették ki. Sokfajta funkciót támogat, úgymint type introspection (változók és objektumok vizsgálata futási időben), parancsok tabulátor billentyűvel történő kiegészítése, illetve az eddig kiadott utasítások közötti visszakereshetőség (history).
 
 ## Python program futtatása online
+
+Python kód online futtatására is van lehetőség, például az alábbiak:
+- [Repl.it](https://repl.it)
+- [Google Colab](https://colab.research.google.com/)
 
 ## Kódszerkesztők, Integrált Fejlesztői Környezetek (IDE-k)
 
