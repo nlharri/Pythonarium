@@ -27,11 +27,11 @@ A Python legfrissebb változata jelen dokumentum írásának idején a 3.7.3 ver
 
 A Python nyelvnek két változata van, a Python3 és a Python2. A Python3 olyan újításokat tartalmaz, ami miatt visszafelé nem kompatibilis. Én ebben a könyvben Python3-at használok, és ennek a telepítését ajánlom az Olvasónak is.
 
-A Python3 miértjéről ebben a cikkben tájékozódhatsz (angolul): https://hackaday.com/2018/08/15/stop-using-python-2-what-you-need-to-know-about-python-3/ 
+A Python3 miértjéről ebben a cikkben tájékozódhatsz (angolul): [STOP USING PYTHON 2: WHAT YOU NEED TO KNOW ABOUT PYTHON 3](https://hackaday.com/2018/08/15/stop-using-python-2-what-you-need-to-know-about-python-3/)
 
 ### Windows
 
-Windowshoz a Python legfrissebb változata letölthető a https://www.python.org/downloads/ weboldalról. Telepítés után a Start Menüből indítható a Python shell.
+Windowshoz a Python legfrissebb változata letölthető a [Python Software Foundation](https://www.python.org/downloads/) weboldalról. Telepítés után a Start Menüből indítható a Python shell.
 
 ![Python in Windows Start Menu](./assets/Python_in_Windows_Start_Menu.png "Python in Windows Start Menu")
 
@@ -81,3 +81,7 @@ Python kód online futtatására is van lehetőség, például az alábbiak:
 
 ## Kódszerkesztők, Integrált Fejlesztői Környezetek (IDE-k)
 
+Az általam használt kódszerkesztő a [Visual Studio Code](https://code.visualstudio.com/). Egyéb kódszerkesztők és Integrált Fejlesztői Környezetek:
+- Atom editor
+- PyCharm
+- IDLE
