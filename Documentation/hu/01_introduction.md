@@ -33,7 +33,7 @@ A Python3 miértjéről ebben a cikkben tájékozódhatsz (angolul): https://hac
 
 Windowshoz a Python legfrissebb változata letölthető a https://www.python.org/downloads/ weboldalról. Telepítés után a Start Menüből indítható a Python shell.
 
-![Python in Windows Start Menu](./img/Python_in_Windows_Start_Menu.png "Python in Windows Start Menu")
+![Python in Windows Start Menu](./assets/Python_in_Windows_Start_Menu.png "Python in Windows Start Menu")
 
 ### Linux
 
