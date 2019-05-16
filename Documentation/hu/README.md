@@ -50,7 +50,7 @@ A Python nyelv alapvető szintaxisa. A Python program felépítése.
 - Iterátorok
 - Beépített könyvtárak
 
-## Modulok, csomagok (package) névtér (namespace), hatáskör (scope)
+## Modulok, csomagok (package), névtér (namespace), hatáskör (scope)
 
 ## Objektumorientált programozás Pythonban
 
