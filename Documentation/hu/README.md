@@ -183,3 +183,4 @@ Ismerkedés a Tensorflow alapjaival.
 - [Deep Learning a gyakorlatban Python és LUA alapon](https://github.com/BME-SmartLab-Education/vitmav45/blob/master/01/03-LUA-alapok-compiled.ipynb)
 - [Getting Started With Testing in Python (by RealPython)](https://realpython.com/python-testing/)
 - [Coursera Machine Learning course by Andrew Ng](https://www.coursera.org/learn/machine-learning)
+- [Virtuális környezet használata Python 3.5+ -ben](https://arato.inf.unideb.hu/szathmary.laszlo/pmwiki/index.php?n=Py3.Virtualenv)
