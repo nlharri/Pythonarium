@@ -2,7 +2,7 @@
 
 From this document you can learn the basics of Python programming language. This description is basically for developers. If you haven't wrote any program in any programming language, this document can also be useful, but in order to learn the basics of programming in general, I would suggest looking for other resources as well. Python is a very good programming language for absolute beginners. But the purpose of this document is not to teach you programming in general. Basically it is good to learn these documents if you already have some experience in programming.
 
-On the Internet there are plenty of resources to learn Python programming. In this document you can learn the basics of Python programming step-by-step, from the simple topics towards the more complicated ones. Many useful examples and applications will help you to understand the many use cases of the programming language
+On the Internet there are plenty of resources to learn Python programming. In this document you can learn the basics of Python programming step-by-step, from the simple topics towards the more complicated ones. Many useful examples and applications will help you to understand the many use cases of the programming language.
 
 # Table of Contents
 
@@ -143,45 +143,40 @@ Currently the most popular Python libraries are
 
 #### Tensorflow and Keras bascis
 
+Basic Elements of Tensorflow:
 
+- Sessions
+- Graphs
+- Variables, Tensors
+- Placeholders
 
-Using Python for Building User Interfaces
+#### Building our first neural networks: a simple neuron
 
-Using Python for Building Websites
+#### Building our first neural networks: image classification, the MNIST dataset
 
-Resources
-- https://www.tutorialspoint.com/python/python_basic_syntax.htm
+#### Building our first neural networks: image classification, dog or cat?
 
-# Detailed Descriptions of Each Chapter
+#### CNNs - Convolutional Neural Networks
 
-## Introduction
+#### RNNs - Recurrent Neural Networks
 
-### History of Python
+#### GANs - Generative Adversarial Networks
 
-### Installing Python
+### Python példafeladatok megoldással
 
-### The Python Interactive Shell
+## Resources, References
 
-### Practicing Python Online
-
-### Recommended Code Editors
-
-### Alternatives, IDEs
-
-## Basic Syntax
-
-## Advanced Concepts
-
-## Object Oriented Python
-
-## Modularization
-
-## External Libraries
-
-## Using Python for Data Science
-
-## Using Python for Machine Learning
-
-## Using Python for Building User Interfaces
-
-## Using Python for Building Websites
+- [Bevezetés a Python Programozásba](http://szerver2.lacszki.sulinet.hu/tananyag/informatika/python.pdf)
+- [Python - Basic Syntax](https://www.tutorialspoint.com/python/python_basic_syntax.htm)
+- [Python Oktató](http://pythontutorial.pergamen.hu/downloads/tut.pdf)
+- [Python programozási nyelv - Wikipedia](https://hu.wikipedia.org/wiki/Python_(programoz%C3%A1si_nyelv))
+- [OpenCV Tutorial: A Guide to Learn OpenCV](https://www.pyimagesearch.com/2018/07/19/opencv-tutorial-a-guide-to-learn-opencv/)
+- [OpenCV Tutorial: A Guide to Learn OpenCV](https://www.pyimagesearch.com/2018/07/19/opencv-tutorial-a-guide-to-learn-opencv/)
+- [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/)
+- [Tutorial: Python Web Scraping Using BeautifulSoup (by DataQuest)](https://www.dataquest.io/blog/web-scraping-tutorial-python/)
+- [Python Data Science Handbook (Jake VanderPlas)](https://jakevdp.github.io/PythonDataScienceHandbook/)
+- [Introduction to Deep Neural Networks with Keras and Tensorflow](https://github.com/leriomaggio/deep-learning-keras-tensorflow)
+- [Jupyter notebooks for the code samples of the book "Deep Learning with Python"](https://github.com/fchollet/deep-learning-with-python-notebooks)
+- [CS228 Python Tutorial](https://github.com/kuleshov/cs228-material/blob/master/tutorials/python/cs228-python-tutorial.ipynb)
+- [Deep Learning a gyakorlatban Python és LUA alapon](https://github.com/BME-SmartLab-Education/vitmav45/blob/master/01/03-LUA-alapok-compiled.ipynb)
+- [Getting Started With Testing in Python (by RealPython)](https://realpython.com/python-testing/)
