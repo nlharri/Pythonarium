@@ -89,7 +89,54 @@ Mi is az a ```pip```? A ```pip``` a Python standard csomagkezelője. Arra jó, h
 
 ## Virtuális környezet, ```virtualenv```
 
+A ```virtualenv``` egy Python csomag, amivel virtuális környezetet lehet létrehozni a Python projektünk számára. Tulajdonképpen létrehoz egy külön könyvtárat a Python projektünkhöz, és ez a könyvtár az összes külső függőséget (külső könyvtárakat, amiket a projektünk használ) tartalmazni fogja. 
 
+A ```virtualenv``` telepítése ```pip``` segítségével:
+
+```
+pip install virtualenv
+```
+
+Majd a telepítés eredményének ellenőrzése a ```virtualenv``` verziójának lekérdezésével:
+
+```
+virtualenv --version
+```
+
+### Virtuális környezet létrehozása
+
+Ehhez létre kell hoznunk egy új könyvtárat a projektünk számára, majd ezt a könyvtárat kijelölni a virtuális környezet számára.
+
+```
+mkdir MyNewPythonProjectVenv
+virtualenv -p python3 MyNewPythonProjectVenv
+```
+
+Ezek után a ```MyNewPythonProjectVenv/bin``` könyvtár tartalmazni fogja a Python fordítót. Ahhoz, hogy ezt a virtuális környezetet használni tudjuk, vagyis ezen a virtuális környezeten belül kezdjünk el dolgozni, a következő parancsot kell kiadni:
+
+```
+source MyNewPythonProjectVenv/bin/activate
+```
+
+Innentől kezdve, ha telepítünk egy csomagot a ```pip```-pel, akkor az ebben a virtuális környezetben fog települni. Például a ```numpy``` csomag telepítése:
+
+```
+pip install --upgrade numpy
+```
+
+### Jelenleg telepített Python csomagok listája
+
+Ha szeretnénk később ugyanezt a virtuális környezetet létrehozni, ugyanezekkel a telepített csomagokkal, például egy másik gépen, akkor szükségünk van arra a listára, hogy milyen csomagjaink lettek telepítve. Erre szolgál a következő parancs (a virtuális környezetből kell kiadni):
+
+```
+pip freeze > requirements.txt
+```
+
+Ez létrehozza a ```requirements.txt``` filet, ami tartalmazni fogja a csomagok listáját. Innentől kezdve ha telepíteni szeretnénk ezeket a csomagokat, azt megtehetjük ezzel a paranccsal:
+
+```
+pip install -r requirements.txt
+```
 
 ## Python program futtatása online
 
