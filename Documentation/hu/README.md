@@ -173,7 +173,6 @@ Ismerkedés a Tensorflow alapjaival.
 - [Python Oktató](http://pythontutorial.pergamen.hu/downloads/tut.pdf)
 - [Python programozási nyelv - Wikipedia](https://hu.wikipedia.org/wiki/Python_(programoz%C3%A1si_nyelv))
 - [OpenCV Tutorial: A Guide to Learn OpenCV](https://www.pyimagesearch.com/2018/07/19/opencv-tutorial-a-guide-to-learn-opencv/)
-- [OpenCV Tutorial: A Guide to Learn OpenCV](https://www.pyimagesearch.com/2018/07/19/opencv-tutorial-a-guide-to-learn-opencv/)
 - [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/)
 - [Tutorial: Python Web Scraping Using BeautifulSoup (by DataQuest)](https://www.dataquest.io/blog/web-scraping-tutorial-python/)
 - [Python Data Science Handbook (Jake VanderPlas)](https://jakevdp.github.io/PythonDataScienceHandbook/)
@@ -184,3 +183,4 @@ Ismerkedés a Tensorflow alapjaival.
 - [Getting Started With Testing in Python (by RealPython)](https://realpython.com/python-testing/)
 - [Coursera Machine Learning course by Andrew Ng](https://www.coursera.org/learn/machine-learning)
 - [Virtuális környezet használata Python 3.5+ -ben](https://arato.inf.unideb.hu/szathmary.laszlo/pmwiki/index.php?n=Py3.Virtualenv)
+- [What Is Pip? A Guide for New Pythonistas](https://realpython.com/what-is-pip/)
