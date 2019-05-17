@@ -14,11 +14,9 @@ Tartalom:
 - A Python programozási nyelv története
 - Motiváció
 - Telepítés
-  - Windows
-  - Linux
-  - macOS
 - Python shell
-  - Python programok futtatása
+- Csomagkezelés: pip
+- Virtuális környezet: virtualenv
 - Python program futtatása online
 - Kódszerkesztők, Integrált Fejlesztői Környezetek (IDE-k)
 
