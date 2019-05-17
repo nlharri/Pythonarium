@@ -91,18 +91,76 @@ A Python programozási nyelv Standard Könyvtára [Python Standard Library](http
 
 Ezek a csomagok a [Python Package Index](https://pypi.org)-en kerülnek publikálásra.
 
-Az alábbi példában telepítünk egy csomagot, a ```requests``` nevűt, amelynek a segítségével weboldalakat tudunk letölteni. Ugyanezt a funkciót a Python Standard Library csomagjaival is meg tudjuk valósítani, de a ```requests``` csomag jóval egyszerűbb, könnyebben használható interfészt nyújt.
+Az alábbi példában telepítünk egy csomagot, a ```requests``` nevűt, amelynek a segítségével weboldalakat tudunk letölteni. Ugyanezt a funkciót a Python Standard Library csomagjaival is meg tudjuk valósítani, de a ```requests``` csomag jóval egyszerűbb, könnyebben használható interfészt nyújt. Az alábbi parancsokat egy virtuális környezeten belül futtatom, amiről a következő alfejezetben olvashatsz.
 
 ```
 pip install requests
 ```
 
-A parancs kiadásának eredménye:
+Ennek hatására a következőt írja ki a konzolra:
 
 ```
+Collecting requests
+  Downloading https://files.pythonhosted.org/packages/51/bd/23c926cd341ea6b7dd0b2a00aba99ae0f828be89d72b2190f27c11d4b7fb/requests-2.22.0-py2.py3-none-any.whl (57kB)
+     |████████████████████████████████| 61kB 449kB/s 
+Collecting idna<2.9,>=2.5 (from requests)
+  Downloading https://files.pythonhosted.org/packages/14/2c/cd551d81dbe15200be1cf41cd03869a46fe7226e7450af7a6545bfc474c9/idna-2.8-py2.py3-none-any.whl (58kB)
+     |████████████████████████████████| 61kB 632kB/s 
+Collecting urllib3!=1.25.0,!=1.25.1,<1.26,>=1.21.1 (from requests)
+  Downloading https://files.pythonhosted.org/packages/39/ec/d93dfc69617a028915df914339ef66936ea976ef24fa62940fd86ba0326e/urllib3-1.25.2-py2.py3-none-any.whl (150kB)
+     |████████████████████████████████| 153kB 552kB/s 
+Collecting chardet<3.1.0,>=3.0.2 (from requests)
+  Downloading https://files.pythonhosted.org/packages/bc/a9/01ffebfb562e4274b6487b4bb1ddec7ca55ec7510b22e4c51f14098443b8/chardet-3.0.4-py2.py3-none-any.whl (133kB)
+     |████████████████████████████████| 143kB 779kB/s 
+Collecting certifi>=2017.4.17 (from requests)
+  Downloading https://files.pythonhosted.org/packages/60/75/f692a584e85b7eaba0e03827b3d51f45f571c2e793dd731e598828d380aa/certifi-2019.3.9-py2.py3-none-any.whl (158kB)
+     |████████████████████████████████| 163kB 859kB/s 
+Installing collected packages: idna, urllib3, chardet, certifi, requests
+Successfully installed certifi-2019.3.9 chardet-3.0.4 idna-2.8 requests-2.22.0 urllib3-1.25.2
 ```
 
-itt kell folytatni!!!
+Ezután, ha lekérdezzük a telepített csomagok listáját ezzel a paranccsal:
+
+```
+pip list
+```
+
+akkor a következőt kapjuk:
+
+```
+Package       Version 
+------------- --------
+certifi       2019.3.9
+chardet       3.0.4   
+idna          2.8     
+pip           19.1.1  
+pkg-resources 0.0.0   
+requests      2.22.0  
+setuptools    41.0.1  
+urllib3       1.25.2  
+wheel         0.33.4 
+```
+
+A ```pip``` mindig a legfrissebb verziót telepíti az adott csomagból, és azokat a további függőségeket is telepíti, amik a csomaghoz szükségesek. Egy adott csomagról a következő paranccsal lehet információt lekérdezni:
+
+```
+pip show requests
+```
+
+Eredmény:
+
+```
+Name: requests
+Version: 2.22.0
+Summary: Python HTTP for Humans.
+Home-page: http://python-requests.org
+Author: Kenneth Reitz
+Author-email: me@kennethreitz.org
+License: Apache 2.0
+Location: /home/harri/Programming/MyNewPythonVenv/lib/python3.7/site-packages
+Requires: certifi, urllib3, idna, chardet
+Required-by:
+```
 
 ## Virtuális környezet: ```virtualenv```
 
