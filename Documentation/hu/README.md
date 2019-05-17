@@ -184,3 +184,4 @@ Ismerkedés a Tensorflow alapjaival.
 - [Coursera Machine Learning course by Andrew Ng](https://www.coursera.org/learn/machine-learning)
 - [Virtuális környezet használata Python 3.5+ -ben](https://arato.inf.unideb.hu/szathmary.laszlo/pmwiki/index.php?n=Py3.Virtualenv)
 - [What Is Pip? A Guide for New Pythonistas](https://realpython.com/what-is-pip/)
+- [Pipenv & Virtual Environments](https://docs.python-guide.org/dev/virtualenvs/)
