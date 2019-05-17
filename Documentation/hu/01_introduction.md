@@ -87,7 +87,24 @@ A következő lehetőségek állnak rendelkezésre:
 
 Mi is az a ```pip```? A ```pip``` a Python standard csomagkezelője. Arra jó, hogy segítségével telepíthessünk és kezelhessünk olyan Python csomagokat, amik nem részei a Python alapkönyvtárának. Más programozási környezetből már ismerős lehet a koncepció, mint pl. JavaScript esetén az ```npm``` csomagkezelő, vagy Ruby esetében a ```gem```. 
 
-## Virtuális környezet, ```virtualenv```
+A Python programozási nyelv Standard Könyvtára [Python Standard Library](https://docs.python.org/3/py-modindex.html) már nagyon sok alapvető csomagot tartalmaz, amelyek segítségével alkalmazások széles körét fejleszthetjük. Ugyanakkor a Python nyelvnek nagyon aktív közössége van, akik újabb és újabb csomagokat készítenek. Ezek a csomagok sok esetben a Pythonban már egy meglévő funkció vagy csomag használatát teszik egyszerűbb, például újabb interfészekkel.
+
+Ezek a csomagok a [Python Package Index](https://pypi.org)-en kerülnek publikálásra.
+
+Az alábbi példában telepítünk egy csomagot, a ```requests``` nevűt, amelynek a segítségével weboldalakat tudunk letölteni. Ugyanezt a funkciót a Python Standard Library csomagjaival is meg tudjuk valósítani, de a ```requests``` csomag jóval egyszerűbb, könnyebben használható interfészt nyújt.
+
+```
+pip install requests
+```
+
+A parancs kiadásának eredménye:
+
+```
+```
+
+itt kell folytatni!!!
+
+## Virtuális környezet: ```virtualenv```
 
 A ```virtualenv``` egy Python csomag, amivel virtuális környezetet lehet létrehozni a Python projektünk számára. Tulajdonképpen létrehoz egy külön könyvtárat a Python projektünkhöz, és ez a könyvtár az összes külső függőséget (külső könyvtárakat, amiket a projektünk használ) tartalmazni fogja. 
 
