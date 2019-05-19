@@ -25,7 +25,7 @@ A lista nem teljes, de jól látható, hogy milyen széleskörűen használható
 
 A Python legfrissebb változata jelen dokumentum írásának idején a 3.7.3 verzió. Linux és macOS operációs rendszerek alatt valószínűleg meg alapból telepítve van egy Python verzió. Windows-hoz külön lehet letölteni és telepíteni.
 
-A Python nyelvnek két nagy verziója van, a Python3 és a Python2. A Python3 olyan újításokat tartalmaz, ami miatt visszafelé nem kompatibilis. Én ebben a irományban Python3-at használok, és ennek a telepítését ajánlom az Olvasónak is. A Python nyelvet a 80-as évek végén fejlesztették ki, és közel 20 évvel későbbre egy nagyon elterjedt programozási nyelvvé nőtte ki magát. A korai tervezői döntések között voltak olyanok, amelyek megnehezítették a további fejlesztést. Új funkciók bevezetése a Python nyelvbe a már kialakult kódbázis alapos elemzését és átalakítását tehette szükségessé, ez viszont akadályozta a nyelv további fejlődését. A megoldást a Python 3 jelentette, amely viszont tudatosan megtörte a visszafele kompatibilitást. Ez viszont lehetőséget adott a fejlesztőknek, hogy kitakarítsák a redundáns implementációkat és újratervették a nyelvet.
+A Python nyelvnek két nagy verziója van, a Python 3 és a Python 2. A Python 3 olyan újításokat tartalmaz, ami miatt visszafelé nem kompatibilis. Én ebben a irományban Python 3-at használok, és ennek a telepítését ajánlom az Olvasónak is. A Python nyelvet a 80-as évek végén fejlesztették ki, és közel 20 évvel későbbre egy nagyon elterjedt programozási nyelvvé nőtte ki magát. A korai tervezői döntések között voltak olyanok, amelyek megnehezítették a további fejlesztést. Új funkciók bevezetése a Python nyelvbe a már kialakult kódbázis alapos elemzését és átalakítását tehette szükségessé, ez viszont akadályozta a nyelv további fejlődését. A megoldást a Python 3 jelentette, amely viszont tudatosan megtörte a visszafele kompatibilitást. Ez viszont lehetőséget adott a fejlesztőknek, hogy kitakarítsák a redundáns implementációkat és újratervették a nyelvet.
 
 A Python 3 miértjéről ebben a cikkben tájékozódhatsz (angolul): [Stop Using Python 2: What You Need To Know About Python 3](https://hackaday.com/2018/08/15/stop-using-python-2-what-you-need-to-know-about-python-3/)
 
@@ -46,7 +46,7 @@ python3 --version
 
 ![Python in Linux](./assets/Python_in_Linux.png "Python in Linux")
 
-Amint látható, a python3-at külön paranccsal lehet elérni.
+Amint látható, a Python 3-at külön paranccsal lehet elérni.
 
 ### macOS
 
