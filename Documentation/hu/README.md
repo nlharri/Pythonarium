@@ -20,9 +20,9 @@ Tartalom:
 - Python program futtatása online
 - Kódszerkesztők, Integrált Fejlesztői Környezetek (IDE-k)
 
-## Alap szintakszis
+## [Bevetetés a Python nyelv szintakszisába](02_base_syntax.md)
 
-A Python nyelv alapvető szintaxisa. A Python program felépítése.
+Ebben a fejezetben a Python nyelv alap szintakszisáról olvashatsz.
 
 - Hello Világ! alkalmazás
 - Azonosítók
