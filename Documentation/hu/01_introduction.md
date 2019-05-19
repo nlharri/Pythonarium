@@ -195,7 +195,7 @@ Ezek után a ```MyNewPythonProjectVenv/bin``` könyvtár tartalmazni fogja a Pyt
 source MyNewPythonProjectVenv/bin/activate
 ```
 
-Innentől kezdve, ha telepítünk egy csomagot a ```pip```-pel, akkor az ebben a virtuális környezetben fog települni. Például a ```numpy``` csomag telepítése:
+Innentől kezdve, ha telepítünk egy csomagot a ```pip```-pel, akkor az ebben a virtuális környezetben fog települni. Például a ```numpy``` csomag telepítése (a ```numpy```-ról bővebben egy későbbi fejezetben lesz szó):
 
 ```
 pip install --upgrade numpy
