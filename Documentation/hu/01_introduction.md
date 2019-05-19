@@ -228,3 +228,7 @@ Az általam használt kódszerkesztő a [Visual Studio Code](https://code.visual
 - [Atom editor](https://atom.io)
 - [PyCharm](https://www.jetbrains.com/pycharm/)
 - [IDLE](https://docs.python.org/3/library/idle.html)
+
+# Befejezés
+
+Ebbe a fejezetbe ennyi fért bele. A következő részben ismertetem a Python alap szintaxisát.
