@@ -6,6 +6,12 @@ Ebben a fejezetben megismerkedhetsz a Python programozási nyelv történetével
 
 A Python egy általános célú, magas szintű programozási nyelv, melyet Guido van Rossum holland programozó kezdett el fejleszteni 1989 végén, majd hozott nyilvánosságra 1991-ben. A nyelv tervezési filozófiája az olvashatóságot és a programozói munka megkönnyítését helyezi előtérbe a futási sebességgel szemben.
 
+A Python nyelv portábilis, elérhető különféle Linux és Windows változatokra és macOS alatt is. Ingyenesen, korlátozás nélkül használható. Egyszerű szintaxis jellemzi, tömör, jól olvasható programok írhatók Pythonban. A Python folyamatosan fejlődő nyelv, ami mögött lelkes felhasználók és fejlesztők közössége áll, akiknek többsége támogatja a szabad szoftvereket.
+
+A Python értelmező és a sokrétű, alaposan kidolgozott alap-könyvtár (Standard Library) szabadon elérhető és felhasználható akár forráskódként, akár bináris formában minden jelentősebb platformra a Python weboldalról: [https://www.python.org](https://www.python.org). Ugyanitt hivatkozások is vannak külső fejlesztésű modulokra, programokra és eszközökre, és kiegészítő dokumentációkra.
+
+A Python dinamikus típusadású. A programozó által manipulált minden objektumnak a programvégrehajtáskor jól meghatározott típusa van, amit nem kell előre definiálni.
+
 ## Motiváció
 
 A Python nyelv használata nagyon széleskörű. Általános programozási nyelvként könnyen tanulható és az egyik legsokoldalúbban alkalmazható programozási nyelv. Néhány fontosabb alkalmazási területe:
