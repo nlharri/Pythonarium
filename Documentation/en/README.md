@@ -171,7 +171,6 @@ Basic Elements of Tensorflow:
 - [Python Oktató](http://pythontutorial.pergamen.hu/downloads/tut.pdf)
 - [Python programozási nyelv - Wikipedia](https://hu.wikipedia.org/wiki/Python_(programoz%C3%A1si_nyelv))
 - [OpenCV Tutorial: A Guide to Learn OpenCV](https://www.pyimagesearch.com/2018/07/19/opencv-tutorial-a-guide-to-learn-opencv/)
-- [OpenCV Tutorial: A Guide to Learn OpenCV](https://www.pyimagesearch.com/2018/07/19/opencv-tutorial-a-guide-to-learn-opencv/)
 - [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/)
 - [Tutorial: Python Web Scraping Using BeautifulSoup (by DataQuest)](https://www.dataquest.io/blog/web-scraping-tutorial-python/)
 - [Python Data Science Handbook (Jake VanderPlas)](https://jakevdp.github.io/PythonDataScienceHandbook/)
