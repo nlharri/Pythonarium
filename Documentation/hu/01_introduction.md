@@ -221,6 +221,20 @@ Ez létrehozza a ```requirements.txt``` filet, ami tartalmazni fogja a csomagok 
 pip install -r requirements.txt
 ```
 
+### Kilépés a virtuális környezetből
+
+Amennyiben a fentebb említett  ```activate``` paranccsal aktiváltuk a virtuális környezetet, akkor a 
+
+```
+deactivate
+```
+
+paranccsal kiléphetünk belőle.
+
+### A `--system-site-packages` parancssori opció
+
+Ha a virtuális környezetünket a `--system-site-packages` parancssori opcióval hozzuk létre, akkor a környezet örökölni fogja a csomagokat a globális `site-packages` könyvtárból (tehát abból a könyvtárból, ami a rendszeren futó default Python-hoz tartozik). Tehát például a már meglévő, globálisan telepített csomagokat fogjuk tudni használni a virtuális környezetből, ezeket nem kell külön telepíteni a virtuális környezetünkben. 
+
 ## Python program futtatása online
 
 Python kód online futtatására is van lehetőség, például az alábbiak:
