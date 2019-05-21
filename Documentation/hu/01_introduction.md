@@ -101,7 +101,7 @@ A következő lehetőségek állnak rendelkezésre:
 
 - IPython: Interactive Python - ez egy parancsértelmező amely többfajta programozási nyelvet támogat, de eredetileg Pythonhoz fejlesztették ki. Sokfajta funkciót támogat, úgymint type introspection (változók és objektumok vizsgálata futási időben), parancsok tabulátor billentyűvel történő kiegészítése, illetve az eddig kiadott utasítások közötti visszakereshetőség (history).
 
-- Jupyter Notebook, Jupyter Lab: webes felület, egy keretrendszer, amelyen elsősorban tudományos számításokhoz hasznos. Python scripteket lehet futtatni a webböngészőben keresztül, illetve például adatvizualizációt megjeleníteni. A Google Colab is egy ilyen keretrendszert használ.
+- Jupyter Notebook, Jupyter Lab: webes felület, egy keretrendszer, amelyen elsősorban tudományos számításokhoz hasznos. Python scripteket lehet futtatni a webböngészőben, illetve például adatvizualizációt megjeleníteni. A Google Colab is egy ilyen keretrendszert használ.
 
 ## Csomagkezelés: ```pip```
 
