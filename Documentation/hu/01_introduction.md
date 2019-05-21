@@ -79,6 +79,18 @@ A Python interpretált nyelv. Ez azt jelenti, hogy a Python nyelven írt program
 
 Python programok futtatása a Python interpreterrel lehetséges.
 
+A Python interpreter működési módjai a következők. Ha csak elindítjuk, akkor interaktívan olvas és hajt végre utasításokat. Ha egy filenévvel, mint argumentummal hívjuk meg, akkor megpróbálja Python scriptként értelmezni és lefuttatni az adott fájlt. Használhatjuk még a `-c` parancssori opciót:
+
+```
+python -c parancs
+```
+
+melynek hatására végrehajtja a 'parancs' utasításokat. érdemes a parancs részt idézőjelbe tenni, hogy a parancsban levő szóközök ne okozzanak gondot:
+
+```
+python -c "parancs"
+```
+
 ### Python programok futtatása 
 
 A következő lehetőségek állnak rendelkezésre:
@@ -89,7 +101,7 @@ A következő lehetőségek állnak rendelkezésre:
 
 - IPython: Interactive Python - ez egy parancsértelmező amely többfajta programozási nyelvet támogat, de eredetileg Pythonhoz fejlesztették ki. Sokfajta funkciót támogat, úgymint type introspection (változók és objektumok vizsgálata futási időben), parancsok tabulátor billentyűvel történő kiegészítése, illetve az eddig kiadott utasítások közötti visszakereshetőség (history).
 
-- Jupyter Notebook, Jupyter Lab: webes felület, egy keretrendszer, amelyen elsősorban tudományos számításokhoz hasznos. Python scripteket lehet futtatni a webböngészőn keresztül, illetve pl. vizualizációt megjeleníteni. A Google Colab is egy ilyen keretrendszert használ.
+- Jupyter Notebook, Jupyter Lab: webes felület, egy keretrendszer, amelyen elsősorban tudományos számításokhoz hasznos. Python scripteket lehet futtatni a webböngészőben keresztül, illetve például adatvizualizációt megjeleníteni. A Google Colab is egy ilyen keretrendszert használ.
 
 ## Csomagkezelés: ```pip```
 
