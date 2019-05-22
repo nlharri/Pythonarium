@@ -34,6 +34,49 @@ print(...)
 
 A paraméterátadás lehetőségeiről a későbbiekben lesz szó részletesen.
 
+## A Python interpreter
+
+Az alábbiakban a Python interpretert fogom használni néhány egyszerű műveletre. Néhány adattípus már most is előkerül, de ezekről részletesen lesz szó később. A példákban a `>>>` karaktersorozat a prompt. A prompt utáni részt kell begépelni az interpreterbe, hogy végrehajtsa az utasítást. Az alatta lévő sorban a Python kiírja a végrehajtás eredményét. (A végrehajtás az ENTER gombbal történik.)
+
+### Számológép
+
+Ha csak egyszerű matematikai műveleteket írunk be, akkor az egész úgy működik, mint egy számológép.
+
+```
+>>> 4+5+6
+15
+>>> 3*5
+15
+>>> 12*2
+24
+>>> 20/7
+2.857142857142857
+>>> 20//7
+2
+>>> 20%7
+6
+```
+
+A `/` az osztás művelet, a `//` pedig az egészosztás. A `%` művelet a maradékos osztás maradékát adja meg.
+
+### Karakterláncok (stringek)
+
+### Boolean értékek
+
+### Komplex számok
+
+### Tömbök
+
+Tömbök (array) vagy másnéven listák (list) definiálására a `[` és `]` karakterek használhatók. A tömb egy adott elemét is megcímezhetjük így. Az elemek indexelése 0-tól kezdődik.
+
+```
+>>> allatok = ['nyúl', 'kacsa', 'liba', 'teknős', 'viziló'] 
+>>> allatok[2]
+'liba'
+```
+
+Az összetett adattípusokról később még lesz szó részletesen
+
 ## Azonosítók
 
 ## Foglalt szavak
