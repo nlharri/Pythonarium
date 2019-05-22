@@ -95,6 +95,8 @@ python -c "parancs"
 
 A következő lehetőségek állnak rendelkezésre:
 
+- Python program futtatása közvetlenül. A Python scripteket közvetlenül futtathatóvá kell tenni (pl. `chmod 755 myscript.py` vagy `chmod a+x myscript.py` paranccsal). Ebben az esetben a Python script első sorának a következőt kell tartalmaznia (itt feltételezem, hogy a `python` parancs elérhető a PATH-ban): `#!/usr/bin/env python`. Ez az úgynevezett "shebang".
+
 - a Python program futtatása (pl. ```program.py```) a következő paranccsal: ```python program.py``` vagy ```python3 program.py```
 
 - Python shell: a ```python``` vagy ```python3``` paranccsal indítható a terminal alkalmazásból (Windows operációs rendszeren PowerShell-ből)
