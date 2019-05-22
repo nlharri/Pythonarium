@@ -61,6 +61,18 @@ A `/` az osztás művelet, a `//` pedig az egészosztás. A `%` művelet a marad
 
 ### Karakterláncok (stringek)
 
+Változóknak `=` jellel lehet értéket adni. A változó típusa futás során dől el, nem kell megadni értékadáskor, vagy előre definiálni a változót, és futás közben más típusú adatot is adhatok a változónak. Az egész dinamikus. A Pythonban egyébként mindent objektumként kezel a rendszer, erről a későbbiekben még lesz szó.
+
+Karakterláncok definiálása az aposztróf vagy idézőjel karakterekkel lehetséges. Ezek használatának részleteiről az "Idézőjelek szerepe" alfejezetben olvashatsz. A `+` karakterrel össze lehet kapcsolni karaktersorozatokat.
+
+```
+>>> gepjarmu_marka = 'BMW'
+>>> gepjarmu_tipus = '118i'
+>>> gepjarmu_megnevezes = gepjarmu_marka + ' ' + gepjarmu_tipus
+>>> gepjarmu_megnevezes
+'BMW 118i'
+```
+
 ### Boolean értékek
 
 ### Komplex számok
