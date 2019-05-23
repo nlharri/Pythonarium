@@ -6,7 +6,7 @@ Az Interneten rengeteg forrásanyag található Python programozással kapcsolat
 
 # Tartalomjegyzék
 
-## [Bevezető](01_introduction.md)
+## [Bevezetés a Python programozásba](01_introduction.md)
 
 Bevezetés a Python programozási nyelv alapjaiba.
 
@@ -20,11 +20,12 @@ Tartalom:
 - Python program futtatása online
 - Kódszerkesztők, Integrált Fejlesztői Környezetek (IDE-k)
 
-## [Bevetetés a Python nyelv szintakszisába](02_base_syntax.md)
+## [Bevezetés a Python nyelv szintakszisába](02_base_syntax.md)
 
 Ebben a fejezetben a Python nyelv alap szintakszisáról olvashatsz.
 
-- Hello Világ! alkalmazás
+- Hello World! program
+- A Python interpreter
 - Azonosítók
 - Foglalt szavak
 - Sorok és bekezdés
