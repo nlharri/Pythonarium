@@ -215,6 +215,6 @@ A Python interpreter felhívása során a parancssori argumentumokat átadása �
 
 * Script név helyett `-c parancs` használata: `sys.argv[0]` értéke `-c` lesz, és az ezután megadott argumentumokat is tartalmazza a `sys.argv`, tehát ezeket a `parancs` utasításnak kell feldolgoznia. 
 
-## Befejezés
+# Befejezés
 
 Köszönöm a figyelmet. A következő részben mélyebben beleássuk magunkat a Python világába.
