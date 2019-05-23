@@ -37,6 +37,7 @@ Ebben a fejezetben a Python nyelv alap szintakszisáról olvashatsz.
 - Több utasítás egy sorban
 - Parancssori argumentumok
 
+<!--
 ## Haladó Python
 
 Összetett adatokkal való műveletek. 
@@ -165,6 +166,7 @@ Ismerkedés a Tensorflow alapjaival.
 #### GANs - Generative Adversarial Networks
 
 ### Python példafeladatok megoldással
+-->
 
 ## Források, Hivatkozások
 - [Bevezetés a Python Programozásba](http://szerver2.lacszki.sulinet.hu/tananyag/informatika/python.pdf)
