@@ -1,4 +1,4 @@
-# The Python Curriculum
+# The Python Curriculum - Full Content of the [Pythonarium](https://medium.com/pythonarium) website
 This is my Python Curriculum.
 
 You can access the following content:
@@ -8,7 +8,7 @@ You can access the following content:
 - Documentation (only in Hungarian language): https://github.com/nlharri/PythonCurriculum/tree/master/Documentation
 - Source Code: https://github.com/nlharri/PythonCurriculum/tree/master/SourceCode
 
-# Python Tananyag
+# Python Tananyag - A [Pythonarium](https://medium.com/pythonarium) weboldal teljes tartalma
 Ez az én Python Tananyagom.
 
 Tartalom:
