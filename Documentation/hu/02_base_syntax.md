@@ -73,6 +73,102 @@ Karakterláncok definiálása az aposztróf vagy idézőjel karakterekkel lehets
 'BMW 118i'
 ```
 
+Ha egymás mellé írunk sztringliterálokat szóközzel elválasztva, akkor azokat is összekapcsolja a Python. Viszont ez változókkal nem működik.
+
+```
+>>> a = 'abcd' 'efgh'
+a = 'abcd' 'efgh'
+>>> a
+'abcdefgh'
+>>> b = 'ijkl'
+b = 'ijkl'
+>>> c = a b
+  File "<stdin>", line 1
+    c = a b
+          ^
+SyntaxError: invalid syntax
+>>> c = b 'zzz'
+  File "<stdin>", line 1
+    c = b 'zzz'
+              ^
+SyntaxError: invalid syntax
+```
+
+Stringeknél a `'` karakterek közé kell tenni a string tartalmát. Viszont mi van, ha magát a `'` karaktert akarjuk beletenni a stringbe? Több lehetőségünk is van. Az alábbi listában a stringek definiálásának a lehetőségeit láthatod:
+
+* `"` karakter használata:
+
+```
+>>> title = "Python Developer's Guide"
+>>> title
+"Python Developer's Guide"
+```
+
+* `'` karakter használata:
+
+```
+>>> title = 'Python Developers Guide'
+>>> title
+'Python Developer's Guide'
+```
+
+* "escape sequence" használata: ezek speciális karaktersorozatok, amelyekkel megváltoztathatjuk az utánuk következő karakter(ek) jelentését. Tipikus példák: `\'`, `\"`, `\n`, `\\` - ezek jelentése sorrenben: `'` karakter, `"` karakter, újsor karakter, `\` karakter.
+
+```
+>>> title = 'Python Developer\'s Guide'
+>>> title
+"Python Developer's Guide"
+>>> title = 'Python\nDeveloper\'s\nGuide"
+>>> print(title)
+Python
+Developer's
+Guide
+>>> quote = "\"When words fail, music speaks.\"\n - Shakespeare"
+>>> print(quote)
+"When words fail, music speaks."
+ - Shakespeare
+```
+
+* `"""` vagy `'''` karaktersorozat használata: Ebben az esetben az utána levő karaktersorozat újsorok szempontjából egy az egyben úgy kerül bele a stringbe, ahogy látjuk. Tehát az újsorjelek benne lesznek. Láthatjuk azt is az alábbi példából, hogy ha csak simán beírjuk a változó nevét az interpreterbe, és nem a print függvényt használjuk, akkor másként jelenik meg a string. A `"""` vagy `'''` karaktersorozat használata esetén is történik escape sequence helyettesítés.
+
+```
+>>> quote = """
+... "An investment in knowledge pays the best interest"
+...  - Benjamin Franklin"""
+>>> print(quote)
+"An investment in knowledge pays the best interest"
+ - Benjamin Franklin
+>>> quote
+'\n"An investment in knowledge pays the best interest"\n - Benjamin Franklin'
+>>> a = """
+... a\n
+... b\n
+... """
+>>> print(a)
+a
+b
+>>> a
+'\na\n\nb\n\n'
+```
+
+* "raw" sztringliterál definiálása: `r''`: ez egy olyan string, amiben pontosan a megadott karakterek vannak, tehát nincsen escape sequence helyettesítés.
+
+```
+>>> rawstring = r'\"this is\nmy\rawsting\"'
+>>> print(rawstring)
+\"this is\nmy\rawsting\"
+>>> rawstring
+'\\"this is\\nmy\\rawsting\\"'
+```
+
+* unicode sztringliterál használata: `u''`
+
+```
+>>> cat = u"\U0001F431"
+>>> print(cat)
+🐱
+```
+
 ### Boolean értékek
 
 ### Komplex számok
