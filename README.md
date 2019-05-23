@@ -7,8 +7,8 @@ Tartalom:
 <!--
 - Dokumentáció (angolul és magyarul): https://github.com/nlharri/PythonCurriculum/tree/master/Documentation
 -->
-- Dokumentáció (csak magyar nyelven érhető el): https://github.com/nlharri/PythonCurriculum/tree/master/Documentation
-- Forráskódok: https://github.com/nlharri/PythonCurriculum/tree/master/SourceCode
+- [Dokumentáció (csak magyar nyelven érhető el)](https://github.com/nlharri/PythonCurriculum/tree/master/Documentation/hu)
+- [Forráskódok](https://github.com/nlharri/PythonCurriculum/tree/master/SourceCode)
 
 # The Python Curriculum - Full Content of the [Pythonarium](https://medium.com/pythonarium) website
 This is my Python Curriculum.
@@ -17,6 +17,6 @@ You can access the following content:
 <!--
 - Documentation (in English and Hungarian languages): https://github.com/nlharri/PythonCurriculum/tree/master/Documentation
 -->
-- Documentation (only in Hungarian language): https://github.com/nlharri/PythonCurriculum/tree/master/Documentation
-- Source Code: https://github.com/nlharri/PythonCurriculum/tree/master/SourceCode
+- [Documentation (only in Hungarian language)](https://github.com/nlharri/PythonCurriculum/tree/master/Documentation/hu)
+- [Source Code](https://github.com/nlharri/PythonCurriculum/tree/master/SourceCode)
 
