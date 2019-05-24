@@ -4,6 +4,13 @@ Ebből a dokumentációból megismerheted a Python programozási nyelv alapjait.
 
 Az Interneten rengeteg forrásanyag található Python programozással kapcsolatban. Ebben a dokumentációban lépésről lépésre ismerkedhetsz meg a Python nyelv elemeivel, az egyszerűbb témaköröktől a bonyolultabbak felé haladva. Sok szemléletes példa és alkalmazás segítségével megismerheted, hogy mennyire sokrétűen lehet használni ezt a programozási nyelvet.
 
+# Jogi nyilatkozat
+
+A nlharri Github usernévhez tartozó Pythonarium Github repositoryban közzétett cikkekben kifejezett nézetek és vélemények a szerzőé, és nem tükrözik a szerző munkáltatójának hivatalos álláspontját. A cikkek megjelenését nem támogatja semmilyen szervezet vagy vállalat. A cikkekben közölt információk kizárólag általános útmutatásul szolgálnak a cikk témájával kapcsolatban az Ön számára személyes használatra. Ön teljes mértékben elfogadja a cikkekben közölt információk használatával járó felelősséget. A cikkek szerzője mindent megtett, hogy a cikkekben közölt információk a valóságnak megfeleljenek a cikkek megírása idején. A cikkek szerzője kizár minden felelősséget a cikkekben közölt információk Ön által történő használata, és/vagy ennek eredménye által bármilyen módon, közvetlenül és/vagy közvetve okozott mindennemű kárért, beleértve, de nem kizárólagossággal a következők által bármilyen módon okozott és/vagy azokból bármilyen módon fakadó károkat:
+- az Ön bármiféle tevékenysége, melyre esetleg a cikkekben közzétett információk ösztönözték Önt
+- a cikkek elérésének lehetetlensége
+- a cikkekben szereplő bizonyos információk helytelensége, hiányossága vagy elavultsága
+
 # Tartalomjegyzék
 
 ## [Bevezetés a Python programozásba](01_introduction.md)
