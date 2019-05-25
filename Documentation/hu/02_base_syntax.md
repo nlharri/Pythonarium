@@ -59,6 +59,20 @@ Ha csak egyszerű matematikai műveleteket írunk be, akkor az egész úgy műk�
 
 A `/` az osztás művelet, a `//` pedig az egészosztás. A `%` művelet a maradékos osztás maradékát adja meg.
 
+### Típusok
+
+A Pythonban a következő egyszerű típusúak lehetnek a változóink. A típusokról a későbbiekben még lesz szó, de az alábbi példák megértéséhez fontos, hogy lássuk, milyen típusok lehetnek. Vannak összetett adattípusok is, amikről később szintén lesz szó.
+
+* Egész szám (integer)
+
+* Lebegőpontos szám (float)
+
+* Komplex szám (complex)
+
+* Karakterláncok (string)
+
+* Igaz/hamis logikai érték (boolean)
+
 ### Karakterláncok (stringek)
 
 Változóknak `=` jellel lehet értéket adni. A változó típusa futás során dől el, nem kell megadni értékadáskor, vagy előre definiálni a változót, és futás közben más típusú adatot is adhatok a változónak. Az egész dinamikus. A Pythonban egyébként mindent objektumként kezel a rendszer, erről a későbbiekben még lesz szó.
@@ -169,9 +183,74 @@ b
 🐱
 ```
 
+Stringekkel sokféle műveletet végezhetünk. Az alábbiakban néhány példát láthatunk erre.
+
+```
+>>> my_str = "Hello World!"
+>>> my_str.isalnum()
+False
+>>> my_str.isalpha()
+False
+>> my_str.upper()
+'HELLO WORLD!'
+>>> my_str.lower()
+'hello world!'
+>>> my_str.islower()
+False
+>>> my_str.isupper()
+False
+>>> my_str.lower().islower()
+True
+>>> my_str.upper().isupper()
+True
+```
+
+Amint látható, a fenti függvényeket a string változón (objektumon) hívtuk meg. Némely közülük igaz/hamis értékkel tér vissza (`boolean`). A fenti példákból az is látszik, hogy az `upper()` és `lower()` függvények egy új stringet hoznak létre. A stringműveletekről részletesen a referencia dokumentációban olvashatunk.
+
+[string - Common string operations](https://docs.python.org/3/library/string.html)
+
 ### Boolean értékek
 
+A boolean típus igaz (`True`) vagy hamis (`False`) értéket vehet fel. Az alábbi példákban a `==` és `!=` operátorokat használjuk két érték egyenlőségének eldöntésére.
+
+```
+>>> 1==2
+False
+>>> 1==1
+True
+>>> 1!=1
+False
+>>> a = (1==2)
+>>> b = (2==2)
+>>> a
+False
+>>> b
+True
+>>> a == b
+False
+>>> a != b
+True
+```
+
 ### Komplex számok
+
+A Python beépítetten támogatja a komplex számokat.
+
+```
+>>> a = 1 + 2j
+>>> b = 3 + 4j
+>>> c = a + b
+>>> c
+(4+6j)
+```
+
+Később még lesz szó a csomagokról, viszont itt érdemes megjegyezni, hogy van egy cmath nevű beépített csomag, amivel komplex számok kezelését támogatja a Python.
+
+```
+>>> import cmath
+>>> cmath.sqrt(-1)
+1j
+```
 
 ### Tömbök
 
