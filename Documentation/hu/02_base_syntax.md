@@ -295,6 +295,21 @@ Az alábbi táblázat a Python foglalt szavait tartalmazza. Ezek a szavak a Pyth
 |----------|--------|---------|--------|-------|--------|
 ```
 
+```
+>>> for = 123
+for = 123
+  File "<stdin>", line 1
+    for = 123
+        ^
+SyntaxError: invalid syntax
+>>> For = 123
+>>> return = a
+  File "<stdin>", line 1
+    return = a
+           ^
+SyntaxError: invalid syntax
+```
+
 ## Sorok és bekezdés
 
 ## Többsoros utasítások
