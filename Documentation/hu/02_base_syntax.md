@@ -268,6 +268,15 @@ Az összetett adattípusokról később még lesz szó részletesen.
 
 A Python azonosítók olyan nevek, amelyekkel azonosítunk változókat, függvényeket, osztályokat, modulokat és egyéb objektumokat. Az azonosító az angol ABC betűiből (kis és nagybetűk külön számítanak, a Python case sensitive), `_` karakterből, és számjegyekből állhat. Csak betűvel vagy `_` karakterrel kezdődhet. A Python nem engedi speciális karakterek használatát, mint például a `@`, `$` vagy `%`.
 
+```
+>>> valtozo1 = 12
+>>> VALTOZO1 = 23
+>>> valtozo1
+12
+>>> VALTOZO1
+23
+```
+
 ## Foglalt szavak
 
 Az alábbi táblázat a Python foglalt szavait tartalmazza. Ezek a szavak a Python nyelvben speciális jelentéssel bírnak, emiatt nem használhatók azonosítóként. A Python nyelv foglalt szavai csak kisbetűket tartalmaznak.
