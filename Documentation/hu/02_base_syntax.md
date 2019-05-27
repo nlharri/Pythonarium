@@ -262,9 +262,11 @@ Tömbök (array) vagy másnéven listák (list) definiálására a `[` és `]` k
 'liba'
 ```
 
-Az összetett adattípusokról később még lesz szó részletesen
+Az összetett adattípusokról később még lesz szó részletesen.
 
 ## Azonosítók
+
+A Python azonosítók olyan nevek, amelyekkel azonosítunk változókat, függvényeket, osztályokat, modulokat és egyéb objektumokat. Az azonosító az angol ABC betűiből (kis és nagybetűk külön számítanak, a Python case sensitive), `_` karakterből, és számjegyekből állhat. Csak betűvel vagy `_` karakterrel kezdődhet. A Python nem engedi speciális karakterek használatát, mint például a `@`, `$` vagy `%`.
 
 ## Foglalt szavak
 
