@@ -270,6 +270,22 @@ A Python azonosítók olyan nevek, amelyekkel azonosítunk változókat, függv�
 
 ## Foglalt szavak
 
+Az alábbi táblázat a Python foglalt szavait tartalmazza. Ezek a szavak a Python nyelvben speciális jelentéssel bírnak, emiatt nem használhatók azonosítóként. A Python nyelv foglalt szavai csak kisbetűket tartalmaznak.
+
+```
+|----------|--------|---------|--------|-------|--------|
+| and      | def    | exec    | if     | not   | return |
+|----------|--------|---------|--------|-------|--------|
+| assert   | del    | finally | import | or    | try    |
+|----------|--------|---------|--------|-------|--------|
+| break    | elif   | for     | in     | pass  | while  |
+|----------|--------|---------|--------|-------|--------|
+| class    | else   | from    | is     | print | with   |
+|----------|--------|---------|--------|-------|--------|
+| continue | except | global  | lambda | raise | yield  |
+|----------|--------|---------|--------|-------|--------|
+```
+
 ## Sorok és bekezdés
 
 ## Többsoros utasítások
