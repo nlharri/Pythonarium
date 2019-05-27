@@ -295,6 +295,8 @@ Az alábbi táblázat a Python foglalt szavait tartalmazza. Ezek a szavak a Pyth
 |----------|--------|---------|--------|-------|--------|
 ```
 
+Amennyiben foglalt szóval szeretnénk egy változót elnevezni, akkor szintaktikai hibát kapunk.
+
 ```
 >>> for = 123
 for = 123
