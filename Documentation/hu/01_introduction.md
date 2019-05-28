@@ -1,3 +1,5 @@
+<p align="right"><sup><a href="02_base_syntax.md">Következő fejezet</a> | <a href="../README.md">Tartalom</a></sup>
+
 # Bevezető
 
 Ebben a fejezetben megismerkedhetsz a Python programozási nyelv történetével, és az első lépésekkel, hogy elkezdhesd megtanulni a nyelvet. 
@@ -266,3 +268,5 @@ Az általam használt kódszerkesztő a [Visual Studio Code](https://code.visual
 # Befejezés
 
 Ebbe a fejezetbe ennyi fért bele. A következő részben ismertetem a Python alap szintaxisát.
+
+<p align="right"><sup><a href="02_base_syntax.md">Következő fejezet</a> | <a href="../README.md">Tartalom</a></sup>
