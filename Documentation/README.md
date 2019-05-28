@@ -1,3 +1,5 @@
+![Pythonarium](../PythonariumLogo.png)
+
 # Python Tananyag - Dokumentáció
 Ez az én Python Tananyagom. A teljes [Pythonarium](https://medium.com/Pythonarium) weboldal tartalma.
 
