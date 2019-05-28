@@ -1,3 +1,5 @@
+![Pythonarium](../../PythonariumLogo.png)
+
 <p align="right"><sup><a href="02_base_syntax.md">Következő fejezet</a> | <a href="README.md">Tartalom</a></sup>
 
 # Bevezető
