@@ -1,3 +1,5 @@
+<p align="right"><sup><a href="01_introduction.md">Előző fejezet</a> | <a href="README.md">Tartalom</a></sup>
+
 # Bevezetés a Python nyelv szintaxisába
 
 Ebben a fejezetben a Python nyelv alap szintakszisáról olvashatsz.
@@ -341,3 +343,5 @@ A Python interpreter felhívása során a parancssori argumentumokat átadása �
 # Befejezés
 
 Köszönöm a figyelmet. A következő részben mélyebben beleássuk magunkat a Python világába.
+
+<p align="right"><sup><a href="01_introduction.md">Előző fejezet</a> | <a href="README.md">Tartalom</a></sup>
