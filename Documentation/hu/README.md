@@ -1,3 +1,5 @@
+![Pythonarium](../../PythonariumLogo.png)
+
 # Python Tananyag
 
 Ebből a dokumentációból megismerheted a Python programozási nyelv alapjait. Ez a leírás alapvetően programozóknak készült. Amennyiben még sosem programoztál semmilyen programozási nyelven, akkor is hasznos lehet ez a leírás. Viszont általánosságban a programozás alapvető elemeinek megismeréséhez javaslom egyéb források keresését. A Python egy nagyon jó kezdő nyelv azok számára, akik még nem tanultak programozni. Ennek az irománynak a célja mégsem az, hogy az abszolút nulla szintről megtanulj programozni. Alapvetően jó, ha úgy olvasod ezt a dokumentációt, hogy van már némi tapasztalatod a programozás terén.
