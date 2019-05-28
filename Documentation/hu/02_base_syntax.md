@@ -1,3 +1,5 @@
+![Pythonarium](../../PythonariumLogo.png)
+
 <p align="right"><sup><a href="01_introduction.md">Előző fejezet</a> | <a href="README.md">Tartalom</a></sup>
 
 # Bevezetés a Python nyelv szintaxisába
