@@ -316,6 +316,46 @@ SyntaxError: invalid syntax
 SyntaxError: invalid syntax
 ```
 
+A Python minden változót objektumként kezel. Minden változónak van egy belső, egyedi azonosítója.
+TODO INNEN FOLYTATNI!!!
+
+```python
+for i in range(-10, 300):
+    a = i
+    b = int(str(i))
+    print("number: {}, id(a)={}, id(b)={}, equal? {}".format(i, id(a), id(b), id(a) == id(b)))
+```
+
+```
+number: -10, id(a)=139914377933488, id(b)=139914375015216, equal? False
+number: -9, id(a)=139914375015280, id(b)=139914377933488, equal? False
+number: -8, id(a)=139914375015216, id(b)=139914375015280, equal? False
+number: -7, id(a)=139914377933488, id(b)=139914375015216, equal? False
+number: -6, id(a)=139914375015280, id(b)=139914377933488, equal? False
+number: -5, id(a)=139914439058592, id(b)=139914439058592, equal? True
+number: -4, id(a)=139914439058624, id(b)=139914439058624, equal? True
+number: -3, id(a)=139914439058656, id(b)=139914439058656, equal? True
+number: -2, id(a)=139914439058688, id(b)=139914439058688, equal? True
+number: -1, id(a)=139914439058720, id(b)=139914439058720, equal? True
+number: 0, id(a)=139914439058752, id(b)=139914439058752, equal? True
+number: 1, id(a)=139914439058784, id(b)=139914439058784, equal? True
+number: 2, id(a)=139914439058816, id(b)=139914439058816, equal? True
+...
+number: 251, id(a)=139914439066784, id(b)=139914439066784, equal? True
+number: 252, id(a)=139914439066816, id(b)=139914439066816, equal? True
+number: 253, id(a)=139914439066848, id(b)=139914439066848, equal? True
+number: 254, id(a)=139914439066880, id(b)=139914439066880, equal? True
+number: 255, id(a)=139914439066912, id(b)=139914439066912, equal? True
+number: 256, id(a)=139914439066944, id(b)=139914439066944, equal? True
+number: 257, id(a)=139914377933488, id(b)=139914375015280, equal? False
+number: 258, id(a)=139914375015216, id(b)=139914377933488, equal? False
+number: 259, id(a)=139914375015280, id(b)=139914375015216, equal? False
+number: 260, id(a)=139914377933488, id(b)=139914375015280, equal? False
+number: 261, id(a)=139914375015216, id(b)=139914377933488, equal? False
+number: 262, id(a)=139914375015280, id(b)=139914375015216, equal? False
+...
+```
+
 ## Sorok és bekezdés
 
 ## Többsoros utasítások
