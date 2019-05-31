@@ -40,7 +40,6 @@ Ebben a fejezetben a Python nyelv alap szintakszisáról olvashatsz.
 - Python objektumok, belső azonosító: `id()`, `is`
 - Sorok és bekezdés
 - Többsoros utasítások
-- Idézőjelek szerepe
 - Megjegyzések elhelyezése a kódban
 - Üres sorok használata
 - Felhasználói bemenet feldolgozása
