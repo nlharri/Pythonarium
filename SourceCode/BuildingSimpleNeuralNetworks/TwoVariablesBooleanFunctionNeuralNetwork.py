@@ -41,19 +41,21 @@ class TwoVariablesBooleanFunctionNeuralNetwork:
 
 
     def feedforward(self):
-        #self.layer1 = sigmoid(np.dot(self.input, self.weights1))
         self.output = sigmoid(np.dot(self.input, self.W))
 
 
     def J(self, W):
-        x1w = np.dot(np.array(self.input[0]),W.T[0])
-        x2w = np.dot(np.array(self.input[1]),W.T[0])
-        x3w = np.dot(np.array(self.input[2]),W.T[0])
-        x4w = np.dot(np.array(self.input[3]),W.T[0])
+        # here the np.dot multiplication will give back
+        # a column vector, which we reshape (so that it will
+        # be transposed to a row vector), and then squeeze (to
+        # get rid of the extra dimension)
+        g_xw = np.array(sigmoid(np.dot(self.input, W))).reshape(1,-1).squeeze()
 
-        g_xw = sigmoid(np.array([x1w, x2w, x3w, x4w]))
+        # calculate the difference between our hypothesis and 
+        # the desired values
         err_diff = self.y - g_xw
 
+        # return the error as sum of squared difference
         return (1 / self.n) * np.sum(np.square(err_diff))
 
 
@@ -107,5 +109,6 @@ if __name__ == "__main__":
         nn.backprop()
         pbar.update(1)
 
+    print("Number of iterations: {}".format(NUM_OF_ITERS))
     print("Weights (W0, W1, ... Wm):\n{}".format(nn.W))
     print("Output (h_W(x)_0, h_W(x)_1, ... h_W(x)_n):\n{}".format(nn.output))
