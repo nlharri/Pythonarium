@@ -316,43 +316,88 @@ SyntaxError: invalid syntax
 SyntaxError: invalid syntax
 ```
 
-A Python minden változót objektumként kezel. Minden változónak van egy belső, egyedi azonosítója.
-TODO INNEN FOLYTATNI!!!
+## Python objektumok, belső azonosító: `id()`, `is`
+
+A Pythonban minden adattípus objektum. Ez azt jelenti, hogy nemcsak az osztályok példányai, hanem az bármely egyszerű adattípus, `int`, `float`, stb., szintén objektum.
+
+Az `id()` nevű beépített függvénnyel az objektumpéldány belső azonosítóját kérdezhetjük le.
+
+```
+id(obj, /)
+    Return the identity of an object.
+
+    This is guaranteed to be unique among simultaneously existing objects.
+    (CPython uses the object's memory address.)
+```
+
+Példák:
+
+```
+>>> a=5
+>>> b=5
+>>> id(a)
+140173373224416
+>>> id(b)
+140173373224416
+>>> a = 257
+>>> b = 257
+>>> id(a)
+140173228920528
+>>> id(b)
+140173228920304
+```
+
+Itt egy érdekességet megfigyelhetünk. Amikor a 257 értéket adom az `a` változónak, akkor azzal létrejön egy új objektum, és ennek a belső azonosítója lesz `140173228920528`. Ha egy másik változóhoz rendelem a 257 értéket, akkor az egy másik példányt hoz létre. Ha lekérdezem az azonosítójuk az `id()`-val, az különböző értéket ad vissza.
+
+Ha viszont ugyanezt csinálom, csak az `5`-ös számot használom, akkor ugyanazt az értéket kapom vissza.
+
+A Pythonba be van építve, hogy a -5 és 256 közötti számokhoz egy külön tömböt hoz létre, tehát ha ezeket a számokat használom, akkor az valójában a Pythonban belül létrejövő tömb elemére fog hivatkozni.
+
+További információ:
+
+- [Plain Integer Objects](https://docs.python.org/2/c-api/int.html)
+
+- [Python's “is” operator behaves unexpectedly with integers, floats...](https://github.com/jaimegildesagredo/expects/issues/34)
+
+- [“is” operator behaves unexpectedly with integers](https://stackoverflow.com/questions/306313/is-operator-behaves-unexpectedly-with-integers)
+
+Az `is` operátor az `id`-kat hasonlítja össze, a `==` operátor viszont az értékeket. Ezért két egész szám értékének összehasonlítására a `==` operátort kell használni.
+
+Az alábbi példában a `int(str(i))` hívással érem el, hogy ténylegúj objektumot hozzon létre az interpreter. Amint látható, -5 és 256 közötti számoknál mégsem ez történik.
 
 ```python
 for i in range(-10, 300):
     a = i
     b = int(str(i))
-    print("number: {}, id(a)={}, id(b)={}, equal? {}".format(i, id(a), id(b), id(a) == id(b)))
+    print("number: {}, id(a)={}, id(b)={}, equal? {}".format(i, id(a), id(b), a is b))
 ```
 
+Kimenet:
 ```
-number: -10, id(a)=139914377933488, id(b)=139914375015216, equal? False
-number: -9, id(a)=139914375015280, id(b)=139914377933488, equal? False
-number: -8, id(a)=139914375015216, id(b)=139914375015280, equal? False
-number: -7, id(a)=139914377933488, id(b)=139914375015216, equal? False
-number: -6, id(a)=139914375015280, id(b)=139914377933488, equal? False
-number: -5, id(a)=139914439058592, id(b)=139914439058592, equal? True
-number: -4, id(a)=139914439058624, id(b)=139914439058624, equal? True
-number: -3, id(a)=139914439058656, id(b)=139914439058656, equal? True
-number: -2, id(a)=139914439058688, id(b)=139914439058688, equal? True
-number: -1, id(a)=139914439058720, id(b)=139914439058720, equal? True
-number: 0, id(a)=139914439058752, id(b)=139914439058752, equal? True
-number: 1, id(a)=139914439058784, id(b)=139914439058784, equal? True
-number: 2, id(a)=139914439058816, id(b)=139914439058816, equal? True
+number: -10, id(a)=140560678412976, id(b)=140560675494704, equal? False
+number: -9, id(a)=140560675494768, id(b)=140560678412976, equal? False
+number: -8, id(a)=140560675494704, id(b)=140560675494768, equal? False
+number: -7, id(a)=140560678412976, id(b)=140560675494704, equal? False
+number: -6, id(a)=140560675494768, id(b)=140560678412976, equal? False
+number: -5, id(a)=140560740979872, id(b)=140560740979872, equal? True
+number: -4, id(a)=140560740979904, id(b)=140560740979904, equal? True
+number: -3, id(a)=140560740979936, id(b)=140560740979936, equal? True
+number: -2, id(a)=140560740979968, id(b)=140560740979968, equal? True
+number: -1, id(a)=140560740980000, id(b)=140560740980000, equal? True
+number: 0, id(a)=140560740980032, id(b)=140560740980032, equal? True
+number: 1, id(a)=140560740980064, id(b)=140560740980064, equal? True
+number: 2, id(a)=140560740980096, id(b)=140560740980096, equal? True
 ...
-number: 251, id(a)=139914439066784, id(b)=139914439066784, equal? True
-number: 252, id(a)=139914439066816, id(b)=139914439066816, equal? True
-number: 253, id(a)=139914439066848, id(b)=139914439066848, equal? True
-number: 254, id(a)=139914439066880, id(b)=139914439066880, equal? True
-number: 255, id(a)=139914439066912, id(b)=139914439066912, equal? True
-number: 256, id(a)=139914439066944, id(b)=139914439066944, equal? True
-number: 257, id(a)=139914377933488, id(b)=139914375015280, equal? False
-number: 258, id(a)=139914375015216, id(b)=139914377933488, equal? False
-number: 259, id(a)=139914375015280, id(b)=139914375015216, equal? False
-number: 260, id(a)=139914377933488, id(b)=139914375015280, equal? False
-number: 261, id(a)=139914375015216, id(b)=139914377933488, equal? False
-number: 262, id(a)=139914375015280, id(b)=139914375015216, equal? False
+number: 253, id(a)=140560740988128, id(b)=140560740988128, equal? True
+number: 254, id(a)=140560740988160, id(b)=140560740988160, equal? True
+number: 255, id(a)=140560740988192, id(b)=140560740988192, equal? True
+number: 256, id(a)=140560740988224, id(b)=140560740988224, equal? True
+number: 257, id(a)=140560678412976, id(b)=140560675494768, equal? False
+number: 258, id(a)=140560675494704, id(b)=140560678412976, equal? False
+number: 259, id(a)=140560675494768, id(b)=140560675494704, equal? False
+number: 260, id(a)=140560678412976, id(b)=140560675494768, equal? False
+number: 261, id(a)=140560675494704, id(b)=140560678412976, equal? False
+number: 262, id(a)=140560675494768, id(b)=140560675494704, equal? False
 ...
 ```
 
