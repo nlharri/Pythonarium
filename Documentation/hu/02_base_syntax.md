@@ -479,11 +479,42 @@ Ha olyan utasításban vagyunk, ami a `[]`, `()` vagy `{}` blokkon belül van, a
 
 ## Megjegyzések elhelyezése a kódban
 
-## Üres sorok használata
+A Python programozási nyelv a megjegyzések elhelyezésére a kódban a `#` karaktert és a `"""` karaktersorozatot használja. A `#` karakterrel csak egy sort lehet megjegyzésként elhelyezni, blokkok kommentelésére a `"""` használatos. Tipikusan a függvények elején érdemes leírni hogy mire szolgál a függvény, amire a `"""` kommentelést szokták használni.
+
+```python
+#!/usr/bin/env bash
+
+def osszeg(elso_szam, masodik_szam):
+    """
+    A két szám összegét adja vissza: elso_szam + masodik_szam
+    """
+    return elso_szam + masodik_szam
+
+if __name__ == "__main__":
+    print(osszeg(12,34.56))
+```
+A kimenet:
+
+```
+46.56
+```
 
 ## Felhasználói bemenet feldolgozása
 
-## Több utasítás egy sorban
+A felhasználótól adatot bekérni a konzolban az `input()` függvénnyel lehet.
+
+```python
+#!/usr/bin/env bash
+name = input("What's your name? ")
+print("Hello {}!".format(name))
+```
+
+Az `input()` függvénynek egy stringet megadva ezt a stringet írja ki a rendszer, és vár a felhasználói inputra, amit az ENTER billentyűvel lehet lezárni.
+
+```
+What's your name? Harri
+Hello Harri!
+```
 
 ## Parancssori argumentumok
 
