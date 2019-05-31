@@ -403,9 +403,79 @@ number: 262, id(a)=140560675494768, id(b)=140560675494704, equal? False
 
 ## Sorok és bekezdés
 
+A Python nyelvben nincs külön dedikált elválasztó karakter a kód-blokkok elkülönítésére. Az elkülönítés a bekezdésekkel történik, amit az interpreter ellenőriz. Az, hogy hány szóköz (vagy tabulátor) jelent egy bekezdést, tetszőleges lehet (nyilván 0-nál nagyobb szám :)), viszont a blokkon belül minden utasítás előtt a bekezdésnek ugyanannyi karakterből kell állnia.
+
+```python
+import datetime
+mai_nap_index = datetime.datetime.now().weekday()
+if mai_nap_index == 4:
+    print("csütörtök van")
+else:
+    print("nem csütörtök van")
+```
+
+Az alábbi kódrészlet szintaktikai hibát ad:
+
+```python
+import datetime
+mai_nap_index = datetime.datetime.now().weekday()
+if mai_nap_index == 4:
+print("csütörtök van")
+else:
+    print("nem csütörtök van")
+```
+
+```
+  File "main.py", line 10
+    print("csütörtök van")
+        ^
+IndentationError: expected an indented block
+```
+
+Viszont az alábbi kódrészlet működik, noha nem túl olvasható így:
+
+```python
+import datetime
+mai_nap_index = datetime.datetime.now().weekday()
+if mai_nap_index == 4:
+ print("csütörtök van")
+else:
+    print("nem csütörtök van")
+```
+
 ## Többsoros utasítások
 
-## Idézőjelek szerepe
+A Pythonban általában egy utasítást egy sorba írunk. Lehetőség van egy utasítást több sorba tördelni a `\` karakterrel.
+
+```
+>>> a = 23
+>>> b = 94
+>>> c = 32
+>>> x = 4
+>>> y = a*x^2 + \
+... b*x + \
+... c
+>>> y
+454
+```
+
+Vagy Python programban:
+
+```python
+y = a * x ^ 2 + \
+    b * x + \
+    c
+```
+
+Ha olyan utasításban vagyunk, ami a `[]`, `()` vagy `{}` blokkon belül van, akkor nem kell használni `\` karaktert a tördeléshez.
+
+```
+>>> allatkert = ["vizilo", "oroszlan",
+... "rinocerosz", "medve", "tigris",
+... "mókuscickány"]
+>>> allatkert
+['vizilo', 'oroszlan', 'rinocerosz', 'medve', 'tigris', 'mókuscickány']
+```
 
 ## Megjegyzések elhelyezése a kódban
 
