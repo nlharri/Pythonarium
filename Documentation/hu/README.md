@@ -41,9 +41,7 @@ Ebben a fejezetben a Python nyelv alap szintakszisáról olvashatsz.
 - Sorok és bekezdés
 - Többsoros utasítások
 - Megjegyzések elhelyezése a kódban
-- Üres sorok használata
 - Felhasználói bemenet feldolgozása
-- Több utasítás egy sorban
 - Parancssori argumentumok
 
 <!--
