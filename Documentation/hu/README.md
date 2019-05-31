@@ -37,6 +37,7 @@ Ebben a fejezetben a Python nyelv alap szintakszisáról olvashatsz.
 - A Python interpreter
 - Azonosítók
 - Foglalt szavak
+- Python objektumok, belső azonosító: `id()`, `is`
 - Sorok és bekezdés
 - Többsoros utasítások
 - Idézőjelek szerepe
