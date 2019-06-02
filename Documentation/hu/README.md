@@ -61,7 +61,11 @@ Ebben a fejezetben a Python nyelv alap szintakszisáról olvashatsz.
 
 ## Objektumorientált programozás Pythonban
 
+-->
+
 ## Adatstruktúrák és algoritmusok
+
+<!--
 
 ## Unit teszt és integration teszt Pythonban
 
@@ -69,47 +73,45 @@ A fejezet alapjául szolgáló mű: [Getting Started With Testing in Python (by 
 
 ## Külső könyvtárak használata
 
-## A Python sokrétű alkalmazása példákkal
-
-### Python használata automatizálásra
+## Python használata automatizálásra
 
 Ebben a fejezetben megismerheted, hogy hogyan lehet a Python nyelvet praktikusan használni olyan feladatokra, amelyek kézzel elvégezve órákig tartanának. A fejezet alapjául szolgáló mű: [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/).
 
-### Python használata weboldalak szisztematikus feldolgozására (webscraping). A BeautifulSoup csomag
+## Python használata weboldalak szisztematikus feldolgozására (webscraping). A BeautifulSoup csomag
 
 A fejezet alapjául a következő tutorial szolgált: [Tutorial: Python Web Scraping Using BeautifulSoup (by DataQuest)](https://www.dataquest.io/blog/web-scraping-tutorial-python/)
 
-### Python használata hálózati programozáshoz
+## Python használata hálózati programozáshoz
 
-### Python használata felhasználói felületek létrehozására: Tkinter, Kivy, PySide2
+## Python használata felhasználói felületek létrehozására: Tkinter, Kivy, PySide2
 
 Ebben a fejezetben desktop alkalmazások fejlesztését mutatom be három különböző Python könyvtár használatán keresztül.
 
-#### Tkinter alapok
+### Tkinter alapok
 
-#### Kivy alapok
+### Kivy alapok
 
-#### PySide2 alapok
+### PySide2 alapok
 
-### Python használata webfejlesztésre. Django és Flask
+## Python használata webfejlesztésre. Django és Flask
 
-#### Django alapok
+### Django alapok
 
-#### Flask alapok
+### Flask alapok
 
-### Python használata képfeldolgozásra. Ismerkedés az OpenCV-vel (Open Source Computer Vision Library)
+## Python használata képfeldolgozásra. Ismerkedés az OpenCV-vel (Open Source Computer Vision Library)
 
 Ebben a fejezetben a képfeldolgozás alapjaival ismerkedhetsz meg a népszerű OpenCV könyvtár használatán kersztül. 
 
 A fejezet alapjául szolgáló weboldal: [OpenCV Tutorial: A Guide to Learn OpenCV](https://www.pyimagesearch.com/2018/07/19/opencv-tutorial-a-guide-to-learn-opencv/)
 
-### Python használata a tudományos számításokhoz
+## Python használata a tudományos számításokhoz
 
 Ebben a fejezetben a Python felhasználási lehetőségeit ismertetem a tudományos számítások világában.
 
 Referencia: [Python Data Science Handbook (Jake VanderPlas)](https://jakevdp.github.io/PythonDataScienceHandbook/)
 
-#### A SciPy ökoszisztéma
+### A SciPy ökoszisztéma
 
 A SciPy ökoszisztéma elemei.
 
@@ -120,27 +122,27 @@ A SciPy ökoszisztéma elemei.
 - SymPy
 - Pandas
 
-#### Ismerkedés a NumPy könyvtárral
+### Ismerkedés a NumPy könyvtárral
 
-#### Ismerkedés a SciPy könyvtárral
+### Ismerkedés a SciPy könyvtárral
 
-#### Ismerkedés a Matplotlib könyvtárral
+### Ismerkedés a Matplotlib könyvtárral
 
-#### Ismerkedés a IPython könyvtárral
+### Ismerkedés a IPython könyvtárral
 
-#### Ismerkedés a SymPy könyvtárral
+### Ismerkedés a SymPy könyvtárral
 
-#### Ismerkedés a Pandas könyvtárral
+### Ismerkedés a Pandas könyvtárral
 
-### Python használata a mesterséges intelligenciában és gépi tanulásban. Bevezetés a Tensorflow és a Keras használatába
+## Python használata a mesterséges intelligenciában és gépi tanulásban. Bevezetés a Tensorflow és a Keras használatába
 
 Referencia: [Python Data Science Handbook (Jake VanderPlas)](https://jakevdp.github.io/PythonDataScienceHandbook/)
 
-#### Mesterséges intelligencia, neurális hálózatok
+### Mesterséges intelligencia, neurális hálózatok
 
-#### Neurális hálózatok architektúrája
+### Neurális hálózatok architektúrája
 
-#### Népszerű Python könyvtárak gépi tanuláshoz és neurális hálózatok létrehozásához
+### Népszerű Python könyvtárak gépi tanuláshoz és neurális hálózatok létrehozásához
 
 A jeleneg legnépszerűbb Python könyvtárak rövid ismertetése.
 
@@ -151,7 +153,7 @@ A jeleneg legnépszerűbb Python könyvtárak rövid ismertetése.
 - Microsoft Cognitive Toolkit (CNTK)
 
 
-#### TensorFlow és Keras alapok
+### TensorFlow és Keras alapok
 
 Ismerkedés a Tensorflow alapjaival.
 
@@ -160,19 +162,26 @@ Ismerkedés a Tensorflow alapjaival.
 - Változók, tenzorok
 - Placeholder-ek
 
-#### Az első Tensorflow neurális hálózataink felépítése: egy egyszerű neuron
+### Az első Tensorflow neurális hálózataink felépítése: egy egyszerű neuron
 
-#### Az első Tensorflow neurális hálózataink felépítése: képek klasszifikálása, az MNIST adathalmaz
+### Az első Tensorflow neurális hálózataink felépítése: képek klasszifikálása, az MNIST adathalmaz
 
-#### Az első Tensorflow neurális hálózataink felépítése: képek klasszifikálása, kutya vagy macska?
+### Az első Tensorflow neurális hálózataink felépítése: képek klasszifikálása, kutya vagy macska?
 
-#### CNNs - Convolutional Neural Networks
+### CNNs - Convolutional Neural Networks
 
-#### RNNs - Recurrent Neural Networks
+### RNNs - Recurrent Neural Networks
 
-#### GANs - Generative Adversarial Networks
+### GANs - Generative Adversarial Networks
 
-### Python példafeladatok megoldással
+-->
+
+## Egyszerű neurális hálózatok építése Pythonban
+
+<!--
+
+## Python példafeladatok megoldással
+
 -->
 
 ## Források, Hivatkozások
