@@ -4,7 +4,7 @@ import numpy as np
 from tqdm import tqdm
 
 # we have only one neuron
-LAYERS = 1 
+NEURONS = 1 
 
 # learning rate
 LEARNING_RATE = 0.01
@@ -32,8 +32,8 @@ class TwoVariablesBooleanFunctionNeuralNetwork:
         # np.shape returns a tuple: (n,m)
         # W is a matrix of m x l:
         #  - m rows: the number of input variables
-        #  - l columns: the number of layers
-        self.W = np.random.rand(self.m, LAYERS)
+        #  - l columns: the number of neurons
+        self.W = np.random.rand(self.m, NEURONS)
 
         # y and output are column vectors of size n
         self.y      = y
