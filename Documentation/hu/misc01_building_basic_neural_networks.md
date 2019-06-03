@@ -72,13 +72,17 @@ A szigmoid függvény, `g`:
 
 Ha például a logikai `ÉS` műveletet szeretnénk megvalósítani, akkor intuitív módon felírhatunk egy olyan súlyvektort, amivel a neurális hálózat, ami jelen esetben csak egyetlen neuronból áll, kb. az `ÉS` műveletnek megfelelő eredményt ad a kimenetén. Hasonlóan járhatunk el más logikai műveletekkel is. Az alábbi ábrán a logikai `ÉS` és `VAGY` művelet egy neuronnal történő megvalósításához tartozó súlyokat láthatjuk. Érdemes észrevenni, hogy ha megfordítom a súlyok előjelét, akkor a végeredmény negáltját kapom, tehát így megvan további két függvény implementációja.
 
-![Egyszerű neuron](./assets/Basic_Neuron.png "Egyszerű neuron")
+![W_AND](./assets/w_and_w0_w1_w2.png "W_AND")
 
-(IDE 4 db ábra kell!!!)
+![W_OR](./assets/w_or_w0_w1_w2.png "W_AND")
+
+![Y_AND](./assets/y_and_x1_and_x2.png "Y_AND")
+
+![Y_OR](./assets/y_or_x1_or_x2.png "Y_OR")
 
 Az `ÉS` és a `VAGY` függvény igazságtáblája, és a neurális hálózat kimenete, ha az előbbi súlyokat használjuk:
 
-![Egyszerű neuron](./assets/Basic_Neuron.png "Egyszerű neuron")
+![AND OR](./assets/and_or_h_w_and_h_w_or_table.png "AND OR")
 
 # Egyszerű neuron implementációja
 
