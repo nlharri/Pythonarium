@@ -1,6 +1,6 @@
 ![Pythonarium](../../PythonariumLogo.png)
 
-<p align="right"><sup><a href="01_introduction.md">Előző fejezet</a> | <a href="README.md">Tartalom</a></sup>
+<p align="right"><sup><a href="01_introduction.md">Előző fejezet</a> | <a href="README.md">Tartalom</a></sup></p>
 
 # Bevezetés a Python nyelv szintaxisába
 
@@ -532,4 +532,4 @@ A Python interpreter felhívása során a parancssori argumentumokat átadása �
 
 Köszönöm a figyelmet. A következő részben mélyebben beleássuk magunkat a Python világába.
 
-<p align="right"><sup><a href="01_introduction.md">Előző fejezet</a> | <a href="README.md">Tartalom</a></sup>
+<p align="right"><sup><a href="01_introduction.md">Előző fejezet</a> | <a href="README.md">Tartalom</a></sup></p>
