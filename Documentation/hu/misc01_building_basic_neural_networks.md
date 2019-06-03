@@ -54,15 +54,15 @@ Az alábbi ábrán egyszeres aláhúzás jelöli a vektor típusú változókat 
 
 A bemeneti adatokat `x`-szel jelölöm:
 
-![Egyszerű neuron](./assets/Basic_Neuron.png "Egyszerű neuron")
+![x = (x0, x1, x2)](./assets/x_x0_x1_x2.png "x = (x0, x1, x2)")
 
 A súlyokat, jelen esetben egy vektort, `w` jelöli.
 
-![Egyszerű neuron](./assets/Basic_Neuron.png "Egyszerű neuron")
+![w = (w0, w1, w2)](./assets/w_w0_w1_w2.png "w = (w0, w1, w2)")
 
 A hipotézis függvény `h`, vagyis ami a neurális hálózat kimenet egy adott `x` bemenetre, `w` súlyok mellett:
 
-![Egyszerű neuron](./assets/Basic_Neuron.png "Egyszerű neuron")
+![h(x) = g(wx) = g(x0w0+x1w1+x2w2)](./assets/h_x_g_wx_g_x0w0_x1w1_x2w2.png "h(x) = g(wx) = g(x0w0+x1w1+x2w2)")
 
 A szigmoid függvény, `g`:
 
