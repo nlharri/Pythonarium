@@ -92,4 +92,8 @@ Az alábbi példaprogram egyetlen neuron tanítását valósítja meg. A gradien
 
 2. *előreterjesztés (feed forward)*: kiszámolom a neuron kimeneteit minden egyes bemenetre.
 
+![Szigmoid függvény](./assets/Sigmoid.png "Szigmoid függvény")
+
+![h_w(x)](./assets/h_w_x_g_xw_g_x0_x1_xm_w0_w1_wm.png "h_w(x)")
+
 <p align="right"><sup><a href="README.md">Tartalom</a></sup></p>
