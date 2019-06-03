@@ -96,4 +96,20 @@ Az alábbi példaprogram egyetlen neuron tanítását valósítja meg. A gradien
 
 ![h_w(x)](./assets/h_w_x_g_xw_g_x0_x1_xm_w0_w1_wm.png "h_w(x)")
 
+3. *hiba-visszaterjesztés (backpropagation)*: A hibafüggvény (amit J jelöl) aktuális értéke az aktuális súlyoktól függ. Ha az i. súlyt kicsit változtatom (egy kis számot hozzáadok, illetve egy kis számot kivonok belőle), ki tudom számolni, hogy mennyit változik a hibafüggvény értéke, ha a többi súlyt változatlanul hagyom. Ebből ki tudom számolni, hogy megközelítőleg mekkora a hibafüggvény meredeksége az. i. súly mentén, ha a többi súly változatlanul marad. Tehát tulajdonképpen a hibafüggvény parciális deriváltját számítom ki megközelítőleg. Ezekből a parciális deriváltakból összeállítok egy oszlopvektort. Az oszlopvektor sorainak száma megegyezik a súlyok számával, vagyis a bemenő változók számával (jelen esetben 3). A kiszámolt vektort megszorzom a tanulási rátával, és kivonom a súlyvektor jelenlegi értékéből. Ezzel megkapom az új súlyvektort.
+
+Ezt a három lépést kell ismételni kellően sokszor ahhoz, hogy jó közelítéssel megtaláljuk a hibafüggvény minimumhelyét, tehát azokat a súlyokat, ahol a hibafüggvény a legkisebb.
+
+A hibafüggvény, `J` (`y` jelöli a tényleges eredményt, `h` pedig a hipotézist):
+
+![J(w)](./assets/J_w_1_div_n_summa_y_minus_h_w_x_square.png "J(w)")
+
+A súlyvektor, ha az i. súlyt kicsit változtatom, és a többi súly változatlanul marad:
+
+![w_i_plus_w_i_minus](./assets/w_i_plus_w_i_minus.png "w_i_+ w_i_-")
+
+A hibafüggvény változásaiból összeállított vektor i. eleme, és maga a vektor:
+
+
+
 <p align="right"><sup><a href="README.md">Tartalom</a></sup></p>
