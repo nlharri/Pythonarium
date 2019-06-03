@@ -176,7 +176,7 @@ Ismerkedés a Tensorflow alapjaival.
 
 -->
 
-## Egyszerű neurális hálózatok építése Pythonban
+## [Egyszerű neurális hálózatok építése Pythonban](misc01_building_basic_neural_networks.md)
 
 <!--
 
