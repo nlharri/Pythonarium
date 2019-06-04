@@ -14,9 +14,9 @@ Ebben a részben az összetett adatokkal való műveletekről lesz szó, tovább
 
 ## Dekorátorok
 
-## Iterátorok
-
 ## Listák és egyéb összetett adattípusok
+
+## Iterátorok
 
 ## Beépített könyvtárak
 
