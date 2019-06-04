@@ -16,8 +16,17 @@ A Python 3-ban a következő adattípusokat használhatjuk:
 - `iterator`: iterátor típus; `generator`: generátor típus
 - szekvenciális típusok: 
   - `list`: lista (vagy tömb)
-  - `tuple`: n db elemet tartalmazó, csak olvasható adatszerkezet
-  - `range`: egész számokból álló intervallum
+  - `tuple`: n db elemet tartalmazó, nem megváltoztatható adatszerkezet
+  - `range`: egész számokból álló számtani sorozat
+- `str`: szöveges adattípus
+- bináris szekvenciális típusok:
+  - `bytes`: byte-okból álló, nem megváltoztatható sorozat
+  - `bytearray`: a `bytes` objektum megváltoztatható változata
+  - `memoryview`: lehetővé teszi objektumok belső adatának elérését Pythonban
+- halmaz típusok:
+  - `set`: hash-elhető objektumok nem sorrendezett gyűjteménye. Egy objektum hash-elhető, ha van egy hash értéke, ami nem változik meg az objektum élettartama során, és összehasonlításra lehet használni. Megváltoztatható, és hash-elhető a `set`.
+  - `frozenset`: A `set` nem megváltoztatható változata
+- "mapping" típus: `dict`: kulcs-érték párokat tároló típus. Egy hash-elhető értéket "map-pel át" egy tetszőleges objektumra. Megváltoztatható.
 
 ## Függvények
 
