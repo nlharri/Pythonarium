@@ -8,6 +8,17 @@ Ebben a részben az összetett adatokkal való műveletekről lesz szó, tovább
 
 ## Adattípusok
 
+A Python 3-ban a következő adattípusokat használhatjuk:
+- numerikus típusok
+  - `int`: egész szám
+  - `float`: lebegőpontos szám
+  - `complex`: komplex szám
+- `iterator`: iterátor típus; `generator`: generátor típus
+- szekvenciális típusok: 
+  - `list`: lista (vagy tömb)
+  - `tuple`: n db elemet tartalmazó, csak olvasható adatszerkezet
+  - `range`: egész számokból álló intervallum
+
 ## Függvények
 
 ## Paraméterek, paraméter-átadás függvényeknek
