@@ -44,28 +44,27 @@ Ebben a fejezetben a Python nyelv alap szintakszisáról olvashatsz.
 - Felhasználói bemenet feldolgozása
 - Parancssori argumentumok
 
-<!--
-## Haladó Python
+## [Haladó Python](03_advanced_python.md)
 
-Összetett adatokkal való műveletek. 
+Ebben a részben az összetett adatokkal való műveletekről lesz szó, továbbá megismerjük a Python vezérlő utasításait.
 
 - Adattípusok
 - Függvények
 - Paraméterek, paraméter-átadás függvényeknek
-- Listák és egyéb összetett adattípusok
 - Dekorátorok
+- Listák és egyéb összetett adattípusok
 - Iterátorok
 - Beépített könyvtárak
+- Vezérlő utasítások (control flow)
+- Referenciák
 
+
+<!--
 ## Modulok, csomagok (package), névtér (namespace), hatáskör (scope)
 
 ## Objektumorientált programozás Pythonban
 
--->
-
 ## Adatstruktúrák és algoritmusok
-
-<!--
 
 ## Unit teszt és integration teszt Pythonban
 
