@@ -70,7 +70,9 @@ False
 
 ## Beépített könyvtárak
 
-## Vezérlő utasítások (control flow)  
+## Vezérlő utasítások (control flow)
+
+## Objektum-orientáltság
 
 ## Referenciák
 
