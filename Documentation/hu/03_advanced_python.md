@@ -60,6 +60,20 @@ False
 
 ## Függvények
 
+### Lambda függvények
+
+```python
+def multiplier(n):
+  return lambda a : a * n
+
+tripler = multiplier(3)
+print(tripler(12))
+print(multiplier(4)(12))
+multiply_by_48 = multiplier(48)
+print(multiplier(4)(multiplier(4)(12)))
+print(multiply_by_48(10))
+```
+
 ## Paraméterek, paraméter-átadás függvényeknek
 
 ## Dekorátorok
