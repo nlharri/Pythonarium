@@ -60,6 +60,20 @@ False
 
 ## Függvények
 
+Függvényeket a `def` kulcsszóval lehet definiálni.
+
+```python
+def print_welcome():
+  print("Welcome!")
+  
+print_welcome()
+```
+Kimenet:
+
+```
+Welcome!
+```
+
 ### Lambda függvények
 
 ```python
@@ -72,6 +86,15 @@ print(multiplier(4)(12))
 multiply_by_48 = multiplier(48)
 print(multiplier(4)(multiplier(4)(12)))
 print(multiply_by_48(10))
+```
+
+Kimenet: 
+
+```
+5
+14
+28
+60
 ```
 
 ## Paraméterek, paraméter-átadás függvényeknek
