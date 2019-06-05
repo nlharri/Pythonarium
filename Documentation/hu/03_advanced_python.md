@@ -76,6 +76,21 @@ print(multiply_by_48(10))
 
 ## Paraméterek, paraméter-átadás függvényeknek
 
+```python
+def plus2mul2(x):
+    x+=2
+    return x*2
+
+n = 5
+plus2mul2(n)
+plus2mul2(n)
+print(n)
+print(plus2mul2(n))
+
+print(plus2mul2(12))
+print(plus2mul2(plus2mul2(12)))
+```
+
 ## Dekorátorok
 
 ## Listák és egyéb összetett adattípusok
