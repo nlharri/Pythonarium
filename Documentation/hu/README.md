@@ -56,13 +56,14 @@ Ebben a részben az összetett adatokkal való műveletekről lesz szó, tovább
 - Iterátorok
 - Beépített könyvtárak
 - Vezérlő utasítások (control flow)
+- Objektum-orientáltság
 - Referenciák
 
 
 <!--
 ## Modulok, csomagok (package), névtér (namespace), hatáskör (scope)
 
-## Objektumorientált programozás Pythonban
+## (ezt valószínű, hogy kiveszem!!!) Objektumorientált programozás Pythonban
 
 ## Adatstruktúrák és algoritmusok
 
@@ -176,6 +177,14 @@ Ismerkedés a Tensorflow alapjaival.
 -->
 
 ## [Egyszerű neurális hálózatok építése Pythonban](misc01_building_basic_neural_networks.md)
+
+- Bevezető
+- Egyetlen neuron 
+- Egyszerű neuron implementációja
+- Mire alkalmas egyetlen neuron?
+- Több neuronból álló hálózat
+- Több neuronból álló hálózat tanítása
+- Referenciák
 
 <!--
 
