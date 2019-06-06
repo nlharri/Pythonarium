@@ -179,6 +179,29 @@ print(plus2mul2(plus2mul2(12)))
 
 #### Kulcsszavas argumentumok
 
+Az alábbi függvényben a paraméterek neve `a` és `b`. 
+
+```python
+def rectangle_area(a,b):
+    print("a={}".format(a))
+    print("b={}".format(b))
+    return a*b
+
+rectangle_area(a=4, b=3)
+rectangle_area(3, 4)
+```
+
+```
+>>> rectangle_area(a=4, b=3)
+a=4
+b=3
+12
+>>> rectangle_area(3, 4)
+a=3
+b=4
+12
+```
+
 #### Alapértelmezett argumentumok
 
 Az alábbi függvénynél az `x` argumentum alapértelmezett `0` értéket kap, tehát ha nem adjuk meg, az olyan, mintha `0`-t adtunk volna meg.
@@ -206,6 +229,8 @@ plus2mul2(n)
 
 #### Változó hosszúságú argumentumlista
 
+
+
 ### Lambda függvények
 
 ```python
@@ -219,8 +244,6 @@ multiply_by_48 = multiplier(48)
 print(multiplier(4)(multiplier(4)(12)))
 print(multiply_by_48(10))
 ```
-
-Kimenet: 
 
 ```
 5
