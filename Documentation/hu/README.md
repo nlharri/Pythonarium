@@ -50,7 +50,6 @@ Ebben a részben az összetett adatokkal való műveletekről lesz szó, tovább
 
 - Adattípusok
 - Függvények
-- Paraméterek, paraméter-átadás függvényeknek
 - Dekorátorok
 - Listák és egyéb összetett adattípusok
 - Iterátorok
