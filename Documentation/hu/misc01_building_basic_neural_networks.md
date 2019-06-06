@@ -6,42 +6,31 @@
 
 Ebben a cikkben egyszerű neurális hálózatokat építek Python nyelven. A feladathoz kizárólag a következő Python könyvtárakat használom: `numpy`, `tqdm`.
 
-Az itt bemutatott neurális hálózatok egyszerű boolean függvényeket modelleznek. Kitérek arra, hogy 1 db neuronnal milyen boolean függvényeket lehet megvalósítani.
+A `numpy` csomag a tudományos számításokhoz használatos csomag a Pythonban. A `tqdm` pedig egy progress bar megjelenítő segéd csomag.
+
+Az itt bemutatott neurális hálózatok egyszerű kétváltozós logikai függvényeket modelleznek. Kitérek arra, hogy 1 db neuronnal milyen logikai függvényeket lehet megvalósítani.
 
 # Bevezető
 
-Jelen cikknek nem célja, hogy általános alapfogalmakkal ismertesse meg az olvasót a mesterséges intelligenciával, gépi tanulással, neurális hálózatokkal, mély tanulással kapcsolatban. A referenciákban felsorolt szakirodalomban alaposan lehet tájékozódni ezekben a témákban. 
+Jelen cikknek nem célja, hogy általános alapfogalmakkal ismertesse meg az olvasót a mesterséges intelligenciával, gépi tanulással, neurális hálózatokkal, mély tanulással kapcsolatban. A referenciákban felsorolt és egyéb szakirodalmakban alaposan lehet tájékozódni ezekkel a témákkal kapcsolatban.
 
-A cikkben implementált neurális hálózatok logikai függvényeket valósítanak meg. Az egyszerű logikai `ÉS` illetve `VAGY` függvénytől kiindulva az összetettebb függvényekig. Látni fogjuk, hogy egyetlen neuronnal mit lehet megvalósítani, és mi az, amihez már több neuronból álló hálózat szükséges.
+A cikkben implementált neurális hálózatok logikai függvényeket valósítanak meg, az `ÉS` illetve `VAGY` függvényt, valamint a kizáró vagy, `XOR` függvényt. Látni fogjuk, hogy egyetlen neuronnal mit lehet megvalósítani, és mi az, amihez már több neuronból álló hálózat szükséges.
 
 A cikk tartalmának értelmezéséhez a következő alapfogalmak ismerete szükséges, ezekkel csak érintőlegesen foglalkozom ebben a cikkben:
 
 - neurális hálózat
-
 - tanítási fázis
-
 - előreterjesztés (feed forward)
-
 - hiba-visszaterjesztés (backpropagation)
-
 - gradiensereszkedés (gradient descent)
-
 - aktivációs függvény (activation function)
-
 - szigmoid függvény / logisztikai függvény (sigmoid function / logistic function)
-
 - súlyok (weights)
-
 - predikció (prediction)
-
 - hipotézis függvény (hypothesis function)
-
 - tanulási ráta (learning rate)
-
 - vektor (vector)
-
 - mátrix (matrix)
-
 - alapvető lineáris algebrai ismeretek
 
 # Egyetlen neuron 
