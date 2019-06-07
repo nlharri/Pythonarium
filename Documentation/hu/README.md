@@ -185,6 +185,17 @@ Ismerkedés a Tensorflow alapjaival.
 - Több neuronból álló hálózat tanítása
 - Referenciák
 
+
+## [Gráfalgoritmusok Pythonban](misc02_graph_algorithms.md)
+
+- Mik a gráfok?
+- Gráfok tárolása
+- Gráfbejárás szélességi kereséssel
+- Gráfbejárás mélységi kereséssel
+- Legrövidebb út kereséses két csúcs között
+- Leghosszabb út kereséses két csúcs között
+- Referenciák
+
 <!--
 
 ## Python példafeladatok megoldással

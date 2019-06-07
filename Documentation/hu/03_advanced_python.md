@@ -33,7 +33,7 @@ A Python 3-ban a következő adattípusokat használhatjuk:
 - halmaz típusok:
   - `set`: hash-elhető objektumok nem sorrendezett gyűjteménye. Megváltoztatható, és hash-elhető a `set`.
   - `frozenset`: A `set` nem megváltoztatható változata
-- "mapping" típus: `dict`: kulcs-érték párokat tároló típus, "szótár". Egy hash-elhető értéket leképez egy tetszőleges objektumra. Megváltoztatható adatszerkezet.
+- `dict`: kulcs-érték párokat tároló szótár típus. Egy hash-elhető értéket leképez egy tetszőleges objektumra. Megváltoztatható adatszerkezet.
 
 Megváltoztathatóság szempontjából a következőképpen néznek ki a Python adattípusok:
 
@@ -229,9 +229,38 @@ plus2mul2(n)
 
 #### Változó hosszúságú argumentumlista
 
+Az alábbi függvény az argumentumokban megadott, tetszőleges mennyiségű számot szorozza össze. Legalább két argumentumot meg kell adni, a többi opcionális.
 
+```python
+def multiply_numbers(n1, n2, *n):
+    result = n1*n2
+    for i in n:
+        result*=i
+    return result
 
-### Lambda függvények
+print(multiply_numbers(1,2,3,4,5))
+print(multiply_numbers(5,10,12,74,331))
+
+print(multiply_numbers(2)) # error
+```
+
+```
+>>> print(multiply_numbers(1,2,3,4,5))
+120
+>>> print(multiply_numbers(5,10,12,74,331))
+14696400
+>>> 
+>>> print(multiply_numbers(2)) # error
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: multiply_numbers() missing 1 required positional argument: 'n2'
+```
+
+### Lambda függvények, anonim függvények
+
+A Pythonban a `lambda` kulcsszóval lehet anomim függvényeket definiálni, melyek egyetlen utasításból állnak. azért anonim függvény, mert sok esetben nincs külön elnevezése. Az alábbi példában a `multiplier` nevű függvény, melynek egy paramétere van (`n`), egy lambda függvényt ad vissza. A lambda függvénynek egyetlen paramétere van (`a`), és a visszatérési értéke ezen paraméter (`a`) értékének, és a `multiplier` függvény hívásakor megadott paraméter (`n`) értékének a szorzata.
+
+Tehát, ha a `multiplier` függvényt 3-as értékkel, mint paraméterrel hívjuk, akkor kapunk egy olyan, egy paraméterrel rendelkező függvényt, amit felhívva a megadott paraméter 3-szorosát adja vissza.
 
 ```python
 def multiplier(n):
@@ -252,6 +281,18 @@ print(multiply_by_48(10))
 60
 ```
 
+A lambda függvények másik tipikus alkalmazása az úgynevezett funkcionális programozás témakörével kapcsolatos. Az alábbi példáról még részletesebben lesz szó később. Ebben az alfejezetben csak annyit jegyzünk meg, hogy a filter függvény első paraméterében megadott lambda anonim függvény `bool` típussal tér vissza, és `False` értékkel, ha a lambda függvény paraméterében megadott `a` szám értéke pozitív, és `True` értékkel, amennyiben negatív. 
+
+```python
+numbers_negative = list(filter(lambda a : a < 0, range(-10,10)))
+print(numbers_negative)
+```
+
+```
+>>> print(numbers_negative)
+[-10, -9, -8, -7, -6, -5, -4, -3, -2, -1]
+```
+
 ## Dekorátorok
 
 ## Listák és egyéb összetett adattípusok
@@ -270,5 +311,6 @@ print(multiply_by_48(10))
 - [Built-in Types - Python documentation](https://docs.python.org/3/library/stdtypes.html)
 - [PEP 3137 -- Immutable Bytes and Mutable Buffer](https://www.python.org/dev/peps/pep-3137/)
 - [Python - Functions](https://www.tutorialspoint.com/python/python_functions.htm)
+- [Python filter()](https://www.programiz.com/python-programming/methods/built-in/filter)
 
 <p align="right"><sup><a href="02_base_syntax.md">Előző fejezet</a> | <a href="README.md">Tartalom</a></sup></p>
