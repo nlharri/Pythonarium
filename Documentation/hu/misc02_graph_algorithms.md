@@ -20,7 +20,7 @@ Ebben a cikkben gráfokkal kapcsolatos közismert algoritmusok példaimplementá
 
 # Referenciák
 
-- (Gráf)[https://hu.wikipedia.org/wiki/Gráf]
-- (Benjamin Baka: Python Data Structures and Algorithms)[https://www.amazon.com/Python-Data-Structures-Algorithms-application-ebook/dp/B01IF7NLM8]
+- [Gráf](https://hu.wikipedia.org/wiki/Gráf)
+- [Benjamin Baka: Python Data Structures and Algorithms](https://www.amazon.com/Python-Data-Structures-Algorithms-application-ebook/dp/B01IF7NLM8)
 
 <p align="right"><sup><a href="README.md">Tartalom</a></sup></p>
