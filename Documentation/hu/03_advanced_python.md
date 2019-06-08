@@ -295,6 +295,167 @@ print(numbers_negative)
 
 ## Dekorátorok
 
+A Pythonban a dekorátorok (decorators) olyan függvények, amikkel egy már meglévő objektumot lehet kibővíteni anélkül, hogy az eredeti objektumot megváltoztatnánk. Általában azelőtt hívódnak fel, mielőtt az eredeti funkció meghívódik.
+
+Nagyon fontos megérteni, hogy a Pythonban minden objektum. A függvények is, ami azt jelenti, hogy a függvényeket át lehet adni paraméterként más függvényeknek, lehet függvény egy másik függvény visszatérési értéke, lehet módosítani egy függvényt, lehet egy változónévhez rendelni függvényt. 
+
+Példaként először vegyük az alábbi függvényt, ami a megadott szám négyzetét adja vissza:
+
+```python
+def square_of_x(x):
+    return x**2
+
+square_of_x(2)
+square_of_x(-2)
+```
+
+```
+>>> square_of_x(2)
+4
+>>> square_of_x(-2)
+4
+```
+
+Tegyük fel, hogy ez a függvény már korábban rendelkezésünkre állt, viszont arra van szükségünk, hogy csak a pozitív számok négyzetét számoljuk ki. Negatív esetben pedig a négyzet ellentettjére van szükségünk. Tehát valami ilyesmire:
+
+```python
+def square_of_x_special(x):
+    if (x>0):
+        return x**2
+    else:
+        return -(x**2)
+
+square_of_x_special(2)
+square_of_x_special(-2)
+```
+
+```
+>>> square_of_x_special(2)
+4
+>>> square_of_x_special(-2)
+-4
+```
+
+Tehát el is készítettük az új függvényünket. De mi a helyzet akkor, ha ezt a már meglévő függvényünk segítségével szeretnénk elkészíteni Éredemes észrevenni, hogy a `square_of_x_special()` függvény újraimplementálja a `square_of_x()` függvényt. Ez most egy egyszerű példa, de ha a `square_of_x()` függvény bonyolult, akkor nem biztos, hogy le akarjuk másolni az egészet egy másik függvény belsejébe, hiszen az kód-duplikálást eredményez, és ha később változtatni kell rajta, akkor már két helyen kell kijavítani ugyanazt. Ez nem az amit mi szeretnénk. Ezért szeretnénk újrahasználni a már létező funkciót. Ezt a példát dekorátor alkalmazásával is meg lehet oldani.
+
+Korábban már láttunk példát arra, hogy egy függvény visszaadott egy másik függvényt eredményként. A dekorátorok alkalmazásakor is ezt a lehetőséget fogjuk használni. Előtte viszont egy kis kitérőként néhány szó az általam beágyazott függvényeknek nevezett konstrukcióról (aminek az eredeti megnevezése _nested functions_).
+
+### Beágyazott függvények (_nested functions_)
+
+Lehetséges függvényeket definiálni függvényeken belül.
+
+```python
+def multiply_by_six(x):
+    def multiply_by_two(y):
+        return y*2
+    return multiply_by_two(x)*3
+
+multiply_by_six(7)
+multiply_by_six(-8)
+```
+
+```
+>>> multiply_by_six(7)
+42
+>>> multiply_by_six(-8)
+-48
+```
+
+A `multiply_by_two()` függvényt nem lehet a `multiply_by_six()` függvényen kívülről elérni.
+
+```
+>>> multiply_by_two(3)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'multiply_by_two' is not defined
+```
+
+A belső függvény viszont hozzáfér az őt tartalmazó függvény szintjén elérhető változókhoz. Az alábbi példában az előbbihez hasonlóan először kettővel, majd hárommal szorzunk, így a végeredmény az eredeti szám hatszorosa lesz. Viszont előtte kiírja a program, hogy mi fog történni. (Ezért egy külön változóban tároljuk el a `multiply_by_two_print()` hívás eredményét (`mul_two`), majd a saját számításunk eredményét is (`result_mul_three`), és utána történik a kiírás. A `multiply_by_two_print()` függvényen belül is hasonlót figyelhetünk meg.)
+
+```python
+def multiply_by_six_print(x):
+    message = "I multiply {} by {}, result: {}"
+    def multiply_by_two_print(y):
+        result_mul_two = y*2
+        print(message.format(y, 2, result_mul_two))
+        return result_mul_two
+    mul_two = multiply_by_two_print(x)
+    result_mul_three = mul_two*3
+    print(message.format(mul_two, 3, result_mul_three))
+    return result_mul_three
+
+multiply_by_six_print(7)
+multiply_by_six_print(-8)
+```
+
+```
+>>> multiply_by_six_print(7)
+I multiply 7 by 2, result: 14
+I multiply 14 by 3, result: 42
+42
+>>> multiply_by_six_print(-8)
+I multiply -8 by 2, result: -16
+I multiply -16 by 3, result: -48
+-48
+```
+
+Függvények utazhatnak paraméterként is, és visszatérési értékként is, ahogy azt már korábban láttuk.
+
+### Dekorátorok használata
+
+Visszatérve a dekorátorokhoz, az alábbi példában a fentebb említett `square_of_x_special()` függvényt valósítom meg a `square_of_x()` függvény és dekorátorok segítségével. Ebben a példában a dekorátor függvény a `square_of_x_special()`, és definiáltam a `square_of_x()` "dekorált" változatát `square_special` néven.
+
+```python
+def square_of_x(x):
+    return x**2
+
+def square_of_x_special(function):
+    def wrapper(x):
+        if x > 0:
+            return function(x)
+        else:
+            return -function(x)
+    return wrapper
+
+square_special = square_of_x_special(square_of_x)
+
+square_special(2)
+square_special(-2)
+```
+
+```
+>>> square_special(2)
+4
+>>> square_special(-2)
+-4
+```
+
+Egy alternatív megoldás a `square_special = square_of_x_special(square_of_x)` sor helyett az alábbi. Ebben az esetben megcseréltem a `square_of_x()` és a `square_of_x_special()` definiálásának sorrendjét.
+
+```python
+def square_of_x_special(function):
+    def wrapper(x):
+        if x > 0:
+            return function(x)
+        else:
+            return -function(x)
+    return wrapper
+
+@square_of_x_special
+def square_of_x(x):
+    return x**2
+
+square_of_x(2)
+square_of_x(-2)
+```
+
+```
+>>> square_of_x(2)
+4
+>>> square_of_x(-2)
+-4
+```
+
 ## Listák és egyéb összetett adattípusok
 
 ## Iterátorok
@@ -312,5 +473,6 @@ print(numbers_negative)
 - [PEP 3137 -- Immutable Bytes and Mutable Buffer](https://www.python.org/dev/peps/pep-3137/)
 - [Python - Functions](https://www.tutorialspoint.com/python/python_functions.htm)
 - [Python filter()](https://www.programiz.com/python-programming/methods/built-in/filter)
+- [Decorators in Python](https://www.datacamp.com/community/tutorials/decorators-python)
 
 <p align="right"><sup><a href="02_base_syntax.md">Előző fejezet</a> | <a href="README.md">Tartalom</a></sup></p>
