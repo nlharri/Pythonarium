@@ -34,6 +34,15 @@ A fenti gráfnak a szomszédsági mátrixa a következőképpen néz ki:
 
 ![Gráf 1 Adjacencia mátrix](./assets/graph1_adjacency_matrix.png "Gráf 1 Adjacencia mátrix")
 
+## Éllistás ábrázolás
+
+# Gráfok kezelése Pythonban
+
+A Pythonban a gráfok kezelése ebben a cikkben a `networkx` csomagot fogom használni.
+
+## Gráfok megjelenítése
+
+## Gráfok adjacenciamátrixának elérése
 
 ```
 [[0. 1. 1. 1. 0.]
@@ -42,8 +51,6 @@ A fenti gráfnak a szomszédsági mátrixa a következőképpen néz ki:
  [1. 0. 0. 0. 1.]
  [0. 0. 1. 1. 0.]]
 ```
-
-## Éllistás ábrázolás
 
 # Gráfbejárás szélességi kereséssel
 
