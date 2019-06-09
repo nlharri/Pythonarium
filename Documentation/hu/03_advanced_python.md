@@ -202,6 +202,48 @@ b=4
 12
 ```
 
+Ha a függvény definíciójának argumentumlistájában van egy `**kwargs` argumentum (itt igazából a név elején szereplő `**` a lényeg, a `**kwargs` elnevezés csak egy elterjedt szokás, de nem kell feltétlenül így hívni), akkor ez az argumentum azokat a kulcsszavas argumentumokat fogja tartalmazni, amik nem szerepelnek a formális argumentumlistájában.
+
+Például az előbbi függvényt így is definiálhatjuk:
+
+```python
+def rectangle_area(**kwargs):
+    print("a={}".format(kwargs["a"]))
+    print("b={}".format(kwargs["b"]))
+    return kwargs["a"] * kwargs["b"]
+
+rectangle_area(a=4, b=3)
+```
+
+```
+>>> rectangle_area(a=4, b=3)
+a=4
+b=3
+12
+```
+
+Viszont ilyenkor meg kell adni a nevet:
+
+```
+>>> rectangle_area(3, 4)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: rectangle_area() takes 0 positional arguments but 2 were given
+```
+
+Ha a függvény felhívásakor nem adunk meg minden paramétert, de a függvényen belül használjuk, akkor is hibát dob a rendszer:
+
+```
+>>> rectangle_area(a=4)
+a=4
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 3, in rectangle_area
+KeyError: 'b'
+```
+
+Tehát az ilyen esetet le kell védeni megfelelő hibakezeléssel.
+
 #### Alapértelmezett argumentumok
 
 Az alábbi függvénynél az `x` argumentum alapértelmezett `0` értéket kap, tehát ha nem adjuk meg, az olyan, mintha `0`-t adtunk volna meg.
@@ -254,6 +296,34 @@ print(multiply_numbers(2)) # error
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 TypeError: multiply_numbers() missing 1 required positional argument: 'n2'
+```
+
+#### Kulcsszavas argumentumok és nem kulcsszavas arguentumok együttes használata
+
+Lehetőség van rá, hogy kulcsszavas és nem kulcsszavas arguentumokat egyszerre használjunk a függvényben. Az alábbi függvényben `*args` néven elérhetők a nem kulcsszavas argumentumok, és `**kwargs` néven elérhetők a további kulcsszavas argumentumok. Az `*args`nak minding meg kell előznie a `**kwargs` argumentumot.
+
+```python
+def number_mapper(one, two, *args, **kwargs):
+    print("one: {}".format(one))
+    print("two: {}".format(two))
+    for arg in args:
+        print(arg)
+    for key in kwargs.keys():
+        print("{}: {}".format(key, kwargs[key]))
+
+number_mapper("1", "2", "3", "4", "5", six="6", seven="7", eight="8")
+```
+
+```
+>>> number_mapper("1", "2", "3", "4", "5", six="6", seven="7", eight="8")
+one: 1
+two: 2
+3
+4
+5
+six: 6
+seven: 7
+eight: 8
 ```
 
 ### Lambda függvények, anonim függvények
@@ -463,6 +533,45 @@ square_of_x(-2)
 ## Beépített könyvtárak
 
 ## Vezérlő utasítások (control flow)
+
+### Elágazások: `if` utasítás
+
+### Ciklusok: `for` utasítás, `range` használata
+
+#### A `break`, `continue` és `else`
+
+Az alábbi példában vegyük észre, hogy az `else` utasítás a `for`ral egy szinten van, és nem az `if`fel van egy szinten. 
+
+```python
+def getDivider(n):
+    for x in range(2,n):
+        if n % x == 0:
+            divider = x
+            break
+    else:
+        divider = 0
+    return divider
+
+for n in range(2,10):
+    divider = getDivider(n)
+    if divider != 0:
+        print("{} = {} * {}".format(n, divider, int(n/divider)))
+    else:
+        print("{} is a prime number.".format(n))
+```
+
+```
+2 is a prime number.
+3 is a prime number.
+4 = 2 * 2
+5 is a prime number.
+6 = 2 * 3
+7 is a prime number.
+8 = 2 * 4
+9 = 3 * 3
+```
+
+#### A `pass` utasítás
 
 ## Objektum-orientáltság
 
