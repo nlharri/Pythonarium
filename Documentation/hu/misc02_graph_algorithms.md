@@ -24,11 +24,16 @@ Rögtön adódik a kérdés, hogy hogyan érdemes tárolni, ábrázolni egy grá
 
 ## Szomszédsági mátrix
 
-Vegyük példaként az alábbi gráfot.
+Vegyük példaként az alábbi, irányítatlan, súlyozatlan gráfot.
 
 ![Gráf 1](./assets/graph1.png "Gráf 1")
 
-Ennek a gráfnak a szomszédsági mátrixa a következőképpen néz ki:
+A szomszédsági mátrix egy olyan, számokból álló táblázat, amelynek annyi sora és oszlopa van, ahány csúcsa van a gráfnak. A példánkban használt gráfnak 5 csúcsa van, ezért a mátrix 5x5-ös. A mátrix i. sorának j. oszlopában szerepel annak az élnek a súlya, amelyik az i. csúcsból a j. csúcsba megy. Ha nincs él az i.-ből a j. csúcsba, akkor 0 a mátrix eleme. Súlyozatlan gráfoknál minden elem 0 vagy 1 értékű. Irányítatlan gráfoknál a mátrix szimmetrikus.
+
+A fenti gráfnak a szomszédsági mátrixa a következőképpen néz ki:
+
+![Gráf 1 Adjacencia mátrix](./assets/graph1_adjacency_matrix.png "Gráf 1 Adjacencia mátrix")
+
 
 ```
 [[0. 1. 1. 1. 0.]
