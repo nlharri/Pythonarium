@@ -36,6 +36,8 @@ A fenti gráfnak a szomszédsági mátrixa a következőképpen néz ki:
 
 ## Éllistás ábrázolás
 
+Ebben az esetben a gráf csúcsai egy listában tároljuk. A lista minden eleméhez hozzárendelünk egy-egy listát: a csúcsból induló élek listáját. 
+
 # Gráfok kezelése Pythonban
 
 A Pythonban a gráfok kezelése ebben a cikkben a `networkx` csomagot fogom használni.
