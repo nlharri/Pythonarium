@@ -46,13 +46,52 @@ A csúcshoz rendelt lista elemeiben a csúcsból kiinduló élek célcsúcsainak
 
 A fenti gráf éllistás ánrázolása a következő:
 
+![Gráf 1 Éllistás ábrázolása](./assets/graph1_edge_list.png "Gráf 1 Éllistás ábrázolása")
+
 # Gráfok kezelése Pythonban
 
-A Pythonban a gráfok kezelése ebben a cikkben a `networkx` csomagot fogom használni.
+A Pythonban a gráfok kezelése ebben a cikkben a `networkx` csomagot fogom használni. Ez a csomag összetett hálózatok létrehozását, manipulálását, tanulmányozását teszi lehetővé.
+
+A `networkx` használatához telepíteni kell azt a `pip` segítségével:
+
+```
+pip install networkx --upgrade
+```
 
 ## Gráfok megjelenítése
 
+Az alábbi program a fent vázolt gráfot definiálja majd megjeleníti a `networx` csomag használatával:
+
+```python
+import networkx as nx
+
+G=nx.Graph()
+G.add_nodes_from(["a", "b", "c", "d", "e"])
+G.add_edges_from([("a", "b"), ("b", "c"), ("c", "a"), ("a", "d"), ("c", "e"), ("d", "e")])
+
+nx.draw_networkx(G)
+```
+
+## Gráfok él- és csűcsszámának lekérdezése
+
+```python
+print("Nodes of graph: {}".format(G.nodes()))
+print("Edges of graph: {}".format(G.edges()))
+```
+
+```
+Nodes of graph: ['a', 'b', 'c', 'd', 'e']
+Edges of graph: [('a', 'b'), ('a', 'c'), ('a', 'd'), ('b', 'c'), ('c', 'e'), ('d', 'e')]
+```
+
 ## Gráfok adjacenciamátrixának elérése
+
+Az adjacenciamátrixot a `to_numpy_matrix()` függvénnyel lehet elérni. (További lehetőségekről a referencia dokumentáció ad tájékoztatást.)
+
+```python
+m = nx.to_numpy_matrix(G)
+print(m)
+```
 
 ```
 [[0. 1. 1. 1. 0.]
@@ -75,5 +114,7 @@ A Pythonban a gráfok kezelése ebben a cikkben a `networkx` csomagot fogom hasz
 - [Gráf](https://hu.wikipedia.org/wiki/Gráf)
 - [Benjamin Baka: Python Data Structures and Algorithms](https://www.amazon.com/Python-Data-Structures-Algorithms-application-ebook/dp/B01IF7NLM8)
 - [Algoritmusok és adatszerkezetek / Gráfok ábrázolása](http://tamop412.elte.hu/tananyagok/algoritmusok/lecke23_lap1.html)
+- [networx 2.3 at pypi](https://pypi.org/project/networkx/2.3/)
+- [NetworkX Reference Release 2.3](https://networkx.github.io/documentation/stable/_downloads/networkx_reference.pdf)
 
 <p align="right"><sup><a href="README.md">Tartalom</a></sup></p>
