@@ -107,6 +107,12 @@ Az alább ismertetett algoritmusoknál az adjacenciamátrixot fogom használni a
 
 # Gráfbejárás szélességi kereséssel
 
+A szélességi és mélységi bejáráshoz a következő gráfot fogom használni:
+
+![Gráf 2](./assets/graph2.png "Gráf 2")
+
+A szélességi bejárás algoritmusát a `visit_vertex()` függvény tartalmazza.
+
 ```python
 import networkx as nx
 import numpy as np
@@ -152,6 +158,8 @@ visit_vertex(0, nx.to_numpy_matrix(G), visited_vertices, 0)
 
 print("Vertices were visited in the following sequence: {}".format(visited_vertices))
 ```
+
+A program a kimenetre kiírja a csúcsok meglátogatásának sorrendjét.
 
 ```
 Nodes of graph: ['0', '1', '2', '3', '4', '5', '6', '7']
