@@ -60,7 +60,7 @@ pip install networkx --upgrade
 
 ## Gráfok megjelenítése
 
-Az alábbi program a fent vázolt gráfot definiálja majd megjeleníti a `networx` csomag használatával:
+Az alábbi program a fent vázolt gráfot definiálja majd megjeleníti a `networkx` csomag használatával:
 
 ```python
 import networkx as nx
@@ -101,7 +101,120 @@ print(m)
  [0. 0. 1. 1. 0.]]
 ```
 
+# Saját gráfkezelés a gráfalgoritmusokhoz
+
+Az alább ismertetett algoritmusoknál az adjacenciamátrixot fogom használni a gráf elérésére. Az algoritmusokat a Google Colab rendszerben implementáltam.
+
 # Gráfbejárás szélességi kereséssel
+
+```python
+import networkx as nx
+import numpy as np
+
+def visit_vertex(v, m, visited_vertices, depth):
+    padding = "  "
+    if v not in visited_vertices:
+        print("{}visiting {}".format(padding*depth, v))
+        visited_vertices.append(v)
+        num_of_vertices = np.shape(m)[0]
+        print("{}visiting neighbours of {}".format(padding*depth, v))
+        for j in range(0, num_of_vertices):
+            if m[v,j] != 0:
+                print("{}stepping to edge ({}, {})".format(padding*depth, v, j))
+                visit_vertex(j, m, visited_vertices, depth + 1)
+    else:
+        print("{}{} was already visited".format(padding*depth, v))
+
+
+G=nx.Graph()
+G.add_nodes_from(["0", "1", "2", "3", "4", "5", "6", "7"])
+G.add_edges_from([("0", "1"), 
+                  ("1", "2"), 
+                  ("2", "0"), 
+                  ("0", "3"), 
+                  ("2", "4"), 
+                  ("3", "4"), 
+                  ("0", "6"), 
+                  ("4", "6"), 
+                  ("2", "5"), 
+                  ("3", "5"), 
+                  ("0", "5"), 
+                  ("2", "7")])
+
+print("Nodes of graph: {}".format(G.nodes()))
+print("Edges of graph: {}".format(G.edges()))
+
+nx.draw_networkx(G)
+
+visited_vertices = []
+
+visit_vertex(0, nx.to_numpy_matrix(G), visited_vertices, 0)
+
+print("Vertices were visited in the following sequence: {}".format(visited_vertices))
+```
+
+```
+Nodes of graph: ['0', '1', '2', '3', '4', '5', '6', '7']
+Edges of graph: [('0', '1'), ('0', '2'), ('0', '3'), ('0', '6'), ('0', '5'), ('1', '2'), ('2', '4'), ('2', '5'), ('2', '7'), ('3', '4'), ('3', '5'), ('4', '6')]
+visiting 0
+visiting neighbours of 0
+stepping to edge (0, 1)
+  visiting 1
+  visiting neighbours of 1
+  stepping to edge (1, 0)
+    0 was already visited
+  stepping to edge (1, 2)
+    visiting 2
+    visiting neighbours of 2
+    stepping to edge (2, 0)
+      0 was already visited
+    stepping to edge (2, 1)
+      1 was already visited
+    stepping to edge (2, 4)
+      visiting 4
+      visiting neighbours of 4
+      stepping to edge (4, 2)
+        2 was already visited
+      stepping to edge (4, 3)
+        visiting 3
+        visiting neighbours of 3
+        stepping to edge (3, 0)
+          0 was already visited
+        stepping to edge (3, 4)
+          4 was already visited
+        stepping to edge (3, 5)
+          visiting 5
+          visiting neighbours of 5
+          stepping to edge (5, 0)
+            0 was already visited
+          stepping to edge (5, 2)
+            2 was already visited
+          stepping to edge (5, 3)
+            3 was already visited
+      stepping to edge (4, 6)
+        visiting 6
+        visiting neighbours of 6
+        stepping to edge (6, 0)
+          0 was already visited
+        stepping to edge (6, 4)
+          4 was already visited
+    stepping to edge (2, 5)
+      5 was already visited
+    stepping to edge (2, 7)
+      visiting 7
+      visiting neighbours of 7
+      stepping to edge (7, 2)
+        2 was already visited
+stepping to edge (0, 2)
+  2 was already visited
+stepping to edge (0, 3)
+  3 was already visited
+stepping to edge (0, 5)
+  5 was already visited
+stepping to edge (0, 6)
+  6 was already visited
+Vertices were visited in the following sequence: [0, 1, 2, 4, 3, 5, 6, 7]
+```
 
 # Gráfbejárás mélységi kereséssel
 
@@ -114,7 +227,7 @@ print(m)
 - [Gráf](https://hu.wikipedia.org/wiki/Gráf)
 - [Benjamin Baka: Python Data Structures and Algorithms](https://www.amazon.com/Python-Data-Structures-Algorithms-application-ebook/dp/B01IF7NLM8)
 - [Algoritmusok és adatszerkezetek / Gráfok ábrázolása](http://tamop412.elte.hu/tananyagok/algoritmusok/lecke23_lap1.html)
-- [networx 2.3 at pypi](https://pypi.org/project/networkx/2.3/)
+- [networkx 2.3 at pypi](https://pypi.org/project/networkx/2.3/)
 - [NetworkX Reference Release 2.3](https://networkx.github.io/documentation/stable/_downloads/networkx_reference.pdf)
 
 <p align="right"><sup><a href="README.md">Tartalom</a></sup></p>
