@@ -528,6 +528,41 @@ square_of_x(-2)
 
 ## Listák és egyéb összetett adattípusok
 
+```
+- `iterator`: iterátor típus; `generator`: generátor típus
+- szekvenciális típusok: 
+  - `list`: lista 
+  - `array.array`: tömb, az `array` modul implementálja
+  - `tuple`: n db elemet tartalmazó, nem megváltoztatható adatszerkezet
+  - `range`: egész számokból álló számtani sorozat
+- `str`: szöveges adattípus
+- bináris szekvenciális típusok:
+  - `bytes`: byte-okból álló, nem megváltoztatható sorozat
+  - `bytearray`: a `bytes` objektum megváltoztatható változata
+  - `memoryview`: lehetővé teszi objektumok belső adatának elérését Pythonban
+- halmaz típusok:
+  - `set`: hash-elhető objektumok nem sorrendezett gyűjteménye. Megváltoztatható, és hash-elhető a `set`.
+  - `frozenset`: A `set` nem megváltoztatható változata
+- `dict`: kulcs-érték párokat tároló szótár típus. Egy hash-elhető értéket leképez egy tetszőleges objektumra. Megváltoztatható adatszerkezet.
+```
+
+### Lista és tömb
+
+A Python nyelvben van két nagyon hasonló adattípus, a lista és a tömb. A következőben a hasonlóságokat és a különbségeket foglaljuk össze.
+
+Hasonlóságok:
+- bármilyen típusú objektumot tárolhatunk bennük
+- indexelt elérést támogatnak
+- végig lehet iterálni az elemeiken 
+
+Különbségek:
+- elvégezhető műveletek különböznek, például egy tömböt el lehet osztani egy számmal, és a végeredmény egy tömb aminek minden eleme az eredeti elem és a szám hányadosa. Ha egy listát osztunk el egy számmal, akkor az interpreter hibát dob.
+
+```python
+TODO
+```
+
+
 ## Iterátorok
 
 ## Beépített könyvtárak
