@@ -13,19 +13,19 @@ A Python 3-ban minden adattípus objektumként van kezelve. Ezen belül lehetsé
 Egy másik fontos fogalom a hash-elhetőség. Egy objektum hash-elhető, ha van egy hash értéke, ami nem változik meg az objektum élettartama során (szükséges, hogy az objektumnak legyen egy `__hash__()` nevű metódusa), és összehasonlításra lehet használni (szükséges egy `__eq__()` nevű metódus is). Az egyező objektumok hash értékének azonosnak kell lennie.
 
 A Python 3-ban a következő adattípusokat használhatjuk:
-- logikai típus: `bool`: igaz/hamis értékkel (`True`/`False`)
+- logikai típus: `bool`: igaz/hamis értékkel (`True`/`False`), nem megváltoztatható adattípus
 - numerikus típusok
-  - `int`: egész szám
-  - `float`: lebegőpontos szám
-  - `complex`: komplex szám
-  - `decimal.Decimal`: decimális típus a Decimal modul segítségével
+  - `int`: egész szám, nem megváltoztatható adattípus
+  - `float`: lebegőpontos szám, nem megváltoztatható adattípus
+  - `complex`: komplex szám, nem megváltoztatható adattípus
+  - `decimal.Decimal`: decimális típus a Decimal modul segítségével, nem megváltoztatható adattípus
 - `iterator`: iterátor típus; `generator`: generátor típus
 - szekvenciális típusok: 
-  - `list`: lista 
-  - `array.array`: tömb, az `array` modul implementálja
+  - `list`: lista, megváltoztatható adatszerkezet
+  - `array.array`: tömb, az `array` modul implementálja, megváltoztatható adatszerkezet
   - `tuple`: n db elemet tartalmazó, nem megváltoztatható adatszerkezet
-  - `range`: egész számokból álló számtani sorozat
-- `str`: szöveges adattípus
+  - `range`: egész számokból álló számtani sorozat, nem megváltoztatható adatszerkezet
+- `str`: szöveges adattípus, nem megváltoztatható adatszerkezet
 - bináris szekvenciális típusok:
   - `bytes`: byte-okból álló, nem megváltoztatható sorozat
   - `bytearray`: a `bytes` objektum megváltoztatható változata
@@ -46,7 +46,7 @@ Megváltoztathatóság szempontjából a következőképpen néznek ki a Python 
 | float           | nem              |
 | complex         | nem              |
 | list            | igen             |
-| array.array     | nem              |
+| array.array     | igen             |
 | tuple           | nem              |
 | range           | nem              |
 | str             | nem              |
@@ -528,27 +528,56 @@ square_of_x(-2)
 
 ## Listák és egyéb összetett adattípusok
 
-```
-- `iterator`: iterátor típus; `generator`: generátor típus
-- szekvenciális típusok: 
-  - `list`: lista 
-  - `array.array`: tömb, az `array` modul implementálja
-  - `tuple`: n db elemet tartalmazó, nem megváltoztatható adatszerkezet
-  - `range`: egész számokból álló számtani sorozat
-- `str`: szöveges adattípus
-- bináris szekvenciális típusok:
-  - `bytes`: byte-okból álló, nem megváltoztatható sorozat
-  - `bytearray`: a `bytes` objektum megváltoztatható változata
-  - `memoryview`: lehetővé teszi objektumok belső adatának elérését Pythonban
-- halmaz típusok:
-  - `set`: hash-elhető objektumok nem sorrendezett gyűjteménye. Megváltoztatható, és hash-elhető a `set`.
-  - `frozenset`: A `set` nem megváltoztatható változata
-- `dict`: kulcs-érték párokat tároló szótár típus. Egy hash-elhető értéket leképez egy tetszőleges objektumra. Megváltoztatható adatszerkezet.
-```
-
 ### Lista és tömb
 
-A Python nyelvben van két nagyon hasonló adattípus, a lista és a tömb. A következőben a hasonlóságokat és a különbségeket foglaljuk össze.
+A Python nyelvben van két nagyon hasonló adattípus, a lista és a tömb. 
+- `list`: szekvenciális típus, lista, megváltoztatható adatszerkezet
+- `array.array`: szekvenciális típus, tömb, az `array` modul implementálja, megváltoztatható adatszerkezet
+
+#### Lista használata
+
+Listák definiálása a `[` és `]` karakterek segítségével lehetséges. Egy lista különféle típusú elemeket is tartalmazhat.
+
+```python
+numbers = [1,2,3,4,5]
+fruits = ["apple", "orange", "lemon", "peach", "melon", "banana"]
+fruits_and_numbers = [1, 2, "lime", "mango", 3, 4, "avocado", "strawberry"] 
+```
+
+Lista elemeinek elérése indexeléssel:
+
+```python
+>>> numbers[3] 
+4
+>>> numbers[0]
+1
+>>> numbers[-1]
+5
+>>> numbers[-2]
+4
+```
+
+Tehát az indexelés 0-tól kezdődik, és a negatív indexek a lista végéről visszafelé címzik a listát.
+
+A következőkben egyéb listaműveletekre mutatunk példákat. (Ezeket *list comprehesions* néven lehet megalálni a szakirodalomban.)
+
+```python
+>>> numbers
+[1, 2, 3, 4, 5]
+>>> numbers_2_4 = numbers[2:4]
+>>> numbers_2_4
+[3, 4]
+>>> numbers[2:]
+[3, 4, 5]
+>>> numbers[:3]
+[1, 2, 3]
+```
+
+#### Tömb használata
+
+#### Hasonlóságok és kölönbségek
+
+A következőben a hasonlóságokat és a különbségeket foglaljuk össze.
 
 Hasonlóságok:
 - bármilyen típusú objektumot tárolhatunk bennük
@@ -558,10 +587,41 @@ Hasonlóságok:
 Különbségek:
 - elvégezhető műveletek különböznek, például egy tömböt el lehet osztani egy számmal, és a végeredmény egy tömb aminek minden eleme az eredeti elem és a szám hányadosa. Ha egy listát osztunk el egy számmal, akkor az interpreter hibát dob.
 
-```python
 TODO
-```
 
+### `tuple`: szekvenciális típus, n db elemet tartalmazó, nem megváltoztatható adatszerkezet
+
+TODO
+
+### `range`: szekvenciális típus, egész számokból álló számtani sorozat
+
+TODO
+
+### `bytes`: bináris szekvenciális típus, byte-okból álló, nem megváltoztatható sorozat
+
+TODO
+
+### `bytearray`: bináris szekvenciális típus, a `bytes` objektum megváltoztatható változata
+
+TODO
+
+### `memoryview`: bináris szekvenciális típus, lehetővé teszi objektumok belső adatának elérését Pythonban
+
+TODO
+
+### `set`: halmaz típus, hash-elhető objektumok nem sorrendezett gyűjteménye. Megváltoztatható, és hash-elhető a `set`.
+
+TODO
+
+### `frozenset`: halmaz típus, a `set` nem megváltoztatható változata
+
+TODO
+
+### `dict`: kulcs-érték párokat tároló szótár típus
+
+A `dict` típussal egy hash-elhető értéket le lehet képezni egy tetszőleges objektumra. Megváltoztatható adatszerkezet.
+
+TODO
 
 ## Iterátorok
 
