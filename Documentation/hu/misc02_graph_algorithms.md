@@ -238,43 +238,25 @@ padding = "  "
 
 def mark_as_visited(v, visited_vertices, depth):
     print("{}visiting {}".format(padding*depth, v))
-
-def visit_vertex(v, m, visited_vertices, visited_edges, depth):
-    num_of_vertices = np.shape(m)[0]
-    print("{}visiting neighbours of {}".format(padding*depth, v))
-    for j in range(0, num_of_vertices):
-        if m[v,j] != 0:
-            if j not in visited_vertices:
-                mark_as_visited(j, visited_vertices, depth + 1)
-                visited_vertices.append(j)
-            else:
-                print("{}{} was already visited".format(padding*(depth + 1), j))
-    for j in range(0, num_of_vertices):
-        if m[v,j] != 0:
-            if (v,j) not in visited_edges:
-                print("{}stepping to edge ({}, {})".format(padding*(depth + 1), v, j))
-                visited_edges.append((v,j))
-                visit_vertex(j, m, visited_vertices, visited_edges, depth + 1)
+    visited_vertices.append(v)
 
 def breadth_first_search(v, m, visited_vertices, visited_edges, depth):
-    mark_as_visited(v, visited_vertices, depth)
-    visited_vertices.append(v)
+    if depth == 0:
+        mark_as_visited(v, visited_vertices, depth)
     num_of_vertices = np.shape(m)[0]
     print("{}visiting neighbours of {}".format(padding*depth, v))
     for j in range(0, num_of_vertices):
         if m[v,j] != 0:
             if j not in visited_vertices:
                 mark_as_visited(j, visited_vertices, depth + 1)
-                visited_vertices.append(j)
             else:
                 print("{}{} was already visited".format(padding*(depth + 1), j))
     for j in range(0, num_of_vertices):
         if m[v,j] != 0:
-            if (v,j) not in visited_edges:
+            if (v,j) not in visited_edges and (j,v) not in visited_edges:
                 print("{}stepping to edge ({}, {})".format(padding*depth, v, j))
                 visited_edges.append((v,j))
-                visit_vertex(j, m, visited_vertices, visited_edges, depth + 1)
-
+                breadth_first_search(j, m, visited_vertices, visited_edges, depth + 1)
 
 
 G=nx.Graph()
@@ -303,6 +285,122 @@ visited_edges = []
 breadth_first_search(0, nx.to_numpy_matrix(G), visited_vertices, visited_edges, 0)
 
 print("Vertices were visited in the following sequence: {}".format(visited_vertices))
+```
+
+Ennek a programnak a kimenete a következő:
+
+```
+Nodes of graph: ['0', '1', '2', '3', '4', '5', '6', '7']
+Edges of graph: [('0', '1'), ('0', '2'), ('0', '3'), ('0', '6'), ('0', '5'), ('1', '2'), ('2', '4'), ('2', '5'), ('2', '7'), ('3', '4'), ('3', '5'), ('4', '6')]
+visiting 0
+visiting neighbours of 0
+  visiting 1
+  visiting 2
+  visiting 3
+  visiting 5
+  visiting 6
+stepping to edge (0, 1)
+  visiting neighbours of 1
+    0 was already visited
+    2 was already visited
+  stepping to edge (1, 2)
+    visiting neighbours of 2
+      0 was already visited
+      1 was already visited
+      visiting 4
+      5 was already visited
+      visiting 7
+    stepping to edge (2, 0)
+      visiting neighbours of 0
+        1 was already visited
+        2 was already visited
+        3 was already visited
+        5 was already visited
+        6 was already visited
+      stepping to edge (0, 3)
+        visiting neighbours of 3
+          0 was already visited
+          4 was already visited
+          5 was already visited
+        stepping to edge (3, 4)
+          visiting neighbours of 4
+            2 was already visited
+            3 was already visited
+            6 was already visited
+          stepping to edge (4, 2)
+            visiting neighbours of 2
+              0 was already visited
+              1 was already visited
+              4 was already visited
+              5 was already visited
+              7 was already visited
+            stepping to edge (2, 5)
+              visiting neighbours of 5
+                0 was already visited
+                2 was already visited
+                3 was already visited
+              stepping to edge (5, 0)
+                visiting neighbours of 0
+                  1 was already visited
+                  2 was already visited
+                  3 was already visited
+                  5 was already visited
+                  6 was already visited
+                stepping to edge (0, 6)
+                  visiting neighbours of 6
+                    0 was already visited
+                    4 was already visited
+                  stepping to edge (6, 4)
+                    visiting neighbours of 4
+                      2 was already visited
+                      3 was already visited
+                      6 was already visited
+              stepping to edge (5, 3)
+                visiting neighbours of 3
+                  0 was already visited
+                  4 was already visited
+                  5 was already visited
+            stepping to edge (2, 7)
+              visiting neighbours of 7
+                2 was already visited
+Vertices were visited in the following sequence: [0, 1, 2, 3, 5, 6, 4, 7]
+```
+
+Ha megnézzük a csúcsok meglátogatásának a sorrendjét (`[0, 1, 2, 3, 5, 6, 4, 7]`) és a gráfot a képen, akkor látható, hogy valóban először egy mélységig megyünk a gráfban, majd 2 mélységig, és így tovább. Egy "mélyebb" gráffal ez még jobban látszik. Az alábbi kód egy másik gráfot hoz létre, ami alatta látható.
+
+```python
+G=nx.Graph()
+G.add_nodes_from(["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"])
+G.add_edges_from([("0", "1"), 
+                  ("1", "2"), 
+                  ("2", "0"), 
+                  ("0", "3"), 
+                  ("2", "4"), 
+                  ("3", "4"), 
+                  ("0", "6"), 
+                  ("4", "6"), 
+                  ("2", "5"), 
+                  ("3", "5"), 
+                  ("0", "5"), 
+                  ("2", "7"),
+                  ("7", "8"),
+                  ("8", "2"),
+                  ("8", "3"),
+                  ("8", "4"),
+                  ("8", "5"),
+                  ("8", "6"),
+                  ("8", "9"),
+                  ("8", "10"),
+                  ("8", "11"),
+                  ("10", "11")])
+```
+
+![Gráf 3](./assets/graph3.png "Gráf 3")
+
+A fenti algoritmust lefuttatva erre a gráfra az alábbi csúcs-sorrendet kapjuk.
+
+```
+[0, 1, 2, 3, 5, 6, 4, 7, 8, 9, 10, 11]
 ```
 
 # Legrövidebb út kereséses két csúcs között
