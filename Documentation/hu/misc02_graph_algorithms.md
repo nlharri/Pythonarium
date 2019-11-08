@@ -101,17 +101,15 @@ print(m)
  [0. 0. 1. 1. 0.]]
 ```
 
-# Saját gráfkezelés a gráfalgoritmusokhoz
-
 Az alább ismertetett algoritmusoknál az adjacenciamátrixot fogom használni a gráf elérésére. Az algoritmusokat a Google Colab rendszerben implementáltam.
-
-# Gráfbejárás szélességi kereséssel
 
 A szélességi és mélységi bejáráshoz a következő gráfot fogom használni:
 
 ![Gráf 2](./assets/graph2.png "Gráf 2")
 
-A szélességi bejárás algoritmusát a `visit_vertex()` függvény tartalmazza.
+# Gráfbejárás mélységi kereséssel
+
+A mélységi bejárás algoritmusát itt is a `visit_vertex()` függvény tartalmazza. A mélységi bejárás lényege, hogy egy adott csúcsból kiindulva először a csúcs első szomszédját látogatom meg, és már az első szomszéd meglátogatásakor meglátogatom ennek is az első szomszédját. Csak akkor lépek tovább a következő szomszéd meglátogatására, amikor az előző szomszéd minden szomszédja (és azoknak is minden szomszédja) meg lett látogatva. Így a bejárás során hamar a gráf mélyére jutok, a legtávolabbi csúcshoz.
 
 ```python
 import networkx as nx
@@ -224,7 +222,76 @@ stepping to edge (0, 6)
 Vertices were visited in the following sequence: [0, 1, 2, 4, 3, 5, 6, 7]
 ```
 
-# Gráfbejárás mélységi kereséssel
+# Gráfbejárás szélességi kereséssel
+
+A szélességi bejárás algoritmusát a `visit_vertex()` függvény tartalmazza. A szélességi bejárás lényege, hogy egy adott csúcsból kiindulva először a csúcs szomszédait látogatom meg. Majd veszem az első, második, stb. szomszédját, és újra ugyanígy járok el. Így a látogatások egyre távolabb kerülnek a kiinduló csúcstól, de közben az adott távolságig az összes csúcsot meglátogatom.
+
+```python
+# this should be the breadth-first search -- todo finish this
+
+import networkx as nx
+import numpy as np
+
+padding = "  "
+
+def mark_as_visited(v, visited_vertices, depth):
+    print("{}visiting {}".format(padding*depth, v))
+    visited_vertices.append(v)
+
+def visit_vertex(v, m, visited_vertices, depth):
+    if v not in visited_vertices:
+        mark_as_visited(v, visited_vertices, depth)
+        num_of_vertices = np.shape(m)[0]
+        print("{}visiting neighbours of {}".format(padding*depth, v))
+        for j in range(0, num_of_vertices):
+            if m[v,j] != 0:
+                print("{}stepping to edge ({}, {})".format(padding*depth, v, j))
+                visit_vertex(j, m, visited_vertices, depth + 1)
+    else:
+        print("{}{} was already visited".format(padding*depth, v))
+
+def breadth_first_search(v, m, visited_vertices, depth):
+    if v not in visited_vertices:
+        mark_as_visited(v, visited_vertices, depth)
+        num_of_vertices = np.shape(m)[0]
+        print("{}visiting neighbours of {}".format(padding*depth, v))
+        for j in range(0, num_of_vertices):
+            mark_as_visited(v, visited_vertices, depth + 1)
+        for j in range(0, num_of_vertices):
+            if m[v,j] != 0:
+                print("{}stepping to edge ({}, {})".format(padding*depth, v, j))
+                visit_vertex(j, m, visited_vertices, depth + 1)
+    else:
+        print("{}{} was already visited".format(padding*depth, v))
+
+
+
+G=nx.Graph()
+G.add_nodes_from(["0", "1", "2", "3", "4", "5", "6", "7"])
+G.add_edges_from([("0", "1"), 
+                  ("1", "2"), 
+                  ("2", "0"), 
+                  ("0", "3"), 
+                  ("2", "4"), 
+                  ("3", "4"), 
+                  ("0", "6"), 
+                  ("4", "6"), 
+                  ("2", "5"), 
+                  ("3", "5"), 
+                  ("0", "5"), 
+                  ("2", "7")])
+
+print("Nodes of graph: {}".format(G.nodes()))
+print("Edges of graph: {}".format(G.edges()))
+
+nx.draw_networkx(G)
+
+visited_vertices = []
+
+visit_vertex(0, nx.to_numpy_matrix(G), visited_vertices, 0)
+
+print("Vertices were visited in the following sequence: {}".format(visited_vertices))
+```
 
 # Legrövidebb út kereséses két csúcs között
 
