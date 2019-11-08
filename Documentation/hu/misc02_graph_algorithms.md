@@ -111,6 +111,8 @@ A szélességi és mélységi bejáráshoz a következő gráfot fogom használn
 
 A mélységi bejárás algoritmusát itt is a `visit_vertex()` függvény tartalmazza. A mélységi bejárás lényege, hogy egy adott csúcsból kiindulva először a csúcs első szomszédját látogatom meg, és már az első szomszéd meglátogatásakor meglátogatom ennek is az első szomszédját. Csak akkor lépek tovább a következő szomszéd meglátogatására, amikor az előző szomszéd minden szomszédja (és azoknak is minden szomszédja) meg lett látogatva. Így a bejárás során hamar a gráf mélyére jutok, a legtávolabbi csúcshoz.
 
+Az alábbi programban figyelemmel kísérjük a meglátogatott csúcsokat (`visited_vertices`).
+
 ```python
 import networkx as nx
 import numpy as np
@@ -226,9 +228,9 @@ Vertices were visited in the following sequence: [0, 1, 2, 4, 3, 5, 6, 7]
 
 A szélességi bejárás algoritmusát a `visit_vertex()` függvény tartalmazza. A szélességi bejárás lényege, hogy egy adott csúcsból kiindulva először a csúcs szomszédait látogatom meg. Majd veszem az első, második, stb. szomszédját, és újra ugyanígy járok el. Így a látogatások egyre távolabb kerülnek a kiinduló csúcstól, de közben az adott távolságig az összes csúcsot meglátogatom.
 
-```python
-# this should be the breadth-first search -- todo finish this
+Az alábbi programban figyelemmel kísérjük a meglátogatott csúcsokat (`visited_vertices`) és a meglátogatott éleket is (`visited_edges`).
 
+```python
 import networkx as nx
 import numpy as np
 
@@ -236,33 +238,42 @@ padding = "  "
 
 def mark_as_visited(v, visited_vertices, depth):
     print("{}visiting {}".format(padding*depth, v))
+
+def visit_vertex(v, m, visited_vertices, visited_edges, depth):
+    num_of_vertices = np.shape(m)[0]
+    print("{}visiting neighbours of {}".format(padding*depth, v))
+    for j in range(0, num_of_vertices):
+        if m[v,j] != 0:
+            if j not in visited_vertices:
+                mark_as_visited(j, visited_vertices, depth + 1)
+                visited_vertices.append(j)
+            else:
+                print("{}{} was already visited".format(padding*(depth + 1), j))
+    for j in range(0, num_of_vertices):
+        if m[v,j] != 0:
+            if (v,j) not in visited_edges:
+                print("{}stepping to edge ({}, {})".format(padding*(depth + 1), v, j))
+                visited_edges.append((v,j))
+                visit_vertex(j, m, visited_vertices, visited_edges, depth + 1)
+
+def breadth_first_search(v, m, visited_vertices, visited_edges, depth):
+    mark_as_visited(v, visited_vertices, depth)
     visited_vertices.append(v)
-
-def visit_vertex(v, m, visited_vertices, depth):
-    if v not in visited_vertices:
-        mark_as_visited(v, visited_vertices, depth)
-        num_of_vertices = np.shape(m)[0]
-        print("{}visiting neighbours of {}".format(padding*depth, v))
-        for j in range(0, num_of_vertices):
-            if m[v,j] != 0:
+    num_of_vertices = np.shape(m)[0]
+    print("{}visiting neighbours of {}".format(padding*depth, v))
+    for j in range(0, num_of_vertices):
+        if m[v,j] != 0:
+            if j not in visited_vertices:
+                mark_as_visited(j, visited_vertices, depth + 1)
+                visited_vertices.append(j)
+            else:
+                print("{}{} was already visited".format(padding*(depth + 1), j))
+    for j in range(0, num_of_vertices):
+        if m[v,j] != 0:
+            if (v,j) not in visited_edges:
                 print("{}stepping to edge ({}, {})".format(padding*depth, v, j))
-                visit_vertex(j, m, visited_vertices, depth + 1)
-    else:
-        print("{}{} was already visited".format(padding*depth, v))
-
-def breadth_first_search(v, m, visited_vertices, depth):
-    if v not in visited_vertices:
-        mark_as_visited(v, visited_vertices, depth)
-        num_of_vertices = np.shape(m)[0]
-        print("{}visiting neighbours of {}".format(padding*depth, v))
-        for j in range(0, num_of_vertices):
-            mark_as_visited(v, visited_vertices, depth + 1)
-        for j in range(0, num_of_vertices):
-            if m[v,j] != 0:
-                print("{}stepping to edge ({}, {})".format(padding*depth, v, j))
-                visit_vertex(j, m, visited_vertices, depth + 1)
-    else:
-        print("{}{} was already visited".format(padding*depth, v))
+                visited_edges.append((v,j))
+                visit_vertex(j, m, visited_vertices, visited_edges, depth + 1)
 
 
 
@@ -287,8 +298,9 @@ print("Edges of graph: {}".format(G.edges()))
 nx.draw_networkx(G)
 
 visited_vertices = []
+visited_edges = []
 
-visit_vertex(0, nx.to_numpy_matrix(G), visited_vertices, 0)
+breadth_first_search(0, nx.to_numpy_matrix(G), visited_vertices, visited_edges, 0)
 
 print("Vertices were visited in the following sequence: {}".format(visited_vertices))
 ```
