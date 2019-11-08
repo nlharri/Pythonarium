@@ -51,7 +51,7 @@ Ebben a részben az összetett adatokkal való műveletekről lesz szó.
 - Adattípusok
 - Függvények
 - Dekorátorok
-- Listák és egyéb összetett adattípusok
+- Összetett adattípusok
 - Referenciák
 
 <!--
@@ -60,7 +60,7 @@ Ebben a részben az összetett adatokkal való műveletekről lesz szó.
 
 Ebben a részben az összetett adatokkal való műveletekről lesz szó, továbbá megismerjük a Python vezérlő utasításait.
 
-- Listák és egyéb összetett adattípusok - folytatás
+- Összetett adattípusok - folytatás
 - Iterátorok
 - Beépített könyvtárak
 - Vezérlő utasítások (control flow)

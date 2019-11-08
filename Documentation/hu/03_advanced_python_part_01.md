@@ -2,9 +2,9 @@
 
 <p align="right"><sup><a href="02_base_syntax.md">Előző fejezet</a> | <a href="03_advanced_python_part_02.md">Következő fejezet</a> | <a href="README.md">Tartalom</a></sup></p>
 
-# Haladó Python
+# Haladó Python - Első rész
 
-Ebben a részben az összetett adatokkal való műveletekről lesz szó.
+Ebben a részben az összetett adatokkal való műveletekről lesz szó. Megismerkedünk továbbá a függvények definiálásának lehetőségeivel, a lambda függvényekkel és a dekorátorokkal is.
 
 ## Adattípusok
 
@@ -526,7 +526,7 @@ square_of_x(-2)
 -4
 ```
 
-## Listák és egyéb összetett adattípusok
+## Összetett adattípusok
 
 ### Lista és tömb
 

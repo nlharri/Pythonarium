@@ -2,9 +2,13 @@
 
 <p align="right"><sup><a href="03_advanced_python_part_01.md">Előző fejezet</a> | <a href="README.md">Tartalom</a></sup></p>
 
-# Haladó Python
+# Haladó Python - Második rész
 
-## Listák és egyéb összetett adattípusok
+TODO
+
+## Összetett adattípusok - folytatás
+
+TODO
 
 ### `bytes`: bináris szekvenciális típus, byte-okból álló, nem megváltoztatható sorozat
 
