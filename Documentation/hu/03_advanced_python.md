@@ -645,7 +645,7 @@ Amint látható a fenti példából, a tömb típusát az első paraméterben ke
 Az alábbi táblázat az egyes típuskódok jelentését foglalja össze (az eredeti forrása: https://docs.python.org/3/library/array.html).
 
 |Type code|C Type|Python Type|Minimum size in bytes|
-|--- |--- |--- |--- |--- |
+|--- |--- |--- |--- |
 |'b'|signed char|int|1|
 |'B'|unsigned char|int|1|
 |'u'|Py_UNICODE|Unicode character|2|
