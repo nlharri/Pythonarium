@@ -534,6 +534,8 @@ A Python nyelvben van két nagyon hasonló adattípus, a lista és a tömb.
 - `list`: szekvenciális típus, lista, megváltoztatható adatszerkezet
 - `array.array`: szekvenciális típus, tömb, az `array` modul implementálja, megváltoztatható adatszerkezet
 
+A listákról később az **Iterátorok és generátorok** fejezetben lesz még szó.
+
 #### Lista használata
 
 Listák definiálása a `[` és `]` karakterek segítségével lehetséges. Egy lista különféle típusú elemeket is tartalmazhat.
@@ -544,9 +546,9 @@ fruits = ["apple", "orange", "lemon", "peach", "melon", "banana"]
 fruits_and_numbers = [1, 2, "lime", "mango", 3, 4, "avocado", "strawberry"] 
 ```
 
-Lista elemeinek elérése indexeléssel:
+##### Lista elemeinek elérése indexeléssel
 
-```python
+```
 >>> numbers[3] 
 4
 >>> numbers[0]
@@ -559,9 +561,11 @@ Lista elemeinek elérése indexeléssel:
 
 Tehát az indexelés 0-tól kezdődik, és a negatív indexek a lista végéről visszafelé címzik a listát.
 
-A következőkben egyéb listaműveletekre mutatunk példákat. (Ezeket *list comprehesions* néven lehet megalálni a szakirodalomban.)
+##### Listaműveletek a `:` használatával
 
-```python
+A következőkben egyéb listaműveletekre mutatunk példákat a `:` használatával. Ezeket a szakirodalomban `slice` néven lehet megtalálni.
+
+```
 >>> numbers
 [1, 2, 3, 4, 5]
 >>> numbers_2_4 = numbers[2:4]
@@ -571,27 +575,127 @@ A következőkben egyéb listaműveletekre mutatunk példákat. (Ezeket *list co
 [3, 4, 5]
 >>> numbers[:3]
 [1, 2, 3]
+>>> numbers[:]
+[1, 2, 3, 4, 5]
+>>> more_numbers = [1,2,3,4,5,6,7,8,9,10]
+>>> more_numbers[3:8:2]
+[4, 6, 8]
+>>> more_numbers[1:-4:3]                                                                                 
+[2, 5]
+>>> more_numbers[::-1]
+[10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
 ```
 
+##### Egyéb listaműveletek
+
+```
+>>> additional_numbers = [7,8,9,10,11]
+>>> many_numbers = numbers+additional_numbers
+>>> many_numbers
+[1, 2, 3, 4, 5, 7, 8, 9, 10, 11]
+>>> even_more_numbers = [100,101,102]
+>>> many_numbers.extend(even_more_numbers)
+>>> many_numbers
+[1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 100, 101, 102]
+>>> many_numbers.append(1000)
+>>> many_numbers
+[1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 100, 101, 102, 1000]
+>>> many_numbers.insert(4, 1234)
+>>> many_numbers
+[1, 2, 3, 4, 1234, 5, 7, 8, 9, 10, 11, 100, 101, 102, 1000]
+>>> many_numbers.remove(7)
+>>> many_numbers
+[1, 2, 3, 4, 1234, 5, 8, 9, 10, 11, 100, 101, 102, 1000]
+>>> last_element = many_numbers.pop()
+>>> last_element
+1000
+>>> many_numbers
+[1, 2, 3, 4, 1234, 5, 8, 9, 10, 11, 100, 101, 102]
+>>> fifth_element = many_numbers.pop(5)
+>>> fifth_element
+5
+>>> many_numbers
+[1, 2, 3, 4, 1234, 8, 9, 10, 11, 100, 101, 102]
+>>> many_numbers.index(1234)                                                                             
+4
+```
+
+Tehát az `insert()` metódus az első paraméterben megadott indexű elem helyére szúrja be a második paraméterben megadott objektumot, és így a lista további elemei egy index-szel jobbra tolódnak. A `remove()` pedig a megadott elemet törli a listából, így a lista további elemei egy index-szel balra tolódnak. A `pop()` metódussal az utolsó elemet lehet eltávolítani, a metódus visszatérési értékként vissza is adja ezt az elemet. A `pop()` metódusnak egy indexet átadva a megadott indexű elemet távolítja el, így a lista további elemei egy index-szel balra tolódnak. Az `index()` metódus a paraméterben megadott elem első elhelyezkedésének indexét adja vissza.
+
 #### Tömb használata
+
+A Python nyelvben a tömbök (az `array` modulon keresztül elérhető `array` objektumtípus, vagyis `array.array`) nagyon hasonlóak a listákhoz, azonban minden elemüknek azonos típusúnak kell lennie. A memóriában a helykihasználásuk emiatt hatékonyabb, mint a listáknak. Egy `array` típusú tömbben csak alaptípusokat lehet tárolni: karaktereket, egész számokat, lebegőpontos számokat. Az `array` egy C nyelvben megszokotthoz hasonló tömbkezelést tesz lehetővé. Emiatt szerepel az alábbi táblázatban a "C type" oszlop.
+
+A tömb létrehozásához szükséges az `array` modul betöltése. Amikor létrehozunk egy `array`-t, meg kell adnunk, hogy milyen típusú elemeket fogunk tárolni benne. Az alábbi példában egy előjeles egész típusú tömböt, és egy lebegőpontos (`float`) típusú elemeket tartalmazó tömböt hozunk létre.
+
+```
+>>> import array
+>>> array_integer = array.array('i', [1,2,3,4,5])
+>>> array_integer
+array('i', [1, 2, 3, 4, 5])
+```
+
+Amint látható a fenti példából, a tömb típusát az első paraméterben kell megadni, aminek a lehetséges értékeit az alábbi módon kérdezhetjük le:
+
+```
+>>> array.typecodes
+'bBuhHiIlLqQfd'
+```
+
+Az alábbi táblázat az egyes típuskódok jelentését foglalja össze (az eredeti forrása: https://docs.python.org/3/library/array.html).
+
+|Type code|C Type|Python Type|Minimum size in bytes|
+|--- |--- |--- |--- |--- |
+|'b'|signed char|int|1|
+|'B'|unsigned char|int|1|
+|'u'|Py_UNICODE|Unicode character|2|
+|'h'|signed short|int|2|
+|'H'|unsigned short|int|2|
+|'i'|signed int|int|2|
+|'I'|unsigned int|int|2|
+|'l'|signed long|int|4|
+|'L'|unsigned long|int|4|
+|'q'|signed long long|int|8|
+|'Q'|unsigned long long|int|8|
+|'f'|float|float|4|
+|'d'|double|float|8|
 
 #### Hasonlóságok és kölönbségek
 
 A következőben a hasonlóságokat és a különbségeket foglaljuk össze.
 
-Hasonlóságok:
-- bármilyen típusú objektumot tárolhatunk bennük
+**Hasonlóságok**:
 - indexelt elérést támogatnak
-- végig lehet iterálni az elemeiken 
+- végig lehet iterálni az elemeiken
+- `append()`, `insert()`, `pop()`, `remove()` és egyéb műveletek elérhetők
 
-Különbségek:
-- elvégezhető műveletek különböznek, például egy tömböt el lehet osztani egy számmal, és a végeredmény egy tömb aminek minden eleme az eredeti elem és a szám hányadosa. Ha egy listát osztunk el egy számmal, akkor az interpreter hibát dob.
-
-TODO
+**Különbségek**:
+- a lista elemei különböző típusúak is lehetnek, a tömbnél viszont minden elemnek ugyanolyan típusúnak kell lennie
+- a tömbben alaptípusok tárolhatók
 
 ### `tuple`: szekvenciális típus, n db elemet tartalmazó, nem megváltoztatható adatszerkezet
 
-TODO
+A `tuple` szó magyar fordításaként talán az "n-es" lenne a legmegfelelőbb: egy tetszőleges számű elemet tartalmazó, nem megváltoztatható adatszerkezetről van szó. A listákhoz hasonlóan, index-szeléssel el lehet érni az elemeit. Elemei "szétpakolhatók" változókba (ez egyébként a listáknál is működik). A `:` operátort a listákhoz hasonlóan a `tuple` típusnál is használhatjuk.
+
+```
+>>> a_tuple = (2, 3, "something")
+>>> a_tuple
+(2, 3, 'something')
+>>> a,b,c = a_tuple
+>>> a
+2
+>>> b
+3
+>>> c
+'something'
+>>> fruits = ("apple", "orange", "lemon", "pear", "peach", "banana", "mango", "avocado")
+>>> fruits[2:-1:2]
+('lemon', 'peach', 'mango')
+>>> fruits[3] = "strawberry"
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'tuple' object does not support item assignment
+```
 
 ### `range`: szekvenciális típus, egész számokból álló számtani sorozat
 
@@ -623,7 +727,7 @@ A `dict` típussal egy hash-elhető értéket le lehet képezni egy tetszőleges
 
 TODO
 
-## Iterátorok
+## Iterátorok és generátorok
 
 ## Beépített könyvtárak
 
