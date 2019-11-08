@@ -1,10 +1,10 @@
 ![Pythonarium](../../PythonariumLogo.png)
 
-<p align="right"><sup><a href="02_base_syntax.md">Előző fejezet</a> | <a href="README.md">Tartalom</a></sup></p>
+<p align="right"><sup><a href="02_base_syntax.md">Előző fejezet</a> | <a href="03_advanced_python_part_02.md">Következő fejezet</a> | <a href="README.md">Tartalom</a></sup></p>
 
 # Haladó Python
 
-Ebben a részben az összetett adatokkal való műveletekről lesz szó, továbbá megismerjük a Python vezérlő utasításait.
+Ebben a részben az összetett adatokkal való műveletekről lesz szó.
 
 ## Adattípusok
 
@@ -699,80 +699,75 @@ TypeError: 'tuple' object does not support item assignment
 
 ### `range`: szekvenciális típus, egész számokból álló számtani sorozat
 
-TODO
+A `range` segítségével egy egész számokból álló sorozatot definiálhatunk. A legegyszerűbb az egyetlen paraméteres változat: 
 
-### `bytes`: bináris szekvenciális típus, byte-okból álló, nem megváltoztatható sorozat
+```
+>>> a_range = range(10)
+>>> a_range
+range(0, 10)
+```
 
-TODO
-
-### `bytearray`: bináris szekvenciális típus, a `bytes` objektum megváltoztatható változata
-
-TODO
-
-### `memoryview`: bináris szekvenciális típus, lehetővé teszi objektumok belső adatának elérését Pythonban
-
-TODO
-
-### `set`: halmaz típus, hash-elhető objektumok nem sorrendezett gyűjteménye. Megváltoztatható, és hash-elhető a `set`.
-
-TODO
-
-### `frozenset`: halmaz típus, a `set` nem megváltoztatható változata
-
-TODO
-
-### `dict`: kulcs-érték párokat tároló szótár típus
-
-A `dict` típussal egy hash-elhető értéket le lehet képezni egy tetszőleges objektumra. Megváltoztatható adatszerkezet.
-
-TODO
-
-## Iterátorok és generátorok
-
-## Beépített könyvtárak
-
-## Vezérlő utasítások (control flow)
-
-### Elágazások: `if` utasítás
-
-### Ciklusok: `for` utasítás, `range` használata
-
-#### A `break`, `continue` és `else`
-
-Az alábbi példában vegyük észre, hogy az `else` utasítás a `for`ral egy szinten van, és nem az `if`fel van egy szinten. 
+Mit is ez a `range`? Ehhez szükség van mégegy fogalomra, amiről később még lesz szó. A ciklusokról van szó, vagyis egy művelet ismételt végrehajtásáról. A `for` utasítással lehet ciklust létrehozni. Az alábbi példában az előbb definiált `a_range` elemeit írjuk ki a képernyőre.
 
 ```python
-def getDivider(n):
-    for x in range(2,n):
-        if n % x == 0:
-            divider = x
-            break
-    else:
-        divider = 0
-    return divider
-
-for n in range(2,10):
-    divider = getDivider(n)
-    if divider != 0:
-        print("{} = {} * {}".format(n, divider, int(n/divider)))
-    else:
-        print("{} is a prime number.".format(n))
+for i in a_range:
+    print(i)
 ```
 
+Az eredmény:
+
 ```
-2 is a prime number.
-3 is a prime number.
-4 = 2 * 2
-5 is a prime number.
-6 = 2 * 3
-7 is a prime number.
-8 = 2 * 4
-9 = 3 * 3
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
 ```
 
-#### A `pass` utasítás
+Tehát a range egy számsorozat. Ha csak egy paraméterrel adjuk meg, akkor a 0-tól indul, és a megadott számú elemet fogja tartalmazni. Mivel a 0 is beleszámít, így, amint látható, a legnagyobb elem a 9 lett az előző példában. A továbbiakban 2 és 3 paraméterrel történő megadásra adunk példákat. Ezekből világos lesz, hogy hogyan is működik a több paraméteres megadás. (Az alábbiakban a `...` a sor elején a Python shell további bemeneti sorait jelzi (tehát a második, harmadik, stb. sorokat, ami akkor jelenik meg, ha ENTER-t ütünk).)
 
-## Objektum-orientáltság
+```
+>>> b_range = range(3, 14)
+>>> for i in b_range:
+...     print(i)
+... 
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+>>> c_range = range(4, 17, 3)
+>>> for i in c_range:
+...     print(i)
+... 
+4
+7
+10
+13
+16
+>>> d_range = range(83, 70, -2)
+>>> for i in d_range:
+...     print(i)
+... 
+83
+81
+79
+77
+75
+73
+71
+```
 
 ## Referenciák
 
@@ -782,5 +777,16 @@ for n in range(2,10):
 - [Python - Functions](https://www.tutorialspoint.com/python/python_functions.htm)
 - [Python filter()](https://www.programiz.com/python-programming/methods/built-in/filter)
 - [Decorators in Python](https://www.datacamp.com/community/tutorials/decorators-python)
+- [Python range() Function Explained with Examples](https://pynative.com/python-range-function/)
+- [Python Tuples](https://www.w3schools.com/python/python_tuples.asp)
+- [Learn X in Y minutes - Where X=python](https://learnxinyminutes.com/docs/python/)
+- [array — Efficient arrays of numeric values](https://docs.python.org/3/library/array.html)
+- [Array Data Structures in Python](https://dbader.org/blog/python-arrays)
+- [Python List](https://www.geeksforgeeks.org/python-list/)
+- [Python list | pop()](https://www.geeksforgeeks.org/python-list-pop/)
+- [Python List Comprehension and Slicing](https://www.geeksforgeeks.org/python-list-comprehension-and-slicing/)
+- [List Comprehension in Python](https://medium.com/better-programming/list-comprehension-in-python-8895a785550b)
+- [Mutable and Immutable Objects](https://www.pythonforthelab.com/blog/mutable-and-immutable-objects/)
+- [Concatenating two lists in Python](https://blog.usejournal.com/concatenating-two-lists-in-python-3cf9051da17f)
 
-<p align="right"><sup><a href="02_base_syntax.md">Előző fejezet</a> | <a href="README.md">Tartalom</a></sup></p>
+<p align="right"><sup><a href="02_base_syntax.md">Előző fejezet</a> | <a href="03_advanced_python_part_02.md">Következő fejezet</a> | <a href="README.md">Tartalom</a></sup></p>
