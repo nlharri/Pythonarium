@@ -2,11 +2,12 @@
 
 <p align="right"><sup><a href="README.md">Tartalom</a></sup></p>
 
-# Gráfalgoritmusok Pythonban
+# Gráfok kezelése Pythonban
 
 Ebben a cikkben gráfokkal kapcsolatos közismert algoritmusok példaimplementációiról lesz szó. A cikkhez a következő Python package-eket fogom használni:
-- `networkx`
-- `numpy`
+- `networkx`: komplex hálózatok struktúrájának, dinamikájának a tanulmányozására szolgáló csomag. Gráfok létrehozására és ábrázolására fogom használni.
+- `numpy`: tudományos számítások végzésére használható csomag. A `networx` csomag gráf objektumának adjacencia mátrixát vissza lehet kérni a `numpy` mátrix formátumában. Emiatt fogom használni.
+- `matplotlib`: 2D rajzoló csomag. A gráfok megjelenítéséhez fogom használni a `networx`-szel együtt.
 
 # Mik a gráfok?
 
@@ -109,7 +110,7 @@ A szélességi és mélységi bejáráshoz a következő gráfot fogom használn
 
 # Gráfbejárás mélységi kereséssel
 
-A mélységi bejárás algoritmusát itt is a `visit_vertex()` függvény tartalmazza. A mélységi bejárás lényege, hogy egy adott csúcsból kiindulva először a csúcs első szomszédját látogatom meg, és már az első szomszéd meglátogatásakor meglátogatom ennek is az első szomszédját. Csak akkor lépek tovább a következő szomszéd meglátogatására, amikor az előző szomszéd minden szomszédja (és azoknak is minden szomszédja) meg lett látogatva. Így a bejárás során hamar a gráf mélyére jutok, a legtávolabbi csúcshoz.
+A mélységi bejárás algoritmusát itt is a `depth_first_search()` függvény tartalmazza. A mélységi bejárás lényege, hogy egy adott csúcsból kiindulva először a csúcs első szomszédját látogatom meg, és már az első szomszéd meglátogatásakor meglátogatom ennek is az első szomszédját. Csak akkor lépek tovább a következő szomszéd meglátogatására, amikor az előző szomszéd minden szomszédja (és azoknak is minden szomszédja) meg lett látogatva. Így a bejárás során hamar a gráf mélyére jutok, a legtávolabbi csúcshoz.
 
 Az alábbi programban figyelemmel kísérjük a meglátogatott csúcsokat (`visited_vertices`).
 
@@ -117,7 +118,10 @@ Az alábbi programban figyelemmel kísérjük a meglátogatott csúcsokat (`visi
 import networkx as nx
 import numpy as np
 
-def visit_vertex(v, m, visited_vertices, depth):
+from networkx.drawing.nx_pydot import graphviz_layout
+import matplotlib.pyplot as plt
+
+def depth_first_search(v, m, visited_vertices, depth):
     padding = "  "
     if v not in visited_vertices:
         print("{}visiting {}".format(padding*depth, v))
@@ -127,7 +131,7 @@ def visit_vertex(v, m, visited_vertices, depth):
         for j in range(0, num_of_vertices):
             if m[v,j] != 0:
                 print("{}stepping to edge ({}, {})".format(padding*depth, v, j))
-                visit_vertex(j, m, visited_vertices, depth + 1)
+                depth_first_search(j, m, visited_vertices, depth + 1)
     else:
         print("{}{} was already visited".format(padding*depth, v))
 
@@ -147,15 +151,16 @@ G.add_edges_from([("0", "1"),
                   ("0", "5"), 
                   ("2", "7")])
 
+pos = graphviz_layout(G, prog='neato')
+plt.figure(figsize=(10, 10))
+nx.draw(G, pos, node_size=500, alpha=1, node_color="orange", with_labels=True)
+plt.axis('equal')
+plt.show()
+
 print("Nodes of graph: {}".format(G.nodes()))
 print("Edges of graph: {}".format(G.edges()))
-
-nx.draw_networkx(G)
-
 visited_vertices = []
-
-visit_vertex(0, nx.to_numpy_matrix(G), visited_vertices, 0)
-
+depth_first_search(0, nx.to_numpy_matrix(G), visited_vertices, 0)
 print("Vertices were visited in the following sequence: {}".format(visited_vertices))
 ```
 
@@ -226,37 +231,34 @@ Vertices were visited in the following sequence: [0, 1, 2, 4, 3, 5, 6, 7]
 
 # Gráfbejárás szélességi kereséssel
 
-A szélességi bejárás algoritmusát a `visit_vertex()` függvény tartalmazza. A szélességi bejárás lényege, hogy egy adott csúcsból kiindulva először a csúcs szomszédait látogatom meg. Majd veszem az első, második, stb. szomszédját, és újra ugyanígy járok el. Így a látogatások egyre távolabb kerülnek a kiinduló csúcstól, de közben az adott távolságig az összes csúcsot meglátogatom.
+A szélességi bejárás algoritmusát a `breadth_first_search()` függvény tartalmazza. A szélességi bejárás lényege, hogy egy adott csúcsból kiindulva először a csúcs szomszédait látogatom meg. Majd veszem az első, második, stb. szomszédját, és újra ugyanígy járok el. Így a látogatások egyre távolabb kerülnek a kiinduló csúcstól, de közben az adott távolságig az összes csúcsot meglátogatom.
 
-Az alábbi programban figyelemmel kísérjük a meglátogatott csúcsokat (`visited_vertices`) és a meglátogatott éleket is (`visited_edges`).
+Az alábbi programban figyelemmel kísérjük a meglátogatott csúcsokat (`visited_vertices`).
 
 ```python
 import networkx as nx
 import numpy as np
 
-padding = "  "
+from networkx.drawing.nx_pydot import graphviz_layout
+import matplotlib.pyplot as plt
 
-def mark_as_visited(v, visited_vertices, depth):
-    print("{}visiting {}".format(padding*depth, v))
-    visited_vertices.append(v)
+def mark_as_visited(v, m, visited_vertices, to_be_visited_vertices):
+    if v not in visited_vertices:
+        print("visiting {}".format(v))
+        visited_vertices.append(v)
+        num_of_vertices = np.shape(m)[0]
+        for j in range(0, num_of_vertices):
+            if m[v,j] != 0 and j not in visited_vertices:
+                to_be_visited_vertices.append(j)
+    else:
+        print("{} was already visited".format(v))
 
-def breadth_first_search(v, m, visited_vertices, visited_edges, depth):
-    if depth == 0:
-        mark_as_visited(v, visited_vertices, depth)
-    num_of_vertices = np.shape(m)[0]
-    print("{}visiting neighbours of {}".format(padding*depth, v))
-    for j in range(0, num_of_vertices):
-        if m[v,j] != 0:
-            if j not in visited_vertices:
-                mark_as_visited(j, visited_vertices, depth + 1)
-            else:
-                print("{}{} was already visited".format(padding*(depth + 1), j))
-    for j in range(0, num_of_vertices):
-        if m[v,j] != 0:
-            if (v,j) not in visited_edges and (j,v) not in visited_edges:
-                print("{}stepping to edge ({}, {})".format(padding*depth, v, j))
-                visited_edges.append((v,j))
-                breadth_first_search(j, m, visited_vertices, visited_edges, depth + 1)
+def breadth_first_search(v, m, visited_vertices):
+    to_be_visited_vertices = []
+    mark_as_visited(v, m, visited_vertices, to_be_visited_vertices)
+    while len(to_be_visited_vertices) != 0:
+        j = to_be_visited_vertices.pop(0)
+        mark_as_visited(j, m, visited_vertices, to_be_visited_vertices)
 
 
 G=nx.Graph()
@@ -274,16 +276,16 @@ G.add_edges_from([("0", "1"),
                   ("0", "5"), 
                   ("2", "7")])
 
+pos = graphviz_layout(G, prog='neato')
+plt.figure(figsize=(10, 10))
+nx.draw(G, pos, node_size=500, alpha=1, node_color="orange", with_labels=True)
+plt.axis('equal')
+plt.show()
+
 print("Nodes of graph: {}".format(G.nodes()))
 print("Edges of graph: {}".format(G.edges()))
-
-nx.draw_networkx(G)
-
 visited_vertices = []
-visited_edges = []
-
-breadth_first_search(0, nx.to_numpy_matrix(G), visited_vertices, visited_edges, 0)
-
+breadth_first_search(0, nx.to_numpy_matrix(G), visited_vertices)
 print("Vertices were visited in the following sequence: {}".format(visited_vertices))
 ```
 
@@ -293,82 +295,48 @@ Ennek a programnak a kimenete a következő:
 Nodes of graph: ['0', '1', '2', '3', '4', '5', '6', '7']
 Edges of graph: [('0', '1'), ('0', '2'), ('0', '3'), ('0', '6'), ('0', '5'), ('1', '2'), ('2', '4'), ('2', '5'), ('2', '7'), ('3', '4'), ('3', '5'), ('4', '6')]
 visiting 0
-visiting neighbours of 0
-  visiting 1
-  visiting 2
-  visiting 3
-  visiting 5
-  visiting 6
-stepping to edge (0, 1)
-  visiting neighbours of 1
-    0 was already visited
-    2 was already visited
-  stepping to edge (1, 2)
-    visiting neighbours of 2
-      0 was already visited
-      1 was already visited
-      visiting 4
-      5 was already visited
-      visiting 7
-    stepping to edge (2, 0)
-      visiting neighbours of 0
-        1 was already visited
-        2 was already visited
-        3 was already visited
-        5 was already visited
-        6 was already visited
-      stepping to edge (0, 3)
-        visiting neighbours of 3
-          0 was already visited
-          4 was already visited
-          5 was already visited
-        stepping to edge (3, 4)
-          visiting neighbours of 4
-            2 was already visited
-            3 was already visited
-            6 was already visited
-          stepping to edge (4, 2)
-            visiting neighbours of 2
-              0 was already visited
-              1 was already visited
-              4 was already visited
-              5 was already visited
-              7 was already visited
-            stepping to edge (2, 5)
-              visiting neighbours of 5
-                0 was already visited
-                2 was already visited
-                3 was already visited
-              stepping to edge (5, 0)
-                visiting neighbours of 0
-                  1 was already visited
-                  2 was already visited
-                  3 was already visited
-                  5 was already visited
-                  6 was already visited
-                stepping to edge (0, 6)
-                  visiting neighbours of 6
-                    0 was already visited
-                    4 was already visited
-                  stepping to edge (6, 4)
-                    visiting neighbours of 4
-                      2 was already visited
-                      3 was already visited
-                      6 was already visited
-              stepping to edge (5, 3)
-                visiting neighbours of 3
-                  0 was already visited
-                  4 was already visited
-                  5 was already visited
-            stepping to edge (2, 7)
-              visiting neighbours of 7
-                2 was already visited
+visiting 1
+visiting 2
+visiting 3
+visiting 5
+visiting 6
+2 was already visited
+visiting 4
+5 was already visited
+visiting 7
+4 was already visited
+5 was already visited
+4 was already visited
 Vertices were visited in the following sequence: [0, 1, 2, 3, 5, 6, 4, 7]
 ```
 
-Ha megnézzük a csúcsok meglátogatásának a sorrendjét (`[0, 1, 2, 3, 5, 6, 4, 7]`) és a gráfot a képen, akkor látható, hogy valóban először egy mélységig megyünk a gráfban, majd 2 mélységig, és így tovább. Egy "mélyebb" gráffal ez még jobban látszik. Az alábbi kód egy másik gráfot hoz létre, ami alatta látható.
+Ha megnézzük a csúcsok meglátogatásának a sorrendjét (`[0, 1, 2, 3, 5, 6, 4, 7]`) és a gráfot a képen, akkor látható, hogy valóban először egy mélységig megyünk a gráfban, majd 2 mélységig, és így tovább. Egy "mélyebb" gráffal ez még jobban látszik. Az alábbi kód egy másik gráfot hoz létre, ami alatta látható. (A gráfbejáró algoritmus ugyanaz, mint előbb.)
 
 ```python
+import networkx as nx
+import numpy as np
+from networkx.drawing.nx_pydot import graphviz_layout
+import matplotlib.pyplot as plt
+
+def mark_as_visited(v, m, visited_vertices, to_be_visited_vertices):
+    if v not in visited_vertices:
+        print("visiting {}".format(v))
+        visited_vertices.append(v)
+        num_of_vertices = np.shape(m)[0]
+        for j in range(0, num_of_vertices):
+            if m[v,j] != 0 and j not in visited_vertices:
+                to_be_visited_vertices.append(j)
+    else:
+        print("{} was already visited".format(v))
+
+def breadth_first_search(v, m, visited_vertices):
+    to_be_visited_vertices = []
+    mark_as_visited(v, m, visited_vertices, to_be_visited_vertices)
+    while len(to_be_visited_vertices) != 0:
+        j = to_be_visited_vertices.pop(0)
+        mark_as_visited(j, m, visited_vertices, to_be_visited_vertices)
+
+
 G=nx.Graph()
 G.add_nodes_from(["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"])
 G.add_edges_from([("0", "1"), 
@@ -393,6 +361,18 @@ G.add_edges_from([("0", "1"),
                   ("8", "10"),
                   ("8", "11"),
                   ("10", "11")])
+
+pos = graphviz_layout(G, prog='twopi')
+plt.figure(figsize=(10, 10))
+nx.draw(G, pos, node_size=500, alpha=1, node_color="orange", with_labels=True)
+plt.axis('equal')
+plt.show()
+
+print("Nodes of graph: {}".format(G.nodes()))
+print("Edges of graph: {}".format(G.edges()))
+visited_vertices = []
+breadth_first_search(0, nx.to_numpy_matrix(G), visited_vertices)
+print("Vertices were visited in the following sequence: {}".format(visited_vertices))
 ```
 
 ![Gráf 3](./assets/graph3.png "Gráf 3")
@@ -401,6 +381,68 @@ A fenti algoritmust lefuttatva erre a gráfra az alábbi csúcs-sorrendet kapjuk
 
 ```
 [0, 1, 2, 3, 5, 6, 4, 7, 8, 9, 10, 11]
+```
+
+Mégegy érdekes példa, egy körkörösen ábrázolt fa:
+
+```python
+import matplotlib.pyplot as plt
+import networkx as nx
+from networkx.drawing.nx_pydot import graphviz_layout
+import numpy as np
+
+def mark_as_visited(v, m, visited_vertices, to_be_visited_vertices):
+    print("visiting {}".format(v))
+    visited_vertices.append(v)
+    num_of_vertices = np.shape(m)[0]
+    for j in range(0, num_of_vertices):
+        if m[v,j] != 0 and j not in visited_vertices:
+            to_be_visited_vertices.append(j)
+
+def breadth_first_search(v, m, visited_vertices):
+    to_be_visited_vertices = []
+    mark_as_visited(v, m, visited_vertices, to_be_visited_vertices)
+    while len(to_be_visited_vertices) != 0:
+        j = to_be_visited_vertices.pop(0)
+        mark_as_visited(j, m, visited_vertices, to_be_visited_vertices)
+
+G = nx.balanced_tree(2, 3)
+pos = graphviz_layout(G, prog='twopi')
+plt.figure(figsize=(10, 10))
+nx.draw(G, pos, node_size=500, alpha=1, node_color="orange", with_labels=True)
+plt.axis('equal')
+plt.show()
+
+print("Nodes of graph: {}".format(G.nodes()))
+print("Edges of graph: {}".format(G.edges()))
+visited_vertices = []
+breadth_first_search(0, nx.to_numpy_matrix(G), visited_vertices)
+print("Vertices were visited in the following sequence: {}".format(visited_vertices))
+```
+
+![Gráf 4](./assets/graph4.png "Gráf 4")
+
+Erre a `G` gráfra lefuttatva a bejárást, az eredmény a következő:
+
+```
+Nodes of graph: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+Edges of graph: [(0, 1), (0, 2), (1, 3), (1, 4), (2, 5), (2, 6), (3, 7), (3, 8), (4, 9), (4, 10), (5, 11), (5, 12), (6, 13), (6, 14)]
+visiting 0
+visiting 1
+visiting 2
+visiting 3
+visiting 4
+visiting 5
+visiting 6
+visiting 7
+visiting 8
+visiting 9
+visiting 10
+visiting 11
+visiting 12
+visiting 13
+visiting 14
+Vertices were visited in the following sequence: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
 ```
 
 # Legrövidebb út kereséses két csúcs között
@@ -412,6 +454,10 @@ A fenti algoritmust lefuttatva erre a gráfra az alábbi csúcs-sorrendet kapjuk
 - [Gráf](https://hu.wikipedia.org/wiki/Gráf)
 - [Benjamin Baka: Python Data Structures and Algorithms](https://www.amazon.com/Python-Data-Structures-Algorithms-application-ebook/dp/B01IF7NLM8)
 - [Algoritmusok és adatszerkezetek / Gráfok ábrázolása](http://tamop412.elte.hu/tananyagok/algoritmusok/lecke23_lap1.html)
+- [networx](https://networkx.github.io)
+- [Graphviz - Graph Visualization Software](https://graphviz.gitlab.io/documentation/)
+- [numpy](https://numpy.org)
+- [Matplotlib](https://matplotlib.org)
 - [networkx 2.3 at pypi](https://pypi.org/project/networkx/2.3/)
 - [NetworkX Reference Release 2.3](https://networkx.github.io/documentation/stable/_downloads/networkx_reference.pdf)
 

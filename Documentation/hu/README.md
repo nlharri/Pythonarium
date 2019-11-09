@@ -193,17 +193,23 @@ Ismerkedés a Tensorflow alapjaival.
 - Referenciák
 
 
-## [Gráfalgoritmusok Pythonban](misc02_graph_algorithms.md)
+## [Gráfalgoritmusok Pythonban - Szélességi és mélységi bejárás](misc02_graph_algorithms.md)
 
 - Mik a gráfok?
 - Gráfok tárolása
 - Gráfbejárás szélességi kereséssel
 - Gráfbejárás mélységi kereséssel
+- Referenciák
+
+<!--
+
+## [Gráfalgoritmusok Pythonban - Legrövidebb és leghosszabb utak keresése](misc03_graph_algorithms.md)
+
+- Bevezető
 - Legrövidebb út kereséses két csúcs között
 - Leghosszabb út kereséses két csúcs között
 - Referenciák
 
-<!--
 
 ## Python példafeladatok megoldással
 
