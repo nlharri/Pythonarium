@@ -9,6 +9,22 @@ Ebben a cikkben gráfokkal kapcsolatos közismert algoritmusok példaimplementá
 - `numpy`: tudományos számítások végzésére használható csomag. A `networx` csomag gráf objektumának adjacencia mátrixát vissza lehet kérni a `numpy` mátrix formátumában. Emiatt fogom használni.
 - `matplotlib`: 2D rajzoló csomag. A gráfok megjelenítéséhez fogom használni a `networx`-szel együtt.
 
+![Gráf 0](./assets/graph0.png "Gráf 0")
+
+A networkx csomaggal a fentihez hasonló gráfokat lehet megjeleníteni. Pl. a fenti gráfot az alábbi programmal lehet megjeleníteni, Jupyter Notebook-ban vagy Google Colab környezetben.
+
+```python
+import matplotlib.pyplot as plt
+import networkx as nx
+
+G = nx.random_geometric_graph(100, 0.125)
+pos = graphviz_layout(G, prog='circo')
+plt.figure(figsize=(20, 20))
+nx.draw(G, pos, node_size=500, alpha=1, node_color="orange", with_labels=True)
+plt.axis('equal')
+plt.show()
+```
+
 # Mik a gráfok?
 
 A gráf formális definíciója egy *G(V,E)* pár, ahol *V* a csúcsok véges halmaza, *E* pedig az élek halmaza. Egy él két csúcsból alkotott rendezetlen vagy rendezett pár. Egy gráf élei lehetnek irányítottak vagy irányítatlanok, lehetnek súlyozottak vagy súlyozatlanok. Tehát megkülönböztetjük az alábbiakat:
@@ -73,7 +89,7 @@ G.add_edges_from([("a", "b"), ("b", "c"), ("c", "a"), ("a", "d"), ("c", "e"), ("
 nx.draw_networkx(G)
 ```
 
-## Gráfok él- és csűcsszámának lekérdezése
+## Gráfok él- és csúcsszámának lekérdezése
 
 ```python
 print("Nodes of graph: {}".format(G.nodes()))
