@@ -10,8 +10,8 @@ https://github.com/nlharri/Pythonarium/blob/master/SourceCode/GraphAlgorithms/Gr
 
 A cikkben a következő Python package-eket fogom használni:
 - `networkx`: komplex hálózatok struktúrájának, dinamikájának a tanulmányozására szolgáló csomag. Gráfok létrehozására és ábrázolására fogom használni.
-- `numpy`: tudományos számítások végzésére használható csomag. A `networx` csomag gráf objektumának adjacencia mátrixát vissza lehet kérni a `numpy` mátrix formátumában. Emiatt fogom használni.
-- `matplotlib`: 2D rajzoló csomag. A gráfok megjelenítéséhez fogom használni a `networx`-szel együtt.
+- `numpy`: tudományos számítások végzésére használható csomag. A `networkx` csomag gráf objektumának adjacencia mátrixát vissza lehet kérni a `numpy` mátrix formátumában. Emiatt fogom használni.
+- `matplotlib`: 2D rajzoló csomag. A gráfok megjelenítéséhez fogom használni a `networkx`-szel együtt.
 
 ![Gráf 0](./assets/graph0.png "Gráf 0")
 
@@ -20,6 +20,7 @@ A networkx csomaggal a fentihez hasonló gráfokat lehet megjeleníteni. Pl. a f
 ```python
 import matplotlib.pyplot as plt
 import networkx as nx
+from networkx.drawing.nx_pydot import graphviz_layout
 
 G = nx.random_geometric_graph(100, 0.125)
 pos = graphviz_layout(G, prog='circo')
@@ -28,6 +29,24 @@ nx.draw(G, pos, node_size=500, alpha=1, node_color="orange", with_labels=True)
 plt.axis('equal')
 plt.show()
 ```
+
+Először a szükséges könyvtárakat és függvényeket kell beimportálni. A `matplotlib.pyplot` egy állapot-alapú interface a `matplotlib`-hez. A MATLAB-hoz hasonló rajzolást tesz lehetővé. A következő a `networkx` könyvtár, majd a `networkx.drawing.nx_pydot` könyvtárból a `graphviz_layout`. A `networkx.drawing.nx_pydot` lehetővé teszi NetworkX gráfok importálását és exportálását Graphviz formátumra a `pydot` segítségével. A `pydot` egy Python csomag ami egy interfészt kínál a Graphviz könyvtárhoz, és a Graphviz által használt DOT formátumot tudja létrehozni és feldolgozni. A DOT formátum egy gráfleíró formátum (nem összekeverendő a Microsoft Word által használt dot formátummal). A Graphviz egy nyílt forráskódu gráfmegjelenító szoftver. A `graphviz` nevű Python csomag egy interfész a Graphvizhoz. 
+
+Ebben a példában először létrehozunk egy `G` gráfot a `networkx` csomag `random_geometric_graph` metódussal. A `random_geometric_graph` egy véletlen geometriai gráfot hoz létre egy egységkockában. A függvény szignatúrája a következőképpen néz ki:
+
+```python
+def random_geometric_graph(n, radius, dim=2, pos=None)
+```
+
+A véletlenszerű geometriai gráf `n` db csúcsot tartalmaz, melyek pozíciói egyenletes eloszlású valószínűségi változót követve helyezkendek el. Két csúcs akkor van összekötve éllel, ha a csúcsok közötti euklideszi távolság legfeljebb `radius`. Tehát a fent látható gráf 100 csúcsból áll (`n = 100`) és a `radius` értéke 0.125. 
+
+A következő utasításban a grapviz_layout függvény hívása. A `graphviz_layout` egy függvény amivel egy gráf csúcsainak pozícióit tudjuk létrehozni. Paraméterként meg kell adni a gráfot, az elrendezéshez használt GraphViz program nevét (ennek lehetséges értékeinek listája függ a Graphviz verziójától, de alapvetően a `neato`, `dot`, `twopi`, `fdp`, `sfdp`, `circo` lehetőségekből lehet választani). Harmadik paraméterként pedig meg lehet adni egy kezdő csúcsát a gráfnak, ahonnan a rendező algoritmus elindul, de ennek a megadása nem kötelező. A függvény visszaad egy `dict` típust amelynek kulcsa a csúcspontok, és értékei az (x,y) pozíciók.
+
+```python
+def graphviz_layout(G, prog='neato', root=None)
+```
+
+Ezek után a `matplotlib`bel és a `networkx`szel megtörténik a gráf megjelenítése.
 
 # Mik a gráfok?
 
@@ -475,11 +494,16 @@ Vertices were visited in the following sequence: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 
 - [Gráf](https://hu.wikipedia.org/wiki/Gráf)
 - [Benjamin Baka: Python Data Structures and Algorithms](https://www.amazon.com/Python-Data-Structures-Algorithms-application-ebook/dp/B01IF7NLM8)
 - [Algoritmusok és adatszerkezetek / Gráfok ábrázolása](http://tamop412.elte.hu/tananyagok/algoritmusok/lecke23_lap1.html)
-- [networx](https://networkx.github.io)
+- [networkx](https://networkx.github.io)
 - [Graphviz - Graph Visualization Software](https://graphviz.gitlab.io/documentation/)
 - [numpy](https://numpy.org)
 - [Matplotlib](https://matplotlib.org)
 - [networkx 2.3 at pypi](https://pypi.org/project/networkx/2.3/)
 - [NetworkX Reference Release 2.3](https://networkx.github.io/documentation/stable/_downloads/networkx_reference.pdf)
+- [random_geometric_graph](https://networkx.github.io/documentation/networkx-1.10/reference/generated/networkx.generators.geometric.random_geometric_graph.html#networkx.generators.geometric.random_geometric_graph)
+- [matplotlib.pyplot](https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.pyplot.html)
+- [pydot](https://pypi.org/project/pydot/)
+- [DOT (graph description language)](https://en.wikipedia.org/wiki/DOT_%28graph_description_language%29)
+- [networkx.drawing.nx_pydot.graphviz_layout](https://networkx.github.io/documentation/latest/reference/generated/networkx.drawing.nx_pydot.graphviz_layout.html)
 
 <p align="right"><sup><a href="README.md">Tartalom</a></sup></p>
