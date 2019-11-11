@@ -4,7 +4,11 @@
 
 # Gráfok kezelése Pythonban
 
-Ebben a cikkben gráfokkal kapcsolatos közismert algoritmusok példaimplementációiról lesz szó. A cikkhez a következő Python package-eket fogom használni:
+Ebben a cikkben gráfokkal kapcsolatos közismert gráfbejárási algoritmusok példaimplementációiról lesz szó. A cikkben bemutatott algoritmusokhoz használt Jupyter Notebook elérhető az alábbi linken:
+
+https://github.com/nlharri/Pythonarium/blob/master/SourceCode/GraphAlgorithms/GraphAlgorithms1.ipynb
+
+A cikkhez a következő Python package-eket fogom használni:
 - `networkx`: komplex hálózatok struktúrájának, dinamikájának a tanulmányozására szolgáló csomag. Gráfok létrehozására és ábrázolására fogom használni.
 - `numpy`: tudományos számítások végzésére használható csomag. A `networx` csomag gráf objektumának adjacencia mátrixát vissza lehet kérni a `numpy` mátrix formátumában. Emiatt fogom használni.
 - `matplotlib`: 2D rajzoló csomag. A gráfok megjelenítéséhez fogom használni a `networx`-szel együtt.
@@ -84,7 +88,12 @@ import networkx as nx
 
 G=nx.Graph()
 G.add_nodes_from(["a", "b", "c", "d", "e"])
-G.add_edges_from([("a", "b"), ("b", "c"), ("c", "a"), ("a", "d"), ("c", "e"), ("d", "e")])
+G.add_edges_from([("a", "b"), 
+                  ("b", "c"), 
+                  ("c", "a"), 
+                  ("a", "d"), 
+                  ("c", "e"), 
+                  ("d", "e")])
 
 nx.draw_networkx(G)
 ```
