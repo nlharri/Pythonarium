@@ -8,14 +8,14 @@ Ebben a cikkben gráfokkal kapcsolatos közismert gráfbejárási algoritmusok p
 
 https://github.com/nlharri/Pythonarium/blob/master/SourceCode/GraphAlgorithms/GraphAlgorithms1.ipynb
 
-A cikkhez a következő Python package-eket fogom használni:
+A cikkben a következő Python package-eket fogom használni:
 - `networkx`: komplex hálózatok struktúrájának, dinamikájának a tanulmányozására szolgáló csomag. Gráfok létrehozására és ábrázolására fogom használni.
 - `numpy`: tudományos számítások végzésére használható csomag. A `networx` csomag gráf objektumának adjacencia mátrixát vissza lehet kérni a `numpy` mátrix formátumában. Emiatt fogom használni.
 - `matplotlib`: 2D rajzoló csomag. A gráfok megjelenítéséhez fogom használni a `networx`-szel együtt.
 
 ![Gráf 0](./assets/graph0.png "Gráf 0")
 
-A networkx csomaggal a fentihez hasonló gráfokat lehet megjeleníteni. Pl. a fenti gráfot az alábbi programmal lehet megjeleníteni, Jupyter Notebook-ban vagy Google Colab környezetben.
+A networkx csomaggal a fentihez hasonló gráfokat lehet megjeleníteni. Pl. a fenti gráfot az alábbi programmal lehet megjeleníteni, Jupyter Notebook-ban vagy Google Colab környezetben. Mivel itt egy véletlenszerűen generált gráfot állítunk elő, így minden futtatáskor máshogy fog kinézni a gráf.
 
 ```python
 import matplotlib.pyplot as plt
