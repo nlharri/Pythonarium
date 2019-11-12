@@ -15,7 +15,7 @@ A cikkben a következő Python package-eket fogom használni:
 
 ![Gráf 0](./assets/graph0.png "Gráf 0")
 
-A networkx csomaggal a fentihez hasonló gráfokat lehet megjeleníteni. Pl. a fenti gráfot az alábbi programmal lehet megjeleníteni, Jupyter Notebook-ban vagy Google Colab környezetben. Mivel itt egy véletlenszerűen generált gráfot állítunk elő, így minden futtatáskor máshogy fog kinézni a gráf.
+A networkx csomaggal a fentihez hasonló gráfokat lehet megjeleníteni. Pl. a fenti, 100 csúcsot tartalmazó gráfot az alábbi programmal lehet létrehozni és megjeleníteni, Jupyter Notebook-ban vagy Google Colab környezetben. Mivel itt egy véletlenszerűen generált gráfot állítunk elő, így minden futtatáskor máshogy fog kinézni a gráf. Az alábbi programról később még lesz szó.
 
 ```python
 import matplotlib.pyplot as plt
@@ -29,24 +29,6 @@ nx.draw(G, pos, node_size=500, alpha=1, node_color="orange", with_labels=True)
 plt.axis('equal')
 plt.show()
 ```
-
-Először a szükséges könyvtárakat és függvényeket kell beimportálni. A `matplotlib.pyplot` egy állapot-alapú interface a `matplotlib`-hez. A MATLAB-hoz hasonló rajzolást tesz lehetővé. A következő a `networkx` könyvtár, majd a `networkx.drawing.nx_pydot` könyvtárból a `graphviz_layout`. A `networkx.drawing.nx_pydot` lehetővé teszi NetworkX gráfok importálását és exportálását Graphviz formátumra a `pydot` segítségével. A `pydot` egy Python csomag ami egy interfészt kínál a Graphviz könyvtárhoz, és a Graphviz által használt DOT formátumot tudja létrehozni és feldolgozni. A DOT formátum egy gráfleíró formátum (nem összekeverendő a Microsoft Word által használt dot formátummal). A Graphviz egy nyílt forráskódu gráfmegjelenító szoftver. A `graphviz` nevű Python csomag egy interfész a Graphvizhoz. 
-
-Ebben a példában először létrehozunk egy `G` gráfot a `networkx` csomag `random_geometric_graph` metódussal. A `random_geometric_graph` egy véletlen geometriai gráfot hoz létre egy egységkockában. A függvény szignatúrája a következőképpen néz ki:
-
-```python
-def random_geometric_graph(n, radius, dim=2, pos=None)
-```
-
-A véletlenszerű geometriai gráf `n` db csúcsot tartalmaz, melyek pozíciói egyenletes eloszlású valószínűségi változót követve helyezkendek el. Két csúcs akkor van összekötve éllel, ha a csúcsok közötti euklideszi távolság legfeljebb `radius`. Tehát a fent látható gráf 100 csúcsból áll (`n = 100`) és a `radius` értéke 0.125. 
-
-A következő utasításban a grapviz_layout függvény hívása. A `graphviz_layout` egy függvény amivel egy gráf csúcsainak pozícióit tudjuk létrehozni. Paraméterként meg kell adni a gráfot, az elrendezéshez használt GraphViz program nevét (ennek lehetséges értékeinek listája függ a Graphviz verziójától, de alapvetően a `neato`, `dot`, `twopi`, `fdp`, `sfdp`, `circo` lehetőségekből lehet választani). Harmadik paraméterként pedig meg lehet adni egy kezdő csúcsát a gráfnak, ahonnan a rendező algoritmus elindul, de ennek a megadása nem kötelező. A függvény visszaad egy `dict` típust amelynek kulcsa a csúcspontok, és értékei az (x,y) pozíciók.
-
-```python
-def graphviz_layout(G, prog='neato', root=None)
-```
-
-Ezek után a `matplotlib`bel és a `networkx`szel megtörténik a gráf megjelenítése.
 
 # Mik a gráfok?
 
@@ -116,6 +98,41 @@ G.add_edges_from([("a", "b"),
 
 nx.draw_networkx(G)
 ```
+
+![Gráf 1](./assets/graph1.png "Gráf 1")
+
+Most térjünk vissza a bevezetőben mutatott programra.
+
+```python
+import matplotlib.pyplot as plt
+import networkx as nx
+from networkx.drawing.nx_pydot import graphviz_layout
+
+G = nx.random_geometric_graph(100, 0.125)
+pos = graphviz_layout(G, prog='circo')
+plt.figure(figsize=(20, 20))
+nx.draw(G, pos, node_size=500, alpha=1, node_color="orange", with_labels=True)
+plt.axis('equal')
+plt.show()
+```
+
+Először a szükséges könyvtárakat és függvényeket kell beimportálni. A `matplotlib.pyplot` egy állapot-alapú interface a `matplotlib`-hez. A MATLAB-hoz hasonló rajzolást tesz lehetővé. A következő a `networkx` könyvtár, majd a `networkx.drawing.nx_pydot` könyvtárból a `graphviz_layout`. A `networkx.drawing.nx_pydot` lehetővé teszi NetworkX gráfok importálását és exportálását Graphviz formátumra a `pydot` segítségével. A `pydot` egy Python csomag ami egy interfészt kínál a Graphviz könyvtárhoz, és a Graphviz által használt DOT formátumot tudja létrehozni és feldolgozni. A DOT formátum egy gráfleíró formátum (nem összekeverendő a Microsoft Word által használt dot formátummal). A Graphviz egy nyílt forráskódu gráfmegjelenító szoftver. A `graphviz` nevű Python csomag egy interfész a Graphvizhoz. 
+
+Ebben a példában először létrehozunk egy `G` gráfot a `networkx` csomag `random_geometric_graph` metódussal. A `random_geometric_graph` egy véletlen geometriai gráfot hoz létre egy egységkockában. A függvény szignatúrája a következőképpen néz ki:
+
+```python
+def random_geometric_graph(n, radius, dim=2, pos=None)
+```
+
+A véletlenszerű geometriai gráf `n` db csúcsot tartalmaz, melyek pozíciói egyenletes eloszlású valószínűségi változót követve helyezkendek el. Két csúcs akkor van összekötve éllel, ha a csúcsok közötti euklideszi távolság legfeljebb `radius`. Tehát a fent látható gráf 100 csúcsból áll (`n = 100`) és a `radius` értéke 0.125. 
+
+A következő utasításban a grapviz_layout függvény hívása. A `graphviz_layout` egy függvény amivel egy gráf csúcsainak pozícióit tudjuk létrehozni. Paraméterként meg kell adni a gráfot, az elrendezéshez használt GraphViz program nevét (ennek lehetséges értékeinek listája függ a Graphviz verziójától, de alapvetően a `neato`, `dot`, `twopi`, `fdp`, `sfdp`, `circo` lehetőségekből lehet választani). Harmadik paraméterként pedig meg lehet adni egy kezdő csúcsát a gráfnak, ahonnan a rendező algoritmus elindul, de ennek a megadása nem kötelező. A függvény visszaad egy `dict` típust amelynek kulcsa a csúcspontok, és értékei az (x,y) pozíciók.
+
+```python
+def graphviz_layout(G, prog='neato', root=None)
+```
+
+Ezek után a `matplotlib`bel és a `networkx`szel történik a gráf megjelenítése.
 
 ## Gráfok él- és csúcsszámának lekérdezése
 
