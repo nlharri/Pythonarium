@@ -126,7 +126,12 @@ def random_geometric_graph(n, radius, dim=2, pos=None)
 
 A véletlenszerű geometriai gráf `n` db csúcsot tartalmaz, melyek pozíciói egyenletes eloszlású valószínűségi változót követve helyezkendek el. Két csúcs akkor van összekötve éllel, ha a csúcsok közötti euklideszi távolság legfeljebb `radius`. Tehát a fent látható gráf 100 csúcsból áll (`n = 100`) és a `radius` értéke 0.125. 
 
-A következő utasításban a grapviz_layout függvény hívása. A `graphviz_layout` egy függvény amivel egy gráf csúcsainak pozícióit tudjuk létrehozni. Paraméterként meg kell adni a gráfot, az elrendezéshez használt GraphViz program nevét (ennek lehetséges értékeinek listája függ a Graphviz verziójától, de alapvetően a `neato`, `dot`, `twopi`, `fdp`, `sfdp`, `circo` lehetőségekből lehet választani). Harmadik paraméterként pedig meg lehet adni egy kezdő csúcsát a gráfnak, ahonnan a rendező algoritmus elindul, de ennek a megadása nem kötelező. A függvény visszaad egy `dict` típust amelynek kulcsa a csúcspontok, és értékei az (x,y) pozíciók.
+A következő utasításban a grapviz_layout függvény hívása. A `graphviz_layout` egy függvény amivel egy gráf csúcsainak pozícióit tudjuk létrehozni. Paraméterként meg kell adni a gráfot, az elrendezéshez használt GraphViz program nevét. A GraphViz program nevének lehetséges értékeinek listája függ a Graphviz verziójától, de alapvetően a `circo`, `dot`, `fdp`, `neato`, `osage`, `patchwork`, `sfdp`, `twopi` lehetőségekből lehet választani. Ezekről az algoritmusokról részletesen az alábbi linkeken található információ:
+- `circo`, `dot`, `fdp`, `neato`, `sfdp`, `twopi`: https://graphviz.gitlab.io/_pages/pdf/dot.1.pdf
+- `osage`: https://graphviz.gitlab.io/_pages/pdf/osage.1.pdf
+- `patchwork`: https://graphviz.gitlab.io/_pages/pdf/patchwork.1.pdf
+
+Harmadik paraméterként pedig meg lehet adni egy kezdő csúcsát a gráfnak, ahonnan a rendező algoritmus elindul, de ennek a megadása nem kötelező. A függvény visszaad egy `dict` típust amelynek kulcsa a csúcspontok, és értékei az (x,y) pozíciók.
 
 ```python
 def graphviz_layout(G, prog='neato', root=None)
@@ -522,5 +527,8 @@ Vertices were visited in the following sequence: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 
 - [pydot](https://pypi.org/project/pydot/)
 - [DOT (graph description language)](https://en.wikipedia.org/wiki/DOT_%28graph_description_language%29)
 - [networkx.drawing.nx_pydot.graphviz_layout](https://networkx.github.io/documentation/latest/reference/generated/networkx.drawing.nx_pydot.graphviz_layout.html)
+- [DOT(1)](https://graphviz.gitlab.io/_pages/pdf/dot.1.pdf)
+- [OSAGE(1)](https://graphviz.gitlab.io/_pages/pdf/osage.1.pdf)
+- [PATCHWORK(1)](https://graphviz.gitlab.io/_pages/pdf/patchwork.1.pdf)
 
 <p align="right"><sup><a href="README.md">Tartalom</a></sup></p>
